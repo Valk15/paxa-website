@@ -4,6 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PAXA — Peace for your pet. Science for you.</title>
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/favicon.png">
+<meta name="theme-color" content="#0A0A0A">
 <!-- Analytics and marketing scripts load only after cookie consent -->
 <script>
 function paxaLoadAnalytics() {
@@ -30,6 +34,20 @@ if (localStorage.getItem('paxa_cookie_consent') === 'accepted') {
 }
 </script>
 <meta name="description" content="PAXA Solo is a 30-day behavioral protocol for dogs with separation anxiety. Built on systematic desensitisation. Not treats. Not guesswork. A system that works.">
+<link rel="canonical" href="https://paxapet.co.uk/">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://paxapet.co.uk/">
+<meta property="og:title" content="PAXA — Peace for your pet. Science for you.">
+<meta property="og:description" content="PAXA Solo is a 30-day behavioral protocol for dogs with separation anxiety. Built on systematic desensitisation. Not treats. Not guesswork. A system that works.">
+<meta property="og:image" content="https://paxapet.co.uk/og-image.png">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="PAXA">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PAXA — Peace for your pet. Science for you.">
+<meta name="twitter:description" content="30-day behavioral protocol for dogs with separation anxiety. Built on science, not guesswork.">
+<meta name="twitter:image" content="https://paxapet.co.uk/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
 <style>
@@ -1223,6 +1241,111 @@ footer {
   .cookie-btn-accept, .cookie-btn-decline { flex: 1; text-align: center; }
 }
 </style>
+
+<!-- Structured Data: Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "PAXA",
+  "url": "https://paxapet.co.uk",
+  "logo": "https://paxapet.co.uk/favicon.png",
+  "description": "PAXA creates science-backed behavioral protocols for dogs with separation anxiety.",
+  "email": "hello@paxapet.co.uk",
+  "sameAs": []
+}
+</script>
+
+<!-- Structured Data: Product -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "PAXA Solo",
+  "description": "A 30-day behavioral protocol workbook for dogs with separation anxiety. Built on systematic desensitisation and counter-conditioning. 42-page interactive PDF.",
+  "image": "https://paxapet.co.uk/og-image.png",
+  "brand": {
+    "@type": "Brand",
+    "name": "PAXA"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "29",
+    "priceCurrency": "GBP",
+    "availability": "https://schema.org/InStock",
+    "url": "https://paxapet.gumroad.com/l/PAXA-Solo",
+    "seller": {
+      "@type": "Organization",
+      "name": "PAXA"
+    }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "3",
+    "bestRating": "5"
+  }
+}
+</script>
+
+<!-- Structured Data: FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is this suitable for severe separation anxiety?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PAXA Solo is built for mild to moderate separation anxiety. If your dog scores 6–10 on the Anxiety Scorecard, we recommend consulting a veterinary behaviourist alongside the protocol. Medication can support faster progress in severe cases."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much time does it take each day?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Training is capped at 30 minutes per day by design. Overtraining is as harmful as under-training. The nervous system needs recovery time to consolidate learning."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "My dog has had anxiety for years. Will this still work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Learned responses can be unlearned — regardless of how long they've been present. The neurological mechanisms that create separation anxiety are the same ones that reverse it. Duration doesn't determine outcome. Consistency does."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need any special equipment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A camera (your phone works perfectly), a mat or blanket for your dog's place, and optionally a remote treat dispenser for Phase 1. All of this is explained in detail in the workbook."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if it doesn't work for my dog?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Full refund within 30 days. No questions asked. We're confident in the science behind PAXA Solo — but if it's not the right fit for your situation, we don't keep your money."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this a PDF or an app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PAXA Solo is a 42-page interactive PDF workbook — instant download, works on any device, printable if you prefer working on paper. No subscription. No login required."
+      }
+    }
+  ]
+}
+</script>
+
 </head>
 <body>
 
