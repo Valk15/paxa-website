@@ -1,3 +1,17 @@
+## AUTO-LOAD ON EVERY SESSION
+Read these files at the start of every session before doing anything else:
+1. .claude/00_PAXA_MASTER_CONTEXT.md — full project context, team, strategy, gate status
+2. .claude/PAXA_SESSION_MEMORY.md — latest changes, active tasks, known issues
+
+## CURRENT STATUS (April 2026)
+- Gate 2: 0/5 organic sales
+- Hosting: Cloudflare
+- Blog: 3 posts live
+- TikTok: 2 videos live, ~475 views
+- Instagram: carousel #1 live
+- Klaviyo DNS: fixed
+- Claude Code: Youness machine, Windows, v2.1.42, authenticated
+
 # PAXA — Claude Code Project Intelligence
 
 ## What This Project Is
