@@ -7,7 +7,9 @@
       "WebFetch(domain:www.bluecross.org.uk)",
       "WebSearch",
       "WebFetch(domain:bluecross.org.uk)",
-      "WebFetch(domain:www.dogstrust.org.uk)"
+      "WebFetch(domain:www.dogstrust.org.uk)",
+      "Bash(git push:*)",
+      "Bash(git commit:*)"
     ]
   }
 }
