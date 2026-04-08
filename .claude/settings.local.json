@@ -1,7 +1,13 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "WebFetch(domain:www.rspca.org.uk)",
+      "WebFetch(domain:www.battersea.org.uk)",
+      "WebFetch(domain:www.bluecross.org.uk)",
+      "WebSearch",
+      "WebFetch(domain:bluecross.org.uk)",
+      "WebFetch(domain:www.dogstrust.org.uk)"
     ]
   }
 }
