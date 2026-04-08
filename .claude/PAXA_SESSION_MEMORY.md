@@ -29,7 +29,7 @@
 ## LIVE BLOG POSTS
 1. /blog/how-to-stop-dog-separation-anxiety/
 2. /blog/why-calming-treats-dont-fix-separation-anxiety/
-3. /blog/the-40-minute-rule-dog-separation-anxiety/ ← pending Ayoub push
+3. /blog/the-40-minute-rule-dog-separation-anxiety/ ✅ live
 
 Next: "Separation anxiety vs boredom: how to tell the difference"
 
@@ -38,29 +38,30 @@ Next: "Separation anxiety vs boredom: how to tell the difference"
 ## ACTIVE TASKS BY PERSON
 
 **Youness:**
-- Write TikTok scripts (hook problem — avg 4–5s watch time)
+- TikTok hook rewrite — PRIORITY (avg 4–5s watch time, hooks failing)
 - Write Instagram captions (3x/week)
 - Monitor Klaviyo DNS verification
+- Purge Cloudflare cache (manual step in Cloudflare dashboard)
 
 **Hamza:**
+- Create Facebook account (no VPN needed)
 - Post Facebook group copy from blog-post-3-distribution.txt
 - Post Pinterest pins from blog-post-3-distribution.txt
 - Reddit: 4–5 comments/day on r/dogs, r/dogadvice, r/puppy101
 - No PAXA links until 5–7 days of karma building
 
 **Ayoub:**
-- Push blog post #3 to GitHub (git push origin main)
-- Fix Claude Code stop hook error (remove _R bash hook from .claude/settings)
 - Add dog name field to Klaviyo email capture
 - Fix/verify Cloudflare hosting config
 
 ---
 
 ## KNOWN ISSUES
-- Claude Code stop hook error: `'_R' is not recognized` — Windows bash issue, cosmetic only
+- Claude Code stop hook error: `'_R' is not recognized` — Windows bash issue, cosmetic only, does not block work
 - Canva Education plan: no AI design generation — manual builds only
 - Testimonials on site: may be fake — UK ASA risk, needs resolution
-- TikTok hook retention: 4–5s avg = hook failing, scripts need rewriting
+- TikTok hook retention: 4–5s avg = hook failing, scripts need rewriting — NEXT CONTENT PRIORITY
+- Cloudflare cache purge needed after blog index confirmed (Youness manual step)
 
 ---
 
