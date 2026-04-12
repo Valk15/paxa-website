@@ -37,22 +37,31 @@ Next: "Separation anxiety vs boredom: how to tell the difference"
 
 ## ACTIVE TASKS BY PERSON
 
-**Youness:**
+**Youness (Brand, Marketing, Code, SEO, GitHub, Claude Code):**
 - TikTok hook rewrite — PRIORITY (avg 4–5s watch time, hooks failing)
-- Write Instagram captions (3x/week)
-- Monitor Klaviyo DNS verification
-- Purge Cloudflare cache (manual step in Cloudflare dashboard)
+- Write TikTok + Instagram scripts (3x/week) for Hamza + Youssef to post
+- All site updates, HTML edits, GitHub pushes
+- SEO: blog post #4, schema markup, keyword monitoring
+- Claude Code agents: maintenance, new agent briefs
 
-**Hamza:**
+**Youssef (Social Media Content — TikTok + Instagram, especially physical product):**
+- Brief from Youness on physical product TikTok scripts once lick mat sample arrives
+- Film + edit TikTok content for physical product launches
+- Instagram Reels for physical product
+- Coordinate with Hamza on posting schedule
+
+**Hamza (Community, Customer Support, Social Posting):**
 - Create Facebook account (no VPN needed)
 - Post Facebook group copy from blog-post-3-distribution.txt
 - Post Pinterest pins from blog-post-3-distribution.txt
 - Reddit: 4–5 comments/day on r/dogs, r/dogadvice, r/puppy101
 - No PAXA links until 5–7 days of karma building
+- Post TikTok + Instagram content (from Youness scripts)
+- Customer support: respond to all DMs and comments
 
-**Ayoub:**
+**Ayoub (Klaviyo only):**
 - Add dog name field to Klaviyo email capture
-- Fix/verify Cloudflare hosting config
+- Monitor email flow open rates after first 50 subscribers
 
 ---
 

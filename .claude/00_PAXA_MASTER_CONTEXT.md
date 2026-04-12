@@ -9,16 +9,17 @@
 
 **Youness** — Co-founder, Brand & Marketing Lead, PAXA.
 - Moroccan, 28 years old
-- Responsible for: strategy, content scripts, ad creative, brand voice, Klaviyo email
+- Responsible for: strategy, content scripts, ad creative, brand voice, all code, SEO, GitHub, Claude Code agents, site updates
 - Uses Claude.ai for content, strategy, and planning sessions
 - Claude Code installed on Youness's own machine (Windows, VS Code)
 
 **The team:**
 | Person | Role |
 |--------|------|
-| Youness | Co-founder — Brand & Marketing Lead |
-| Ayoub | Co-founder — Technical Lead (GitHub, Cloudflare, Telegram bot) |
-| Hamza | Co-founder — Operations (posting, Reddit, Facebook, customer support) |
+| Youness | Co-founder — Brand & Marketing Lead + all code, SEO, GitHub, Claude Code agents, site updates |
+| Ayoub | Co-founder — Klaviyo email flows only |
+| Hamza | Co-founder — Community management, customer support, social media posting |
+| Youssef | Social Media Content — TikTok + Instagram content creation, especially for physical product |
 
 ---
 
@@ -189,10 +190,10 @@ The only metric that matters: **5 organic sales.**
 - Gate 4 (future): Week 12 review → AU + physical product research
 
 **Active channels:**
-- TikTok + Instagram (Hamza posts, Youness writes scripts — 3x/week)
+- TikTok + Instagram (Hamza + Youssef post, Youness writes scripts — 3x/week)
 - Reddit: r/dogs, r/dogadvice, r/puppy101 (Hamza — genuine value, no spam)
 - UK Facebook dog groups (Hamza)
-- Email: Klaviyo 5-email flow via free 2-day preview lead magnet
+- Email: Klaviyo 5-email flow via free 2-day preview lead magnet (Ayoub manages)
 - Blog: 3 posts live, distributing via Facebook groups + Pinterest
 
 ---
@@ -231,15 +232,15 @@ The only metric that matters: **5 organic sales.**
 
 | Tool | Purpose | Owner |
 |------|---------|-------|
-| paxapet.co.uk | Landing page + blog | Ayoub (Cloudflare) |
-| GitHub (paxa-website) | Codebase + agents | Ayoub |
+| paxapet.co.uk | Landing page + blog | Youness (Cloudflare) |
+| GitHub (paxa-website) | Codebase + agents | Youness |
 | Gumroad | Product delivery + payments | Youness |
-| Klaviyo | Email marketing, 5-email flow | Youness |
-| Telegram bot | Youness → Claude Code bridge | Ayoub built |
+| Klaviyo | Email marketing, 5-email flow | Ayoub |
+| Telegram bot | Youness → Claude Code bridge | Youness |
 | Claude Code v2.1.42 | 6-agent PAXA system | Youness (Windows) |
 | Claude.ai | Strategy, content, planning | Youness |
 | Canva | Design (Education plan — no AI gen) | Youness |
-| TikTok / Instagram | Organic content | Hamza posts |
+| TikTok / Instagram | Organic content — posting | Hamza + Youssef |
 
 ---
 

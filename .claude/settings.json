@@ -1,5 +1,7 @@
 {
   "enabledPlugins": {
-    "claude-mem@thedotmack": true
+    "claude-mem@thedotmack": false,
+    "context-mode@context-mode": false,
+    "hookify@claude-plugins-official": false
   }
 }

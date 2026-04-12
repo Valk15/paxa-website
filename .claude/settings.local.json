@@ -9,7 +9,12 @@
       "WebFetch(domain:bluecross.org.uk)",
       "WebFetch(domain:www.dogstrust.org.uk)",
       "Bash(git push:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(git submodule:*)",
+      "Bash(git rm:*)",
+      "WebFetch(domain:www.amazon.co.uk)",
+      "WebFetch(domain:www.etsy.com)",
+      "WebFetch(domain:dogtoy360.co.uk)"
     ]
   }
 }

@@ -61,9 +61,10 @@ PAXA is a premium UK dog behavioral wellness brand. Our core product is **PAXA S
 
 | Person | Role |
 |--------|------|
-| Youness | Brand, marketing, content, ads |
-| Ayoub | Technical, analytics, infrastructure |
-| Hamza | Community, customer support, social posting |
+| Youness | Brand, marketing, content, ads — also all code, SEO, GitHub, Claude Code agents, site updates |
+| Ayoub | Klaviyo email flows only |
+| Hamza | Community management, customer support, social media posting |
+| Youssef | Social media content creation — TikTok + Instagram, especially for physical product |
 
 ---
 
