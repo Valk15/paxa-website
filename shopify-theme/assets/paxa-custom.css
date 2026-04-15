@@ -60,14 +60,23 @@ main { background-color: #E8E0D5; }
   transition: all 0.25s ease !important;
 }
 .button--primary,
-.product-form__submit {
+.product-form__submit,
+.shopify-payment-button__button--unbranded,
+form[action="/cart/add"] .button,
+[data-testid="Checkout-button"] {
   background: #4A6741 !important;
+  background-color: #4A6741 !important;
   color: #F5F5F0 !important;
   border: 2px solid #4A6741 !important;
+  border-color: #4A6741 !important;
 }
 .button--primary:hover,
-.product-form__submit:hover {
+.product-form__submit:hover,
+.shopify-payment-button__button--unbranded:hover,
+form[action="/cart/add"] .button:hover {
   background: #3d5636 !important;
+  background-color: #3d5636 !important;
+  border-color: #3d5636 !important;
   transform: translateY(-1px);
   box-shadow: 0 6px 20px rgba(74,103,65,0.28) !important;
 }
