@@ -1,0 +1,223 @@
+/* ============================================
+   PAXA CALM MAT — PREMIUM BRAND CSS v1.0
+   Brand: paxapet.co.uk
+   ============================================ */
+
+/* === GLOBAL BACKGROUND === */
+body,
+.shopify-section,
+main { background-color: #E8E0D5; }
+
+.color-scheme-1,
+.color-scheme-1 .shopify-section {
+  --color-background: 232 224 213 !important;
+  background-color: #E8E0D5 !important;
+}
+
+/* === ANNOUNCEMENT BAR === */
+.announcement-bar {
+  background: #0A0A0A !important;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.announcement-bar__message,
+.announcement-bar a {
+  color: #E8E0D5 !important;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* === HEADER === */
+.header,
+.section-header {
+  background-color: #E8E0D5 !important;
+  border-bottom: 1px solid rgba(10,10,10,0.1) !important;
+}
+.header__heading-link,
+.header__heading a {
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #0A0A0A !important;
+}
+.header__menu-item span {
+  font-size: 10px !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  font-weight: 700 !important;
+}
+.header__menu-item:hover span { color: #4A6741 !important; }
+
+/* === BUTTONS === */
+.button,
+.btn {
+  border-radius: 0 !important;
+  font-size: 11px !important;
+  letter-spacing: 0.15em !important;
+  text-transform: uppercase !important;
+  font-weight: 700 !important;
+  padding: 16px 36px !important;
+  transition: all 0.25s ease !important;
+}
+.button--primary,
+.product-form__submit {
+  background: #4A6741 !important;
+  color: #F5F5F0 !important;
+  border: 2px solid #4A6741 !important;
+}
+.button--primary:hover,
+.product-form__submit:hover {
+  background: #3d5636 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(74,103,65,0.28) !important;
+}
+.button--secondary {
+  background: transparent !important;
+  color: #0A0A0A !important;
+  border: 2px solid #0A0A0A !important;
+}
+.button--secondary:hover {
+  background: #0A0A0A !important;
+  color: #E8E0D5 !important;
+}
+
+/* === PRODUCT PAGE === */
+.product__title {
+  font-size: clamp(1.8rem, 3vw, 2.8rem) !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1.2 !important;
+  color: #0A0A0A !important;
+}
+.price,
+.price__regular {
+  font-size: 1.8rem !important;
+  font-weight: 800 !important;
+  color: #0A0A0A !important;
+}
+.product__media-wrapper { background: #EDE5D8; border-radius: 4px; }
+.thumbnail-list__item.is-active .thumbnail {
+  border-color: #4A6741 !important;
+  border-width: 2px !important;
+}
+.product__description {
+  border-top: 1px solid rgba(10,10,10,0.1) !important;
+  padding-top: 2rem !important;
+  line-height: 1.7 !important;
+}
+.select,
+select {
+  border: 1.5px solid rgba(10,10,10,0.3) !important;
+  border-radius: 0 !important;
+  background-color: #E8E0D5 !important;
+}
+.select:focus { border-color: #4A6741 !important; }
+
+/* === PRODUCT CARDS === */
+.card,
+.card-wrapper {
+  background: #EDE5D8 !important;
+  border-radius: 3px !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+  overflow: hidden;
+}
+.card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 40px rgba(10,10,10,0.1) !important;
+}
+.card__heading a { color: #0A0A0A !important; }
+.card__heading a:hover { color: #4A6741 !important; }
+
+/* === HERO BANNER === */
+.banner { background-color: #0A0A0A !important; }
+.banner__heading,
+.banner__text { color: #E8E0D5 !important; }
+
+/* === SECTION TITLES === */
+.title-wrapper__title,
+.collection__title,
+.section-heading {
+  font-weight: 400 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  color: #0A0A0A !important;
+}
+
+/* === FOOTER === */
+.footer,
+.footer__content-top,
+.footer__content-bottom { background: #0A0A0A !important; }
+.footer p,
+.footer li,
+.footer span { color: #B8A898 !important; }
+.footer a { color: #B8A898 !important; transition: color 0.2s ease !important; }
+.footer a:hover { color: #E8E0D5 !important; }
+.footer__column-header,
+.footer__heading {
+  color: #E8E0D5 !important;
+  font-size: 10px !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+  font-weight: 700 !important;
+}
+
+/* === FORMS / INPUTS === */
+.field__input,
+input[type="text"],
+input[type="email"],
+textarea {
+  border: 1.5px solid rgba(10,10,10,0.2) !important;
+  border-radius: 0 !important;
+  background-color: #F5F0E8 !important;
+  color: #0A0A0A !important;
+  padding: 12px 16px !important;
+}
+.field__input:focus,
+input[type="text"]:focus,
+input[type="email"]:focus {
+  border-color: #4A6741 !important;
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(74,103,65,0.15) !important;
+}
+
+/* === BADGES === */
+.badge {
+  border-radius: 0 !important;
+  font-size: 10px !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  background: #4A6741 !important;
+  color: #F5F5F0 !important;
+}
+
+/* === SCROLLBAR === */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #E8E0D5; }
+::-webkit-scrollbar-thumb { background: #B8A898; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #6B6860; }
+
+/* === FOCUS === */
+:focus-visible {
+  outline: 2px solid #4A6741 !important;
+  outline-offset: 3px !important;
+}
+
+/* === TRUST SIGNALS (product page) === */
+.paxa-trust-bar {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.2rem 0;
+  border-top: 1px solid rgba(10,10,10,0.08);
+  border-bottom: 1px solid rgba(10,10,10,0.08);
+  margin: 1.5rem 0;
+}
+.paxa-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #0A0A0A;
+}
