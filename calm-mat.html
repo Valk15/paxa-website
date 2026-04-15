@@ -860,6 +860,89 @@ if (localStorage.getItem('paxa_cookie_consent') === 'accepted') {
 .reveal.stagger-1 { transition-delay: 0.1s; }
 .reveal.stagger-2 { transition-delay: 0.2s; }
 .reveal.stagger-3 { transition-delay: 0.3s; }
+
+/* ── PRODUCT GALLERY ── */
+.adv-gallery {
+  margin-bottom: 40px;
+}
+.adv-gallery-main {
+  position: relative;
+  background: rgba(255,255,255,0.05);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  aspect-ratio: 1 / 1;
+  max-height: 420px;
+}
+.adv-gallery-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.3s ease;
+}
+.gallery-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(10,10,10,0.55);
+  color: var(--bone);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 2;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gallery-nav:hover { background: var(--sage); }
+.gallery-prev { left: 10px; }
+.gallery-next { right: 10px; }
+.adv-gallery-thumbs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--stone) transparent;
+}
+.gallery-thumb {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 2px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  cursor: pointer;
+  background: none;
+  padding: 0;
+  transition: border-color 0.2s;
+}
+.gallery-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.gallery-thumb.active,
+.gallery-thumb:hover { border-color: var(--sage-mid); }
+
+/* ── VARIANT CARD CURSOR ── */
+.adv-duo-card {
+  cursor: pointer;
+  transition: border-color 0.2s, transform 0.15s;
+}
+.adv-duo-card.selected {
+  border-color: var(--sage-mid) !important;
+  transform: translateY(-2px);
+}
+.adv-duo-card:hover {
+  border-color: rgba(159,191,147,0.5);
+}
 </style>
 </head>
 <body class="blog-post-page">
@@ -876,7 +959,7 @@ if (localStorage.getItem('paxa_cookie_consent') === 'accepted') {
     <a href="/blog/" class="nav-link">Blog</a>
     <a href="mailto:hello@paxapet.co.uk" class="nav-link">Contact</a>
   </div>
-  <a href="#get-calm-mat" class="nav-cta">Get the Calm Mat — £34 →</a>
+  <a href="https://paxa-7714.myshopify.com/cart/53536507068753:1" class="nav-cta" id="nav-cta-link">Get the Calm Mat — £34 →</a>
 </nav>
 
 <!-- COOKIE BANNER -->
@@ -983,8 +1066,39 @@ if (localStorage.getItem('paxa_cookie_consent') === 'accepted') {
     <span class="adv-protocol-badge reveal stagger-3">As used in the PAXA Solo protocol</span>
     <p class="adv-product-tagline reveal">The physical tool your dog's nervous system needs during the 40-minute cortisol window.</p>
 
-    <!-- PRODUCT HERO IMAGE -->
-    <img class="adv-product-hero-img reveal" src="https://images.unsplash.com/photo-1678783133022-89e103910f76?w=960&auto=format&fit=crop&q=80" alt="PAXA Calm Mat Bundle of 2 — food-grade silicone, BPA-free, dual-texture design" loading="lazy">
+    <!-- PRODUCT GALLERY -->
+    <div class="adv-gallery reveal">
+      <div class="adv-gallery-main">
+        <button class="gallery-nav gallery-prev" aria-label="Previous image">&#8592;</button>
+        <img id="gallery-main-img"
+          src="https://cdn.shopify.com/s/files/1/1037/8874/0945/files/5976563626975890682_121.jpg?v=1776245217"
+          alt="PAXA Calm Mat — Protocol Pair (Milk White + Sky Blue)" loading="eager">
+        <button class="gallery-nav gallery-next" aria-label="Next image">&#8594;</button>
+      </div>
+      <div class="adv-gallery-thumbs">
+        <button class="gallery-thumb active" data-idx="0">
+          <img src="https://cdn.shopify.com/s/files/1/1037/8874/0945/files/5976563626975890682_121.jpg?v=1776245217" alt="Protocol Pair hero">
+        </button>
+        <button class="gallery-thumb" data-idx="1">
+          <img src="https://cdn.shopify.com/s/files/1/1037/8874/0945/files/O1CN013UjPr01GIqRaMGbzF__2817070600-0-cib.jpg?v=1776245217" alt="Regulation Pair">
+        </button>
+        <button class="gallery-thumb" data-idx="2">
+          <img src="https://cdn.shopify.com/s/files/1/1037/8874/0945/files/O1CN01N7mONv1GIqZQuKcFq__2817070600-0-cib.jpg?v=1776245217" alt="Anchor Pair">
+        </button>
+        <button class="gallery-thumb" data-idx="3">
+          <img src="https://cdn.shopify.com/s/files/1/1037/8874/0945/files/O1CN0186kJW31GIqRf2AWN7__2817070600-0-cib.jpg?v=1776245217" alt="Detail shot">
+        </button>
+        <button class="gallery-thumb" data-idx="4">
+          <img src="https://cdn.shopify.com/s/files/1/1037/8874/0945/files/O1CN01cUieph1GIqRg7a6nz__2817070600-0-cib.jpg?v=1776245217" alt="Suction base">
+        </button>
+        <button class="gallery-thumb" data-idx="5">
+          <img src="https://cdn.shopify.com/s/files/1/1037/8874/0945/files/5976563626975890676_121.jpg?v=1776245217" alt="Lifestyle">
+        </button>
+        <button class="gallery-thumb" data-idx="6">
+          <img src="https://cdn.shopify.com/s/files/1/1037/8874/0945/files/5976563626975890675_121.jpg?v=1776245217" alt="In use">
+        </button>
+      </div>
+    </div>
 
     <!-- Specs -->
     <div class="adv-specs-grid reveal">
@@ -1014,38 +1128,47 @@ if (localStorage.getItem('paxa_cookie_consent') === 'accepted') {
       </div>
     </div>
 
-    <!-- Colour duos -->
+    <!-- Variant selector -->
     <div class="adv-duos reveal">
-      <p class="adv-duos-title">Choose your duo</p>
+      <p class="adv-duos-title">Choose your colour pair</p>
       <div class="adv-duo-cards">
 
-        <div class="adv-duo-card hero-duo">
+        <label class="adv-duo-card hero-duo selected" data-variant="53536507068753"
+          data-img="https://cdn.shopify.com/s/files/1/1037/8874/0945/files/5976563626975890682_121.jpg?v=1776245217"
+          onclick="selectVariant(this)">
+          <input type="radio" name="variant" value="53536507068753" checked style="display:none">
           <span class="adv-duo-badge">Most popular</span>
           <div class="adv-duo-swatches">
-            <div class="swatch swatch-blue"></div>
-            <div class="swatch swatch-teal"></div>
+            <div class="swatch" style="background:#F5F5F0; border:1.5px solid rgba(255,255,255,0.4);"></div>
+            <div class="swatch" style="background:#87CEEB;"></div>
           </div>
-          <span class="adv-duo-name">The Calm Duo</span>
-          <p class="adv-duo-desc">Slate Blue + Teal — wellness-coded, premium feel</p>
-        </div>
+          <span class="adv-duo-name">Protocol Pair</span>
+          <p class="adv-duo-desc">Milk White + Sky Blue — clean, calming, premium</p>
+        </label>
 
-        <div class="adv-duo-card">
+        <label class="adv-duo-card" data-variant="53536507101521"
+          data-img="https://cdn.shopify.com/s/files/1/1037/8874/0945/files/O1CN013UjPr01GIqRaMGbzF__2817070600-0-cib.jpg?v=1776245217"
+          onclick="selectVariant(this)">
+          <input type="radio" name="variant" value="53536507101521" style="display:none">
           <div class="adv-duo-swatches">
-            <div class="swatch swatch-beige"></div>
-            <div class="swatch swatch-grey"></div>
+            <div class="swatch" style="background:#98D4A3;"></div>
+            <div class="swatch" style="background:#4CAF50;"></div>
           </div>
-          <span class="adv-duo-name">The Natural Duo</span>
-          <p class="adv-duo-desc">Beige + Grey — neutral, gift-friendly</p>
-        </div>
+          <span class="adv-duo-name">Regulation Pair</span>
+          <p class="adv-duo-desc">Mint Green + Light Green — nature-coded, fresh</p>
+        </label>
 
-        <div class="adv-duo-card">
+        <label class="adv-duo-card" data-variant="53536507134289"
+          data-img="https://cdn.shopify.com/s/files/1/1037/8874/0945/files/O1CN01N7mONv1GIqZQuKcFq__2817070600-0-cib.jpg?v=1776245217"
+          onclick="selectVariant(this)">
+          <input type="radio" name="variant" value="53536507134289" style="display:none">
           <div class="adv-duo-swatches">
-            <div class="swatch swatch-purple"></div>
-            <div class="swatch swatch-green"></div>
+            <div class="swatch" style="background:#9C27B0;"></div>
+            <div class="swatch" style="background:#616161;"></div>
           </div>
-          <span class="adv-duo-name">The Bold Duo</span>
-          <p class="adv-duo-desc">Purple + Lime — high contrast, scroll-stopping</p>
-        </div>
+          <span class="adv-duo-name">Anchor Pair</span>
+          <p class="adv-duo-desc">Purple + Dark Grey — bold contrast, high visibility</p>
+        </label>
 
       </div>
     </div>
@@ -1058,12 +1181,11 @@ if (localStorage.getItem('paxa_cookie_consent') === 'accepted') {
       </div>
       <p class="adv-price-note">Bundle of 2 mats · Free UK delivery · Ships within 3–5 working days</p>
       <p class="adv-price-single">Also available as a single mat — £20</p>
-      <!-- REPLACE href BELOW WITH SHOPIFY URL ONCE AYOUB SETS UP STORE -->
-      <a href="#" class="btn-calm-mat" id="cta-calm-mat">
+      <a href="https://paxa-7714.myshopify.com/cart/53536507068753:1" class="btn-calm-mat" id="cta-calm-mat">
         Get the Calm Mat — £34 →
       </a>
     </div>
-    <p class="adv-guarantee reveal">30-day money-back guarantee &nbsp;·&nbsp; Secure checkout</p>
+    <p class="adv-guarantee reveal">30-day money-back guarantee &nbsp;·&nbsp; Secure checkout &nbsp;·&nbsp; Free UK delivery</p>
 
     <!-- Solo upsell -->
     <div class="adv-upsell reveal">
@@ -1108,8 +1230,7 @@ if (localStorage.getItem('paxa_cookie_consent') === 'accepted') {
 <div class="adv-final-cta">
   <h2 class="reveal">Two mats. One protocol.<br><em>A different dog.</em></h2>
   <p class="reveal">The PAXA Calm Mat is the physical tool that gives the science somewhere to land. Used correctly, it is the difference between a dog that spirals and a dog that settles.</p>
-  <!-- REPLACE href BELOW WITH SHOPIFY URL ONCE AYOUB SETS UP STORE -->
-  <a href="#" class="btn-final reveal">Get the Calm Mat — £34 →</a>
+  <a href="https://paxa-7714.myshopify.com/cart/53536507068753:1" class="btn-final reveal" id="cta-final">Get the Calm Mat — £34 →</a>
 </div>
 
 <!-- FOOTER -->
@@ -1130,7 +1251,7 @@ if (localStorage.getItem('paxa_cookie_consent') === 'accepted') {
   <div class="adv-sticky-bar-text">
     PAXA Calm Mat — Bundle of 2<br><span class="price">£34</span>
   </div>
-  <a href="#get-calm-mat" class="btn-sticky">Get it →</a>
+  <a href="https://paxa-7714.myshopify.com/cart/53536507068753:1" class="btn-sticky" id="cta-sticky">Get it →</a>
 </div>
 
 <script>
@@ -1189,7 +1310,7 @@ function paxaDeclineCookies() {
 }
 
 // ── GA4 event: CTA clicks ──
-document.querySelectorAll('#cta-calm-mat, .btn-final, .btn-sticky').forEach(function(btn) {
+document.querySelectorAll('#cta-calm-mat, #cta-final, #cta-sticky').forEach(function(btn) {
   btn.addEventListener('click', function() {
     if (window.gtag) {
       gtag('event', 'calm_mat_cta_click', {
@@ -1199,6 +1320,94 @@ document.querySelectorAll('#cta-calm-mat, .btn-final, .btn-sticky').forEach(func
     }
   });
 });
+
+// ── PRODUCT GALLERY ──
+var galleryImages = [
+  { src: 'https://cdn.shopify.com/s/files/1/1037/8874/0945/files/5976563626975890682_121.jpg?v=1776245217', alt: 'Protocol Pair hero' },
+  { src: 'https://cdn.shopify.com/s/files/1/1037/8874/0945/files/O1CN013UjPr01GIqRaMGbzF__2817070600-0-cib.jpg?v=1776245217', alt: 'Regulation Pair' },
+  { src: 'https://cdn.shopify.com/s/files/1/1037/8874/0945/files/O1CN01N7mONv1GIqZQuKcFq__2817070600-0-cib.jpg?v=1776245217', alt: 'Anchor Pair' },
+  { src: 'https://cdn.shopify.com/s/files/1/1037/8874/0945/files/O1CN0186kJW31GIqRf2AWN7__2817070600-0-cib.jpg?v=1776245217', alt: 'Detail shot' },
+  { src: 'https://cdn.shopify.com/s/files/1/1037/8874/0945/files/O1CN01cUieph1GIqRg7a6nz__2817070600-0-cib.jpg?v=1776245217', alt: 'Suction base' },
+  { src: 'https://cdn.shopify.com/s/files/1/1037/8874/0945/files/5976563626975890676_121.jpg?v=1776245217', alt: 'Lifestyle' },
+  { src: 'https://cdn.shopify.com/s/files/1/1037/8874/0945/files/5976563626975890675_121.jpg?v=1776245217', alt: 'In use' }
+];
+var currentIdx = 0;
+var mainImg = document.getElementById('gallery-main-img');
+var thumbs = document.querySelectorAll('.gallery-thumb');
+
+function setGalleryImage(idx) {
+  if (idx < 0) idx = galleryImages.length - 1;
+  if (idx >= galleryImages.length) idx = 0;
+  currentIdx = idx;
+  mainImg.style.opacity = '0';
+  setTimeout(function() {
+    mainImg.src = galleryImages[idx].src;
+    mainImg.alt = galleryImages[idx].alt;
+    mainImg.style.opacity = '1';
+  }, 150);
+  thumbs.forEach(function(t, i) {
+    t.classList.toggle('active', i === idx);
+  });
+}
+
+thumbs.forEach(function(t) {
+  t.addEventListener('click', function() {
+    setGalleryImage(parseInt(this.dataset.idx));
+  });
+});
+
+var prevBtn = document.querySelector('.gallery-prev');
+var nextBtn = document.querySelector('.gallery-next');
+if (prevBtn) prevBtn.addEventListener('click', function() { setGalleryImage(currentIdx - 1); });
+if (nextBtn) nextBtn.addEventListener('click', function() { setGalleryImage(currentIdx + 1); });
+
+// Keyboard nav for gallery
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'ArrowLeft') setGalleryImage(currentIdx - 1);
+  if (e.key === 'ArrowRight') setGalleryImage(currentIdx + 1);
+});
+
+// ── VARIANT SELECTOR ──
+function selectVariant(card) {
+  // Remove selected from all
+  document.querySelectorAll('.adv-duo-card').forEach(function(c) {
+    c.classList.remove('selected');
+  });
+  card.classList.add('selected');
+  var variantId = card.dataset.variant;
+  var variantImg = card.dataset.img;
+  var cartUrl = 'https://paxa-7714.myshopify.com/cart/' + variantId + ':1';
+
+  // Update all CTAs
+  var ctaMain = document.getElementById('cta-calm-mat');
+  var ctaFinal = document.getElementById('cta-final');
+  var ctaSticky = document.getElementById('cta-sticky');
+  var ctaNav = document.getElementById('nav-cta-link');
+  if (ctaMain) ctaMain.href = cartUrl;
+  if (ctaFinal) ctaFinal.href = cartUrl;
+  if (ctaSticky) ctaSticky.href = cartUrl;
+  if (ctaNav) ctaNav.href = cartUrl;
+
+  // Update gallery main image to variant hero
+  var variantImgIdx = galleryImages.findIndex(function(img) { return img.src === variantImg; });
+  if (variantImgIdx >= 0) {
+    setGalleryImage(variantImgIdx);
+  } else {
+    mainImg.style.opacity = '0';
+    setTimeout(function() {
+      mainImg.src = variantImg;
+      mainImg.style.opacity = '1';
+    }, 150);
+  }
+
+  // GA4 event
+  if (window.gtag) {
+    gtag('event', 'select_item', {
+      event_category: 'ecommerce',
+      event_label: 'calm_mat_variant_' + variantId
+    });
+  }
+}
 </script>
 </body>
 </html>
