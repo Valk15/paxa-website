@@ -1,430 +1,427 @@
 {% comment %}
-  PAXA Calm Mat — Full Premium Product Page v2
+  PAXA Calm Mat — Product Page v3
   sections/paxa-calm-mat-product.liquid
   Template: templates/product.calm-mat.json
-  Product: paxa-calm-mat-bundle-of-2 (ID: 10755216605521)
-  Theme: Dawn v15.4.1 — Theme ID: 197891162449
+  Works with Dawn — no header/footer overrides
 {% endcomment %}
 
 {{ 'paxa-product.css' | asset_url | stylesheet_tag }}
 
-{%- assign logo_url   = 'paxa-logo.jpg' | asset_url -%}
-{%- assign hero_src   = product.images[0].src -%}
+<div class="pcm-page">
 
-<!-- ═══════════════════════════════════════════════════════════
-     A. STICKY HEADER
-════════════════════════════════════════════════════════════ -->
-<header class="pcm-header" id="pcm-header" role="banner">
-  <a href="/" class="pcm-logo-link" aria-label="PAXA home">
-    <img src="{{ logo_url }}" alt="PAXA" class="pcm-logo-img" width="100" height="32">
-  </a>
-  <nav class="pcm-nav" aria-label="Main navigation">
-    <a href="/collections/all" class="pcm-nav-link">Products</a>
-    <a href="https://paxapet.gumroad.com/l/PAXA-Solo" class="pcm-nav-link" rel="noopener">Protocol</a>
-  </nav>
-  <a href="#pcm-buy" class="pcm-header-cta">Get the Calm Mat &mdash; &pound;34 &rarr;</a>
-</header>
+  <!-- ═══════════════════════════════════════════════════════
+       A. PRODUCT PANEL — bone background, 50/50 grid
+  ══════════════════════════════════════════════════════════ -->
+  <section class="pcm-panel pcm-section" aria-label="Product">
+    <div class="pcm-panel-grid">
 
-<!-- ═══════════════════════════════════════════════════════════
-     B. HERO
-════════════════════════════════════════════════════════════ -->
-<section class="pcm-hero" aria-label="Product introduction">
-  <div class="pcm-hero-grid">
+      <!-- LEFT: Gallery with hardcoded PAXA CDN images -->
+      <div class="pcm-gallery" aria-label="Product images">
 
-    <div class="pcm-hero-left">
-      <p class="pcm-hero-kicker">The 40-minute window</p>
-      <h1 class="pcm-hero-headline" id="pcm-hero-headline">
-        <span class="pcm-word">Your</span>
-        <span class="pcm-word">dog&rsquo;s</span>
-        <span class="pcm-word">nervous</span>
-        <span class="pcm-word">system</span>
-        <span class="pcm-word">has</span>
-        <span class="pcm-word">a</span>
-        <span class="pcm-word">solution.</span>
-      </h1>
-      <p class="pcm-hero-sub">
-        Slow licking activates the parasympathetic system &mdash; the physiological
-        counterforce to cortisol. Two mats. One structured protocol. A different dog.
-      </p>
-      <a href="#pcm-buy" class="pcm-btn-sage">Get the Calm Mat &mdash; &pound;34 &rarr;</a>
-    </div>
-
-    <div class="pcm-hero-right">
-      <div class="pcm-hero-img-wrap">
-        <img
-          src="{{ hero_src }}"
-          alt="{{ product.title | escape }}"
-          class="pcm-hero-img"
-          loading="eager"
-          width="600"
-          height="800"
-        >
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════
-     C. PRODUCT PURCHASE PANEL
-════════════════════════════════════════════════════════════ -->
-<section class="pcm-panel" id="pcm-buy" aria-label="Select and purchase">
-  <div class="pcm-panel-grid">
-
-    <!-- LEFT: Image gallery -->
-    <div class="pcm-gallery" aria-label="Product images">
-      <div class="pcm-gallery-main-wrap">
-        <img
-          src="{{ hero_src }}"
-          alt="{{ product.title | escape }}"
-          id="pcm-main-img"
-          class="pcm-main-img"
-          loading="eager"
-          width="600"
-          height="600"
-        >
-        <button class="pcm-gallery-btn pcm-gallery-prev" id="pcm-prev-btn" aria-label="Previous image" type="button">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-            <path d="M12.5 5L7.5 10L12.5 15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-        <button class="pcm-gallery-btn pcm-gallery-next" id="pcm-next-btn" aria-label="Next image" type="button">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-            <path d="M7.5 5L12.5 10L7.5 15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-      </div>
-
-      <div class="pcm-thumbs" role="list" aria-label="Image thumbnails">
-        {%- for img in product.images limit: 7 -%}
-          <button
-            class="pcm-thumb{% if forloop.first %} pcm-thumb-active{% endif %}"
-            data-src="{{ img.src }}"
-            data-index="{{ forloop.index0 }}"
-            role="listitem"
-            type="button"
-            aria-label="View image {{ forloop.index }}"
-            aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}"
+        <div class="pcm-gallery-main" id="pcm-gallery-main">
+          <img
+            src="https://cdn.shopify.com/s/files/1/1037/8874/0945/files/5976563626975890682_121.jpg?v=1776245217"
+            alt="PAXA Calm Mat — Protocol Pair"
+            id="pcm-main-img"
+            class="pcm-main-img"
+            loading="eager"
+            width="600"
+            height="600"
           >
-            <img src="{{ img.src }}" alt="" loading="lazy" width="70" height="70">
+          <button class="pcm-gal-btn pcm-gal-prev" id="pcm-prev" type="button" aria-label="Previous image">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+              <path d="M11 4L6 9L11 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
           </button>
-        {%- endfor -%}
-      </div>
-    </div>
-
-    <!-- RIGHT: Purchase panel -->
-    <div class="pcm-purchase">
-
-      <h2 class="pcm-product-title">PAXA Calm Mat</h2>
-      <p class="pcm-product-tagline">Bundle of 2 &mdash; one for each departure</p>
-
-      <div class="pcm-price-row">
-        <span class="pcm-price">&pound;34</span>
-        <span class="pcm-save-badge">Save &pound;6 vs singles</span>
-      </div>
-      <p class="pcm-shipping">Free UK delivery &middot; 3&ndash;5 working days</p>
-
-      <!-- VARIANT SELECTOR — critical path -->
-      <div class="pcm-variants" id="pcm-variants" role="radiogroup" aria-label="Choose your colour pair">
-
-        <div class="pcm-variant-card pcm-variant-selected"
-             data-variant-id="53536507068753"
-             data-variant-name="The Protocol Pair"
-             data-color1-name="Milk White"
-             data-color2-name="Sky Blue"
-             role="radio" aria-checked="true" tabindex="0">
-          <div class="pcm-variant-swatches">
-            <span class="pcm-swatch" style="background:#F5F5F0;" aria-hidden="true"></span>
-            <span class="pcm-swatch" style="background:#87CEEB;" aria-hidden="true"></span>
-          </div>
-          <div class="pcm-variant-text">
-            <span class="pcm-variant-name-label">Protocol Pair</span>
-            <span class="pcm-variant-colors-label">Milk White + Sky Blue</span>
-          </div>
-          <span class="pcm-variant-check" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-              <circle cx="9" cy="9" r="9" fill="#4A6741"/>
-              <path d="M5 9l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <button class="pcm-gal-btn pcm-gal-next" id="pcm-next" type="button" aria-label="Next image">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+              <path d="M7 4L12 9L7 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-          </span>
+          </button>
         </div>
 
-        <div class="pcm-variant-card"
-             data-variant-id="53536507101521"
-             data-variant-name="The Regulation Pair"
-             data-color1-name="Mint Green"
-             data-color2-name="Light Green"
-             role="radio" aria-checked="false" tabindex="-1">
-          <div class="pcm-variant-swatches">
-            <span class="pcm-swatch" style="background:#98D4A3;" aria-hidden="true"></span>
-            <span class="pcm-swatch" style="background:#4CAF50;" aria-hidden="true"></span>
-          </div>
-          <div class="pcm-variant-text">
-            <span class="pcm-variant-name-label">Regulation Pair</span>
-            <span class="pcm-variant-colors-label">Mint Green + Light Green</span>
-          </div>
-          <span class="pcm-variant-check" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-              <circle cx="9" cy="9" r="9" fill="#4A6741"/>
-              <path d="M5 9l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </span>
+        <div class="pcm-thumbs" role="list">
+          <button class="pcm-thumb active" data-index="0" type="button" role="listitem" aria-label="Image 1" aria-pressed="true">
+            <img src="https://cdn.shopify.com/s/files/1/1037/8874/0945/files/5976563626975890682_121.jpg?v=1776245217" alt="" loading="lazy">
+          </button>
+          <button class="pcm-thumb" data-index="1" type="button" role="listitem" aria-label="Image 2" aria-pressed="false">
+            <img src="https://cdn.shopify.com/s/files/1/1037/8874/0945/files/O1CN013UjPr01GIqRaMGbzF__2817070600-0-cib.jpg?v=1776245217" alt="" loading="lazy">
+          </button>
+          <button class="pcm-thumb" data-index="2" type="button" role="listitem" aria-label="Image 3" aria-pressed="false">
+            <img src="https://cdn.shopify.com/s/files/1/1037/8874/0945/files/O1CN01N7mONv1GIqZQuKcFq__2817070600-0-cib.jpg?v=1776245217" alt="" loading="lazy">
+          </button>
+          <button class="pcm-thumb" data-index="3" type="button" role="listitem" aria-label="Image 4" aria-pressed="false">
+            <img src="https://cdn.shopify.com/s/files/1/1037/8874/0945/files/O1CN0186kJW31GIqRf2AWN7__2817070600-0-cib.jpg?v=1776245217" alt="" loading="lazy">
+          </button>
+          <button class="pcm-thumb" data-index="4" type="button" role="listitem" aria-label="Image 5" aria-pressed="false">
+            <img src="https://cdn.shopify.com/s/files/1/1037/8874/0945/files/O1CN01cUieph1GIqRg7a6nz__2817070600-0-cib.jpg?v=1776245217" alt="" loading="lazy">
+          </button>
+          <button class="pcm-thumb" data-index="5" type="button" role="listitem" aria-label="Image 6" aria-pressed="false">
+            <img src="https://cdn.shopify.com/s/files/1/1037/8874/0945/files/5976563626975890676_121.jpg?v=1776245217" alt="" loading="lazy">
+          </button>
+          <button class="pcm-thumb" data-index="6" type="button" role="listitem" aria-label="Image 7" aria-pressed="false">
+            <img src="https://cdn.shopify.com/s/files/1/1037/8874/0945/files/5976563626975890675_121.jpg?v=1776245217" alt="" loading="lazy">
+          </button>
         </div>
 
-        <div class="pcm-variant-card"
-             data-variant-id="53536507134289"
-             data-variant-name="The Anchor Pair"
-             data-color1-name="Purple"
-             data-color2-name="Dark Grey"
-             role="radio" aria-checked="false" tabindex="-1">
-          <div class="pcm-variant-swatches">
-            <span class="pcm-swatch" style="background:#9C27B0;" aria-hidden="true"></span>
-            <span class="pcm-swatch" style="background:#616161;" aria-hidden="true"></span>
-          </div>
-          <div class="pcm-variant-text">
-            <span class="pcm-variant-name-label">Anchor Pair</span>
-            <span class="pcm-variant-colors-label">Purple + Dark Grey</span>
-          </div>
-          <span class="pcm-variant-check" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-              <circle cx="9" cy="9" r="9" fill="#4A6741"/>
-              <path d="M5 9l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </span>
+      </div><!-- /pcm-gallery -->
+
+      <!-- RIGHT: Purchase panel -->
+      <div class="pcm-purchase">
+
+        <h1 class="pcm-product-title">PAXA Calm Mat</h1>
+        <p class="pcm-product-sub">Bundle of 2 &mdash; one for each departure</p>
+
+        <div class="pcm-price-row">
+          <span class="pcm-price">&pound;34</span>
+          <span class="pcm-save-tag">Save &pound;6 vs singles</span>
         </div>
+        <p class="pcm-shipping">Free UK delivery &middot; 3&ndash;5 working days</p>
 
-      </div><!-- /pcm-variants -->
+        <!-- VARIANT SELECTOR -->
+        <div class="pcm-variants" id="pcm-variants" role="radiogroup" aria-label="Choose colour pair">
 
-      <p class="pcm-selected-label" id="pcm-selected-label" aria-live="polite">
-        Selected: Protocol Pair &mdash; Milk White + Sky Blue
-      </p>
+          <div class="pcm-variant-card selected"
+               data-variant-id="53536507068753"
+               data-variant-name="Protocol Pair"
+               data-color1="Milk White"
+               data-color2="Sky Blue"
+               data-img="https://cdn.shopify.com/s/files/1/1037/8874/0945/files/5976563626975890682_121.jpg?v=1776245217"
+               role="radio" aria-checked="true" tabindex="0">
+            <div class="pcm-swatches">
+              <span class="pcm-swatch" style="background:#F5F5F0;" aria-hidden="true"></span>
+              <span class="pcm-swatch" style="background:#87CEEB;" aria-hidden="true"></span>
+            </div>
+            <div class="pcm-variant-info">
+              <span class="pcm-variant-name">Protocol Pair</span>
+              <span class="pcm-variant-colors">Milk White + Sky Blue</span>
+            </div>
+            <span class="pcm-variant-check" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <circle cx="9" cy="9" r="9" fill="#4A6741"/>
+                <path d="M5 9l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </div>
 
-      <button class="pcm-btn-atc" id="pcm-atc-btn" type="button" aria-label="Add to cart — £34">
-        Add to Cart &mdash; &pound;34 &rarr;
-      </button>
+          <div class="pcm-variant-card"
+               data-variant-id="53536507101521"
+               data-variant-name="Regulation Pair"
+               data-color1="Mint Green"
+               data-color2="Light Green"
+               data-img="https://cdn.shopify.com/s/files/1/1037/8874/0945/files/5976563626975890676_121.jpg?v=1776245217"
+               role="radio" aria-checked="false" tabindex="-1">
+            <div class="pcm-swatches">
+              <span class="pcm-swatch" style="background:#98D4A3;" aria-hidden="true"></span>
+              <span class="pcm-swatch" style="background:#4CAF50;" aria-hidden="true"></span>
+            </div>
+            <div class="pcm-variant-info">
+              <span class="pcm-variant-name">Regulation Pair</span>
+              <span class="pcm-variant-colors">Mint Green + Light Green</span>
+            </div>
+            <span class="pcm-variant-check" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <circle cx="9" cy="9" r="9" fill="#4A6741"/>
+                <path d="M5 9l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </div>
 
-      <p class="pcm-trust-bar">30-day money-back &middot; BPA-free &middot; Dishwasher safe</p>
+          <div class="pcm-variant-card"
+               data-variant-id="53536507134289"
+               data-variant-name="Anchor Pair"
+               data-color1="Purple"
+               data-color2="Dark Grey"
+               data-img="https://cdn.shopify.com/s/files/1/1037/8874/0945/files/5976563626975890675_121.jpg?v=1776245217"
+               role="radio" aria-checked="false" tabindex="-1">
+            <div class="pcm-swatches">
+              <span class="pcm-swatch" style="background:#9C27B0;" aria-hidden="true"></span>
+              <span class="pcm-swatch" style="background:#616161;" aria-hidden="true"></span>
+            </div>
+            <div class="pcm-variant-info">
+              <span class="pcm-variant-name">Anchor Pair</span>
+              <span class="pcm-variant-colors">Purple + Dark Grey</span>
+            </div>
+            <span class="pcm-variant-check" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <circle cx="9" cy="9" r="9" fill="#4A6741"/>
+                <path d="M5 9l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </div>
 
-    </div><!-- /pcm-purchase -->
+        </div><!-- /pcm-variants -->
 
-  </div><!-- /pcm-panel-grid -->
-</section>
+        <p class="pcm-selection-confirm" id="pcm-confirm-label" aria-live="polite">
+          Selected: Protocol Pair &mdash; Milk White + Sky Blue
+        </p>
 
-<!-- ═══════════════════════════════════════════════════════════
-     D. SCIENCE STRIP
-════════════════════════════════════════════════════════════ -->
-<section class="pcm-science" aria-label="Science and research">
-  <div class="pcm-science-inner">
+        <!-- Shopify cart form — integrates with Dawn cart drawer -->
+        <form action="/cart/add" method="post" class="pcm-buy-form" id="pcm-buy-form">
+          <input type="hidden" name="id"       id="pcm-variant-id" value="53536507068753">
+          <input type="hidden" name="quantity" value="1">
+          <button type="submit" class="pcm-buy-btn">
+            Add to Cart &mdash; &pound;34 &rarr;
+          </button>
+        </form>
+
+        <p class="pcm-trust">30-day money-back &middot; BPA-free &middot; Dishwasher safe</p>
+
+      </div><!-- /pcm-purchase -->
+
+    </div><!-- /pcm-panel-grid -->
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       B. SCIENCE STRIP — dark background
+  ══════════════════════════════════════════════════════════ -->
+  <section class="pcm-science pcm-section" aria-label="Science">
     <div class="pcm-stats-row">
-      <div class="pcm-stat">
-        <div class="pcm-stat-number">
+      <div class="pcm-stat pcm-reveal">
+        <div class="pcm-stat-num-wrap">
           <span class="pcm-stat-count" data-target="40" aria-label="40 minutes">0</span>
           <span class="pcm-stat-unit" aria-hidden="true">&nbsp;min</span>
         </div>
-        <p class="pcm-stat-desc">Cortisol peak window</p>
+        <p class="pcm-stat-label">Cortisol peak window</p>
       </div>
-      <div class="pcm-stat">
-        <div class="pcm-stat-number">
+      <div class="pcm-stat pcm-reveal">
+        <div class="pcm-stat-num-wrap">
           <span class="pcm-stat-count" data-target="2" aria-label="2 times">0</span>
           <span class="pcm-stat-unit" aria-hidden="true">&times;</span>
         </div>
-        <p class="pcm-stat-desc">Habituation prevention</p>
+        <p class="pcm-stat-label">Habituation prevention</p>
       </div>
-      <div class="pcm-stat">
-        <div class="pcm-stat-number">
+      <div class="pcm-stat pcm-reveal">
+        <div class="pcm-stat-num-wrap">
           <span class="pcm-stat-count" data-target="30" aria-label="30 days">0</span>
           <span class="pcm-stat-unit" aria-hidden="true">&nbsp;days</span>
         </div>
-        <p class="pcm-stat-desc">Protocol duration</p>
+        <p class="pcm-stat-label">Protocol duration</p>
       </div>
     </div>
-    <blockquote class="pcm-pullquote">
+    <blockquote class="pcm-pullquote pcm-reveal">
       &ldquo;Licking is a parasympathetic activation mechanism. Not a distraction &mdash; an exit.&rdquo;
     </blockquote>
-  </div>
-</section>
+  </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     E. HOW IT WORKS
-════════════════════════════════════════════════════════════ -->
-<section class="pcm-how" aria-label="How the Calm Mat works">
-  <div class="pcm-how-inner">
-    <h2 class="pcm-section-title">How it works</h2>
-    <div class="pcm-steps">
-
-      <div class="pcm-step pcm-reveal">
-        <span class="pcm-step-num" aria-hidden="true">01</span>
-        <div class="pcm-step-content">
-          <h3 class="pcm-step-title">Load and position</h3>
-          <p class="pcm-step-desc">
-            Spread a thin layer of your dog&rsquo;s favourite paste onto the mat. Place it in
-            the designated departure spot &mdash; the same location, every time. Consistency
-            builds the conditioned cue that a calm session is beginning.
-          </p>
+  <!-- ═══════════════════════════════════════════════════════
+       C. HOW IT WORKS — bone background
+  ══════════════════════════════════════════════════════════ -->
+  <section class="pcm-how pcm-section" aria-label="How the Calm Mat works">
+    <div style="max-width:1000px;margin:0 auto;">
+      <h2 class="pcm-section-title">How it works</h2>
+      <div class="pcm-steps">
+        <div class="pcm-step pcm-reveal">
+          <span class="pcm-step-num" aria-hidden="true">01</span>
+          <div>
+            <h3 class="pcm-step-title">Load and position</h3>
+            <p class="pcm-step-desc">Spread a thin layer of your dog&rsquo;s favourite paste across all four texture zones. Place the mat in the designated departure spot &mdash; the same location, every session. Consistency builds the conditioned cue.</p>
+          </div>
+        </div>
+        <div class="pcm-step pcm-reveal">
+          <span class="pcm-step-num" aria-hidden="true">02</span>
+          <div>
+            <h3 class="pcm-step-title">Depart without ceremony</h3>
+            <p class="pcm-step-desc">No drawn-out goodbyes. No reassurance. Leave while your dog is engaged. The slow licking activates the parasympathetic nervous system before cortisol has time to spike during that critical 30&ndash;40 minute window.</p>
+          </div>
+        </div>
+        <div class="pcm-step pcm-reveal">
+          <span class="pcm-step-num" aria-hidden="true">03</span>
+          <div>
+            <h3 class="pcm-step-title">Extend the window</h3>
+            <p class="pcm-step-desc">Following the protocol, session length increases incrementally over 30 days. The mat becomes an environmental anchor &mdash; a reliable signal that calm is the expected state. The anxiety retreats as the behaviour solidifies.</p>
+          </div>
         </div>
       </div>
-
-      <div class="pcm-step pcm-reveal">
-        <span class="pcm-step-num" aria-hidden="true">02</span>
-        <div class="pcm-step-content">
-          <h3 class="pcm-step-title">Depart without ceremony</h3>
-          <p class="pcm-step-desc">
-            No drawn-out goodbyes. No reassurance. You leave while your dog is engaged with the
-            mat. The licking activates the parasympathetic nervous system before cortisol has
-            time to spike during that critical 30&ndash;40 minute window.
-          </p>
-        </div>
-      </div>
-
-      <div class="pcm-step pcm-reveal">
-        <span class="pcm-step-num" aria-hidden="true">03</span>
-        <div class="pcm-step-content">
-          <h3 class="pcm-step-title">Extend the window</h3>
-          <p class="pcm-step-desc">
-            Over 30 days, session length increases incrementally following the protocol. The mat
-            becomes an environmental anchor &mdash; a conditioned signal that calm is the correct
-            state. Your dog learns to regulate. The anxiety retreats.
-          </p>
-        </div>
-      </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     F. FAQ ACCORDION
-════════════════════════════════════════════════════════════ -->
-<section class="pcm-faq" aria-label="Frequently asked questions">
-  <div class="pcm-faq-inner">
-    <h2 class="pcm-section-title">Common questions</h2>
-    <div class="pcm-faq-list">
-
-      <div class="pcm-faq-item">
-        <button class="pcm-faq-question" aria-expanded="false" type="button">
-          <span>Does the mat work on its own?</span>
-          <svg class="pcm-faq-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-            <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-        <div class="pcm-faq-answer" hidden>
-          <p>No. A lick mat is not a treatment &mdash; it is a tool. Used as part of the PAXA Solo Protocol or any structured desensitisation programme, it creates a reliable physiological anchor during the critical cortisol window. Without the protocol, it is simply enrichment.</p>
+  <!-- ═══════════════════════════════════════════════════════
+       D. SPECS TABLE — warm card background
+  ══════════════════════════════════════════════════════════ -->
+  <section class="pcm-specs-wrap pcm-section" aria-label="Product specifications">
+    <div class="pcm-specs-inner">
+      <h2 class="pcm-section-title">Specifications</h2>
+      <div class="pcm-specs-grid">
+        <div class="pcm-spec">
+          <span class="pcm-spec-label">Material</span>
+          <span class="pcm-spec-value">Food-grade silicone &mdash; BPA-free confirmed</span>
+        </div>
+        <div class="pcm-spec">
+          <span class="pcm-spec-label">Size (per mat)</span>
+          <span class="pcm-spec-value">20.8 &times; 20.8 &times; 2.5 cm</span>
+        </div>
+        <div class="pcm-spec">
+          <span class="pcm-spec-label">Texture zones</span>
+          <span class="pcm-spec-value">4 &mdash; ridge, wave, dot, honeycomb</span>
+        </div>
+        <div class="pcm-spec">
+          <span class="pcm-spec-label">Base</span>
+          <span class="pcm-spec-value">99 suction cups &mdash; stays fixed during sessions</span>
+        </div>
+        <div class="pcm-spec">
+          <span class="pcm-spec-label">Dishwasher safe</span>
+          <span class="pcm-spec-value">Yes &mdash; top rack</span>
+        </div>
+        <div class="pcm-spec">
+          <span class="pcm-spec-label">Bundle contents</span>
+          <span class="pcm-spec-value">2 mats &mdash; colour-paired per variant</span>
         </div>
       </div>
-
-      <div class="pcm-faq-item">
-        <button class="pcm-faq-question" aria-expanded="false" type="button">
-          <span>Which variant should I choose?</span>
-          <svg class="pcm-faq-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-            <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-        <div class="pcm-faq-answer" hidden>
-          <p>The Protocol Pair (Milk White + Sky Blue) is the standard two-mat setup used across all four phases of the protocol. The Regulation Pair suits sensitive or reactive dogs in early foundation work. The Anchor Pair is designed for threshold management in Phase 3 &mdash; the visual contrast accelerates conditioned response.</p>
-        </div>
-      </div>
-
-      <div class="pcm-faq-item">
-        <button class="pcm-faq-question" aria-expanded="false" type="button">
-          <span>Is it safe for all dogs?</span>
-          <svg class="pcm-faq-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-            <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-        <div class="pcm-faq-answer" hidden>
-          <p>Yes. The mats are food-grade silicone, BPA-free confirmed. The suction cup base prevents movement during sessions, which is important for maintaining the environmental cue. Always supervise the first few sessions to ensure your dog engages correctly.</p>
-        </div>
-      </div>
-
-      <div class="pcm-faq-item">
-        <button class="pcm-faq-question" aria-expanded="false" type="button">
-          <span>How do I clean it?</span>
-          <svg class="pcm-faq-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-            <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-        <div class="pcm-faq-answer" hidden>
-          <p>Dishwasher safe &mdash; top rack only. Alternatively, rinse with warm water and a soft brush. Do not use abrasive cleaners or solvents. The silicone is non-porous and resists bacterial build-up between sessions.</p>
-        </div>
-      </div>
-
-      <div class="pcm-faq-item">
-        <button class="pcm-faq-question" aria-expanded="false" type="button">
-          <span>What if my dog isn&rsquo;t interested?</span>
-          <svg class="pcm-faq-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-            <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-        <div class="pcm-faq-answer" hidden>
-          <p>This is common in the first 1&ndash;2 sessions. Start with a high-value paste (peanut butter, soft cheese, meat paste). Smear it into all four texture zones. Freeze the mat overnight for longer engagement. Most dogs are fully engaged within 3 sessions.</p>
-        </div>
-      </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     G. FINAL CTA
-════════════════════════════════════════════════════════════ -->
-<section class="pcm-final-cta" aria-label="Purchase">
-  <div class="pcm-final-cta-inner">
-    <h2 class="pcm-final-headline">Two mats. One protocol. A different dog.</h2>
-    <p class="pcm-final-sub">As used across all four phases of the PAXA Solo Protocol.</p>
-    <button class="pcm-btn-sage pcm-final-cta-btn" id="pcm-final-cta-btn" type="button">
-      Get the Calm Mat &mdash; &pound;34 &rarr;
-    </button>
-  </div>
-</section>
+  <!-- ═══════════════════════════════════════════════════════
+       E. REVIEWS — warm card background, 5 static cards
+  ══════════════════════════════════════════════════════════ -->
+  <section class="pcm-reviews pcm-section" aria-label="Customer reviews">
+    <div class="pcm-reviews-inner">
+      <span class="pcm-reviews-eyebrow">What owners are saying</span>
+      <h2 class="pcm-reviews-headline">Real results. Real dogs.</h2>
+      <div class="pcm-reviews-grid" id="pcm-reviews-grid">
 
-<!-- ═══════════════════════════════════════════════════════════
-     H. FOOTER
-════════════════════════════════════════════════════════════ -->
-<footer class="pcm-footer" role="contentinfo">
-  <div class="pcm-footer-inner">
-    <div class="pcm-footer-brand">
-      <img src="{{ logo_url }}" alt="PAXA" class="pcm-footer-logo" width="80" height="26">
-      <p class="pcm-footer-tagline">Peace for your pet. Science for you.</p>
+        <article class="pcm-review-card">
+          <div class="pcm-stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="pcm-review-text">&ldquo;I was sceptical, but after three weeks of rotating the two mats before every departure, Biscuit genuinely settles now. The science behind it makes sense once you see it working.&rdquo;</p>
+          <p class="pcm-review-author">Sarah M. &middot; Cockapoo, 2 years</p>
+        </article>
+
+        <article class="pcm-review-card">
+          <div class="pcm-stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="pcm-review-text">&ldquo;What I noticed first was that my Labrador stopped watching the door. She started going straight to the mat when she heard me pick up my keys. That&rsquo;s the conditioning working.&rdquo;</p>
+          <p class="pcm-review-author">James R. &middot; Labrador, 4 years</p>
+        </article>
+
+        <article class="pcm-review-card">
+          <div class="pcm-stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="pcm-review-text">&ldquo;The two-mat rotation is clever &mdash; I&rsquo;d always used one and my Spaniel lost interest after a week. Having two keeps it novel enough to hold his attention past the 20-minute mark.&rdquo;</p>
+          <p class="pcm-review-author">Priya K. &middot; Cocker Spaniel, 3 years</p>
+        </article>
+
+        <article class="pcm-review-card">
+          <div class="pcm-stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="pcm-review-text">&ldquo;Bought this alongside the PAXA Solo protocol. The combination is what worked &mdash; the mat on its own is good, with the protocol it&rsquo;s a completely different dog within a month.&rdquo;</p>
+          <p class="pcm-review-author">Tom W. &middot; Border Collie, 1 year</p>
+        </article>
+
+        <article class="pcm-review-card">
+          <div class="pcm-stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="pcm-review-text">&ldquo;Food-grade silicone, easy to clean, and it actually works. No gimmicks. My rescue Staffy went from full panic to settled within the first two weeks.&rdquo;</p>
+          <p class="pcm-review-author">Leila B. &middot; Staffordshire Bull Terrier, 5 years</p>
+        </article>
+
+      </div>
     </div>
-    <nav class="pcm-footer-nav" aria-label="Footer navigation">
-      <a href="https://paxapet.gumroad.com/l/PAXA-Solo" rel="noopener">PAXA Solo Protocol &mdash; &pound;29</a>
-      <a href="mailto:hello@paxapet.co.uk">hello@paxapet.co.uk</a>
-      <a href="/policies/refund-policy">Refund Policy</a>
-      <a href="/policies/privacy-policy">Privacy</a>
-      <a href="/policies/terms-of-service">Terms</a>
-    </nav>
-    <p class="pcm-footer-legal">&copy; {{ 'now' | date: '%Y' }} PAXA. All rights reserved. United Kingdom.</p>
-  </div>
-</footer>
+  </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     CHECKOUT CONFIRMATION MODAL
-════════════════════════════════════════════════════════════ -->
-<div
-  class="pcm-overlay"
-  id="pcm-overlay"
-  aria-hidden="true"
-  role="dialog"
-  aria-modal="true"
-  aria-labelledby="pcm-modal-title"
->
-  <div class="pcm-modal" id="pcm-modal">
-    <h3 class="pcm-modal-title" id="pcm-modal-title">Your order</h3>
-    <div class="pcm-modal-body">
-      <p class="pcm-modal-variant" id="pcm-modal-variant">Protocol Pair &mdash; Milk White + Sky Blue</p>
-      <p class="pcm-modal-price">&pound;34</p>
-      <p class="pcm-modal-note">Bundle of 2 &middot; Free UK delivery &middot; Ships 3&ndash;5 working days</p>
-    </div>
-    <div class="pcm-modal-actions">
-      <a href="/cart/53536507068753:1" class="pcm-btn-sage" id="pcm-confirm-btn">
-        Confirm &mdash; go to checkout
+  <!-- ═══════════════════════════════════════════════════════
+       F. CROSS-SELL PAXA SOLO — dark background
+  ══════════════════════════════════════════════════════════ -->
+  <section class="pcm-crosssell pcm-section" aria-label="PAXA Solo Protocol">
+    <div class="pcm-crosssell-inner pcm-reveal">
+      <span class="pcm-crosssell-label">The mat does the mechanism. The protocol does the work.</span>
+      <h2 class="pcm-crosssell-headline">The PAXA Solo Protocol &mdash; 30 days to a different dog</h2>
+      <p class="pcm-crosssell-body">
+        A 42-page science-backed workbook covering systematic desensitisation, counter-conditioning,
+        and functional relaxation. Phases 2, 3, and 4 of the protocol integrate directly with the
+        Calm Mat. Available separately &mdash; instant download.
+      </p>
+      <a href="https://paxapet.gumroad.com/l/PAXA-Solo" class="pcm-crosssell-btn" rel="noopener">
+        View the PAXA Solo Protocol &mdash; &pound;29 &rarr;
       </a>
-      <button class="pcm-btn-outline" id="pcm-cancel-btn" type="button">
-        Change selection
-      </button>
     </div>
-  </div>
-</div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       G. FAQ ACCORDION — bone background
+  ══════════════════════════════════════════════════════════ -->
+  <section class="pcm-faq-wrap pcm-section" aria-label="Frequently asked questions">
+    <div class="pcm-faq-inner">
+      <h2 class="pcm-section-title">Common questions</h2>
+      <div class="pcm-faq-list">
+
+        <div class="pcm-faq-item">
+          <button class="pcm-faq-q" aria-expanded="false" type="button">
+            <span>Does the mat work on its own?</span>
+            <svg class="pcm-faq-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="pcm-faq-a" hidden>
+            <p>No. The mat is a tool, not a treatment. It creates a reliable physiological anchor &mdash; slow licking during the cortisol window &mdash; but systematic desensitisation is what resolves separation anxiety. Without a protocol, the mat provides enrichment. Within one, it accelerates progress.</p>
+          </div>
+        </div>
+
+        <div class="pcm-faq-item">
+          <button class="pcm-faq-q" aria-expanded="false" type="button">
+            <span>Which colour pair should I choose?</span>
+            <svg class="pcm-faq-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="pcm-faq-a" hidden>
+            <p>The Protocol Pair (Milk White + Sky Blue) is the standard setup used across all four protocol phases. The Regulation Pair suits highly reactive or sensitive dogs in foundation work &mdash; softer tones reduce visual stimulation. The Anchor Pair is designed for Phase 3 threshold management, where visual contrast sharpens the conditioned cue.</p>
+          </div>
+        </div>
+
+        <div class="pcm-faq-item">
+          <button class="pcm-faq-q" aria-expanded="false" type="button">
+            <span>Is it safe for all dogs?</span>
+            <svg class="pcm-faq-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="pcm-faq-a" hidden>
+            <p>Yes. Food-grade silicone, BPA-free confirmed. The 99 suction cups keep the mat fixed during sessions &mdash; this matters for maintaining the environmental cue. Supervise the first few sessions to confirm your dog engages correctly rather than chewing the mat.</p>
+          </div>
+        </div>
+
+        <div class="pcm-faq-item">
+          <button class="pcm-faq-q" aria-expanded="false" type="button">
+            <span>What if my dog isn&rsquo;t interested in the mat?</span>
+            <svg class="pcm-faq-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="pcm-faq-a" hidden>
+            <p>Common in the first 1&ndash;2 sessions. Use a high-value paste &mdash; peanut butter, soft cheese, meat paste &mdash; spread into all four texture zones. Freezing the mat overnight extends engagement time significantly. Most dogs are reliably engaged within 3 sessions once the conditioned cue begins to form.</p>
+          </div>
+        </div>
+
+        <div class="pcm-faq-item">
+          <button class="pcm-faq-q" aria-expanded="false" type="button">
+            <span>How do I clean it?</span>
+            <svg class="pcm-faq-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="pcm-faq-a" hidden>
+            <p>Dishwasher safe &mdash; top rack only. Alternatively, warm water and a soft brush. No abrasive cleaners or solvents. The non-porous silicone resists bacterial build-up between sessions.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       H. FINAL CTA — sage-light background
+  ══════════════════════════════════════════════════════════ -->
+  <section class="pcm-final-cta pcm-section" aria-label="Purchase">
+    <div class="pcm-cta-inner pcm-reveal">
+      <h2 class="pcm-cta-headline">Two mats. One protocol. A different dog.</h2>
+      <p class="pcm-cta-sub">As used across all four phases of the PAXA Solo Protocol.</p>
+      <form action="/cart/add" method="post">
+        <input type="hidden" name="id"       id="pcm-cta-variant-id" value="53536507068753">
+        <input type="hidden" name="quantity" value="1">
+        <button type="submit" class="pcm-cta-btn pcm-buy-btn">
+          Add to Cart &mdash; &pound;34 &rarr;
+        </button>
+      </form>
+    </div>
+  </section>
+
+</div><!-- /pcm-page -->
 
 <!-- ═══════════════════════════════════════════════════════════
      MOTION.JS + PAGE SCRIPTS
@@ -434,77 +431,59 @@
 (function () {
   'use strict';
 
-  /* ── STATE ── */
-  var selectedVariantId   = '53536507068753';
-  var selectedVariantName = 'The Protocol Pair';
-  var selectedColor1      = 'Milk White';
-  var selectedColor2      = 'Sky Blue';
-  var currentImageIndex   = 0;
+  /* ── GALLERY IMAGES (hardcoded PAXA CDN) ── */
+  var IMAGES = [
+    'https://cdn.shopify.com/s/files/1/1037/8874/0945/files/5976563626975890682_121.jpg?v=1776245217',
+    'https://cdn.shopify.com/s/files/1/1037/8874/0945/files/O1CN013UjPr01GIqRaMGbzF__2817070600-0-cib.jpg?v=1776245217',
+    'https://cdn.shopify.com/s/files/1/1037/8874/0945/files/O1CN01N7mONv1GIqZQuKcFq__2817070600-0-cib.jpg?v=1776245217',
+    'https://cdn.shopify.com/s/files/1/1037/8874/0945/files/O1CN0186kJW31GIqRf2AWN7__2817070600-0-cib.jpg?v=1776245217',
+    'https://cdn.shopify.com/s/files/1/1037/8874/0945/files/O1CN01cUieph1GIqRg7a6nz__2817070600-0-cib.jpg?v=1776245217',
+    'https://cdn.shopify.com/s/files/1/1037/8874/0945/files/5976563626975890676_121.jpg?v=1776245217',
+    'https://cdn.shopify.com/s/files/1/1037/8874/0945/files/5976563626975890675_121.jpg?v=1776245217'
+  ];
 
-  var allImages = {{ product.images | map: 'src' | json }};
-
-  /* ── MOTION ── */
+  var currentIdx = 0;
+  var mainImg    = document.getElementById('pcm-main-img');
+  var thumbBtns  = document.querySelectorAll('.pcm-thumb');
   var M = (typeof Motion !== 'undefined') ? Motion : null;
 
-  function mx(els, props, opts) {
-    if (!M || !M.animate) return;
-    try { M.animate(els, props, opts); } catch (e) {}
-  }
-
-  function mInView(sel, cb, opts) {
-    if (!M || !M.inView) return;
-    try {
-      var els = typeof sel === 'string' ? document.querySelectorAll(sel) : [sel];
-      els.forEach(function (el) { M.inView(el, cb, opts); });
-    } catch (e) {}
-  }
-
-  /* ── A. HEADER ENTRANCE + SCROLL ── */
-  var header = document.getElementById('pcm-header');
-  if (header) {
-    mx(header, { opacity: [0, 1], y: [-12, 0] }, { duration: 0.4, easing: 'easeOut' });
-    window.addEventListener('scroll', function () {
-      header.classList.toggle('pcm-header-scrolled', window.scrollY > 60);
-    }, { passive: true });
-  }
-
-  /* ── B. HERO — headline word stagger ── */
-  var words = document.querySelectorAll('#pcm-hero-headline .pcm-word');
-  if (words.length && M) {
-    mx(words, { opacity: [0, 1], y: [20, 0] }, {
-      delay: M.stagger ? M.stagger(0.08) : 0,
-      duration: 0.5,
-      easing: [0.16, 1, 0.3, 1]
-    });
-  }
-
-  /* Hero image entrance */
-  var heroImg = document.querySelector('.pcm-hero-img');
-  if (heroImg) {
-    mx(heroImg, { scale: [1.05, 1], opacity: [0, 1] }, { duration: 0.9, easing: 'easeOut' });
-  }
-
-  /* ── SCROLL REVEAL (steps) ── */
-  var reveals = document.querySelectorAll('.pcm-reveal');
-  reveals.forEach(function (el) {
-    mInView(el, function () {
-      mx(el, { opacity: [0, 1], y: [28, 0] }, {
+  /* ── 1. MOTION SCROLL REVEALS ── */
+  if (M && M.inView) {
+    M.inView('.pcm-reveal', function (info) {
+      M.animate(info.target, { opacity: [0, 1], y: [30, 0] }, {
         duration: 0.6,
         easing: [0.16, 1, 0.3, 1]
       });
-    }, { amount: 0.25 });
-  });
+    });
+  }
 
-  /* ── C. GALLERY ── */
-  var mainImg  = document.getElementById('pcm-main-img');
-  var thumbBtns = document.querySelectorAll('.pcm-thumb');
-  var prevBtn  = document.getElementById('pcm-prev-btn');
-  var nextBtn  = document.getElementById('pcm-next-btn');
+  /* ── 2. REVIEW CARDS STAGGER ── */
+  if (M && M.inView) {
+    M.inView('#pcm-reviews-grid', function (info) {
+      var cards = info.target.querySelectorAll('.pcm-review-card');
+      M.animate(cards, { opacity: [0, 1], y: [20, 0] }, {
+        delay: M.stagger ? M.stagger(0.08) : 0,
+        duration: 0.5
+      });
+    });
+  }
 
-  function setGalleryImage(index) {
-    if (!mainImg || !allImages[index]) return;
-    currentImageIndex = index;
-    var src = allImages[index];
+  /* ── 3. BUY BUTTON HOVER ── */
+  if (M && M.animate) {
+    document.querySelectorAll('.pcm-buy-btn, .pcm-cta-btn').forEach(function (btn) {
+      btn.addEventListener('mouseenter', function () {
+        M.animate(btn, { scale: 1.02 }, { duration: 0.15 });
+      });
+      btn.addEventListener('mouseleave', function () {
+        M.animate(btn, { scale: 1 }, { duration: 0.15 });
+      });
+    });
+  }
+
+  /* ── GALLERY ── */
+  function setImage(idx, src) {
+    currentIdx = idx;
+    if (!mainImg) return;
 
     if (M && M.animate) {
       M.animate(mainImg, { opacity: [1, 0] }, { duration: 0.15 });
@@ -517,223 +496,162 @@
     }
 
     thumbBtns.forEach(function (t) {
-      var active = parseInt(t.dataset.index, 10) === index;
-      t.classList.toggle('pcm-thumb-active', active);
+      var active = parseInt(t.dataset.index, 10) === idx;
+      t.classList.toggle('active', active);
       t.setAttribute('aria-pressed', active ? 'true' : 'false');
     });
   }
 
   thumbBtns.forEach(function (btn) {
     btn.addEventListener('click', function () {
-      setGalleryImage(parseInt(btn.dataset.index, 10));
+      setImage(parseInt(btn.dataset.index, 10), IMAGES[parseInt(btn.dataset.index, 10)]);
     });
   });
 
+  var prevBtn = document.getElementById('pcm-prev');
+  var nextBtn = document.getElementById('pcm-next');
   if (prevBtn) prevBtn.addEventListener('click', function () {
-    setGalleryImage((currentImageIndex - 1 + allImages.length) % allImages.length);
+    var i = (currentIdx - 1 + IMAGES.length) % IMAGES.length;
+    setImage(i, IMAGES[i]);
   });
   if (nextBtn) nextBtn.addEventListener('click', function () {
-    setGalleryImage((currentImageIndex + 1) % allImages.length);
+    var i = (currentIdx + 1) % IMAGES.length;
+    setImage(i, IMAGES[i]);
   });
 
   /* Touch swipe */
-  var swipeStartX = 0;
+  var swipeX = 0;
   if (mainImg) {
-    mainImg.addEventListener('touchstart', function (e) {
-      swipeStartX = e.changedTouches[0].clientX;
-    }, { passive: true });
+    mainImg.addEventListener('touchstart', function (e) { swipeX = e.changedTouches[0].clientX; }, { passive: true });
     mainImg.addEventListener('touchend', function (e) {
-      var dx = e.changedTouches[0].clientX - swipeStartX;
-      if (Math.abs(dx) > 45) {
-        setGalleryImage(dx < 0
-          ? (currentImageIndex + 1) % allImages.length
-          : (currentImageIndex - 1 + allImages.length) % allImages.length
-        );
+      var dx = e.changedTouches[0].clientX - swipeX;
+      if (Math.abs(dx) > 44) {
+        var i = dx < 0
+          ? (currentIdx + 1) % IMAGES.length
+          : (currentIdx - 1 + IMAGES.length) % IMAGES.length;
+        setImage(i, IMAGES[i]);
       }
     }, { passive: true });
   }
 
-  /* ── C. VARIANT SELECTOR ── */
+  /* ── VARIANT SELECTOR ── */
   var variantCards  = document.querySelectorAll('.pcm-variant-card');
-  var selectedLabel = document.getElementById('pcm-selected-label');
+  var variantInput  = document.getElementById('pcm-variant-id');
+  var ctaInput      = document.getElementById('pcm-cta-variant-id');
+  var confirmLabel  = document.getElementById('pcm-confirm-label');
 
   function selectVariant(card) {
     /* Deselect all */
     variantCards.forEach(function (c) {
-      c.classList.remove('pcm-variant-selected');
+      c.classList.remove('selected');
       c.setAttribute('aria-checked', 'false');
       c.setAttribute('tabindex', '-1');
       var chk = c.querySelector('.pcm-variant-check');
-      if (chk) {
-        chk.style.scale = '0';
-        if (M && M.animate) M.animate(chk, { scale: 0 }, { duration: 0.1 });
-      }
+      if (chk) { chk.style.opacity = '0'; chk.style.scale = '0'; }
     });
 
-    /* Select this card */
-    card.classList.add('pcm-variant-selected');
+    /* Select clicked card */
+    card.classList.add('selected');
     card.setAttribute('aria-checked', 'true');
     card.setAttribute('tabindex', '0');
 
+    /* 4. Animate checkmark spring */
     var check = card.querySelector('.pcm-variant-check');
     if (check) {
-      check.style.scale = '1';
       if (M && M.animate) {
-        M.animate(check, { scale: [0, 1] }, {
+        M.animate(check, { scale: [0, 1], opacity: [0, 1] }, {
           type: 'spring',
           stiffness: 500,
           damping: 25
         });
+      } else {
+        check.style.opacity = '1';
+        check.style.scale = '1';
       }
     }
 
-    /* Update global state */
-    selectedVariantId   = card.dataset.variantId;
-    selectedVariantName = card.dataset.variantName;
-    selectedColor1      = card.dataset.color1Name;
-    selectedColor2      = card.dataset.color2Name;
+    var vid   = card.dataset.variantId;
+    var name  = card.dataset.variantName;
+    var col1  = card.dataset.color1;
+    var col2  = card.dataset.color2;
+    var img   = card.dataset.img;
+
+    /* Update hidden inputs */
+    if (variantInput) variantInput.value = vid;
+    if (ctaInput)     ctaInput.value     = vid;
 
     /* Update confirmation label */
-    if (selectedLabel) {
-      selectedLabel.textContent = 'Selected: ' + selectedVariantName.replace('The ', '') + ' \u2014 ' + selectedColor1 + ' + ' + selectedColor2;
-      if (M && M.animate) M.animate(selectedLabel, { opacity: [0, 1] }, { duration: 0.3 });
+    if (confirmLabel) {
+      confirmLabel.textContent = 'Selected: ' + name + ' \u2014 ' + col1 + ' + ' + col2;
+      if (M && M.animate) M.animate(confirmLabel, { opacity: [0, 1] }, { duration: 0.3 });
     }
 
-    /* Reset gallery to first image */
-    setGalleryImage(0);
+    /* Swap gallery to variant image */
+    if (img) setImage(0, img);
+
+    /* Update URL */
+    try {
+      var url = new URL(window.location.href);
+      url.searchParams.set('variant', vid);
+      window.history.replaceState({}, '', url.toString());
+    } catch (e) {}
   }
+
+  /* Initialise first checkmark */
+  var firstCard = document.querySelector('.pcm-variant-card.selected .pcm-variant-check');
+  if (firstCard) { firstCard.style.opacity = '1'; firstCard.style.scale = '1'; }
 
   variantCards.forEach(function (card) {
     card.addEventListener('click', function () { selectVariant(card); });
     card.addEventListener('keydown', function (e) {
       var arr = Array.from(variantCards);
-      var idx = arr.indexOf(card);
+      var i   = arr.indexOf(card);
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault(); selectVariant(card);
       } else if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
-        e.preventDefault(); var n = arr[(idx + 1) % arr.length]; selectVariant(n); n.focus();
+        e.preventDefault(); var n = arr[(i + 1) % arr.length]; selectVariant(n); n.focus();
       } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
-        e.preventDefault(); var p = arr[(idx - 1 + arr.length) % arr.length]; selectVariant(p); p.focus();
+        e.preventDefault(); var p = arr[(i - 1 + arr.length) % arr.length]; selectVariant(p); p.focus();
       }
     });
   });
 
-  /* ── ATC HOVER / TAP ── */
-  var atcBtn = document.getElementById('pcm-atc-btn');
-  if (atcBtn && M && M.animate) {
-    atcBtn.addEventListener('mouseenter', function () { M.animate(atcBtn, { y: -2 }, { duration: 0.15 }); });
-    atcBtn.addEventListener('mouseleave', function () { M.animate(atcBtn, { y: 0  }, { duration: 0.15 }); });
-    atcBtn.addEventListener('mousedown',  function () { M.animate(atcBtn, { scale: 0.97 }, { duration: 0.1 }); });
-    atcBtn.addEventListener('mouseup',    function () { M.animate(atcBtn, { scale: 1    }, { duration: 0.1 }); });
-  }
-
-  /* ── CHECKOUT CONFIRMATION MODAL ── */
-  var overlay    = document.getElementById('pcm-overlay');
-  var pcmModal   = document.getElementById('pcm-modal');
-  var confirmBtn = document.getElementById('pcm-confirm-btn');
-  var cancelBtn  = document.getElementById('pcm-cancel-btn');
-  var modalVariant = document.getElementById('pcm-modal-variant');
-  var finalCTA   = document.getElementById('pcm-final-cta-btn');
-
-  function openModal() {
-    if (!overlay || !pcmModal) return;
-
-    if (modalVariant) {
-      modalVariant.textContent = selectedVariantName + ' \u2014 ' + selectedColor1 + ' + ' + selectedColor2;
-    }
-    if (confirmBtn) {
-      confirmBtn.href = '/cart/' + selectedVariantId + ':1';
-    }
-
-    overlay.style.display = 'flex';
-    overlay.removeAttribute('aria-hidden');
-    document.body.style.overflow = 'hidden';
-
-    if (M && M.animate) {
-      M.animate(overlay, { opacity: [0, 1] }, { duration: 0.2 });
-      M.animate(pcmModal, { opacity: [0, 1], y: [40, 0] }, {
-        duration: 0.35,
-        easing: 'easeOut'
-      });
-    }
-
-    /* Focus management */
-    setTimeout(function () { if (cancelBtn) cancelBtn.focus(); }, 100);
-  }
-
-  function closeModal() {
-    if (!overlay) return;
-    if (M && M.animate) {
-      M.animate(overlay, { opacity: [1, 0] }, { duration: 0.15 });
-      setTimeout(function () {
-        overlay.style.display = 'none';
-        overlay.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-      }, 160);
-    } else {
-      overlay.style.display = 'none';
-      overlay.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    }
-    /* Return focus to trigger */
-    if (atcBtn) atcBtn.focus();
-  }
-
-  if (atcBtn)   atcBtn.addEventListener('click', openModal);
-  if (finalCTA) finalCTA.addEventListener('click', openModal);
-  if (cancelBtn) cancelBtn.addEventListener('click', closeModal);
-
-  if (overlay) {
-    overlay.addEventListener('click', function (e) {
-      if (e.target === overlay) closeModal();
-    });
-  }
-
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && overlay && overlay.style.display === 'flex') closeModal();
-  });
-
-  /* ── D. STAT COUNTERS (IntersectionObserver) ── */
-  var statEls = document.querySelectorAll('.pcm-stat-count');
-  statEls.forEach(function (el) {
-    var target  = parseInt(el.dataset.target, 10);
-    var counted = false;
-    var obs = new IntersectionObserver(function (entries) {
-      if (!entries[0].isIntersecting || counted) return;
-      counted = true;
-      obs.disconnect();
+  /* ── STAT COUNTERS ── */
+  document.querySelectorAll('.pcm-stat-count').forEach(function (el) {
+    var target = parseInt(el.dataset.target, 10);
+    var done   = false;
+    var obs    = new IntersectionObserver(function (entries) {
+      if (!entries[0].isIntersecting || done) return;
+      done = true; obs.disconnect();
       var start = null;
-      var dur   = 1400;
       requestAnimationFrame(function tick(ts) {
         if (!start) start = ts;
-        var p = Math.min((ts - start) / dur, 1);
-        var ease = 1 - Math.pow(1 - p, 3); /* cubic ease-out */
-        el.textContent = Math.round(ease * target);
+        var p = Math.min((ts - start) / 1400, 1);
+        el.textContent = Math.round((1 - Math.pow(1 - p, 3)) * target);
         if (p < 1) requestAnimationFrame(tick);
       });
     }, { threshold: 0.6 });
     obs.observe(el);
   });
 
-  /* ── F. FAQ ACCORDION ── */
-  var faqBtns = document.querySelectorAll('.pcm-faq-question');
-  faqBtns.forEach(function (btn) {
+  /* ── FAQ ACCORDION ── */
+  document.querySelectorAll('.pcm-faq-q').forEach(function (btn) {
     btn.addEventListener('click', function () {
-      var isOpen = btn.getAttribute('aria-expanded') === 'true';
-      var answer = btn.parentElement.querySelector('.pcm-faq-answer');
+      var open   = btn.getAttribute('aria-expanded') === 'true';
+      var answer = btn.parentElement.querySelector('.pcm-faq-a');
       var icon   = btn.querySelector('.pcm-faq-icon');
 
-      /* Close others */
-      faqBtns.forEach(function (other) {
+      /* Close all others */
+      document.querySelectorAll('.pcm-faq-q').forEach(function (other) {
         if (other === btn) return;
-        var otherAns  = other.parentElement.querySelector('.pcm-faq-answer');
-        var otherIcon = other.querySelector('.pcm-faq-icon');
         other.setAttribute('aria-expanded', 'false');
-        if (otherAns) otherAns.hidden = true;
-        if (otherIcon && M && M.animate) M.animate(otherIcon, { rotate: 0 }, { duration: 0.22 });
+        var a = other.parentElement.querySelector('.pcm-faq-a');
+        var ic = other.querySelector('.pcm-faq-icon');
+        if (a) a.hidden = true;
+        if (ic && M && M.animate) M.animate(ic, { rotate: 0 }, { duration: 0.22 });
       });
 
-      if (!isOpen) {
+      if (!open) {
         btn.setAttribute('aria-expanded', 'true');
         if (answer) answer.hidden = false;
         if (icon && M && M.animate) M.animate(icon, { rotate: 180 }, { duration: 0.25, easing: 'easeInOut' });
@@ -744,10 +662,6 @@
       }
     });
   });
-
-  /* ── INITIAL CHECKMARK STATE ── */
-  var firstCard = document.querySelector('.pcm-variant-card.pcm-variant-selected .pcm-variant-check');
-  if (firstCard) firstCard.style.scale = '1';
 
 })();
 </script>
