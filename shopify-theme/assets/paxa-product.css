@@ -1055,13 +1055,61 @@
   .pcm-mobile-bar { display: flex; }
 }
 
-/* ─── REVEAL (initial hidden state) ────────────────────────── */
+/* ─── REVEAL — CSS transition, class added by IntersectionObserver ── */
 .pcm-reveal {
   opacity: 0;
-  transform: translateY(24px);
+  transform: translateY(22px);
+  transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.pcm-reveal.pcm-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── DARK SECTION TEXT — ensure white on ink background ── */
+.pcm-science .pcm-stat-count,
+.pcm-science .pcm-stat-unit,
+.pcm-science .pcm-stat-label,
+.pcm-science .pcm-pullquote {
+  color: inherit;
+}
+.pcm-protocol .pcm-protocol-eyebrow,
+.pcm-protocol .pcm-protocol-headline,
+.pcm-protocol .pcm-protocol-intro,
+.pcm-protocol .pcm-phase-days,
+.pcm-protocol .pcm-phase-name,
+.pcm-protocol .pcm-phase-desc,
+.pcm-protocol .pcm-protocol-cta {
+  color: inherit;
+}
+
+/* ─── FAQ ICON — CSS-driven rotation ── */
+.pcm-faq-icon {
+  transition: transform 0.25s ease-in-out;
+}
+
+/* ─── LIFESTYLE IMAGE BREAK ── */
+.pcm-lifestyle {
+  overflow: hidden;
+  max-height: 480px;
+  line-height: 0;
+}
+.pcm-lifestyle-img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+}
+@media (max-width: 600px) {
+  .pcm-lifestyle { max-height: 280px; }
+  .pcm-lifestyle-img { height: 280px; }
 }
 
 /* ─── REDUCED MOTION ───────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
-  .pcm-reveal { opacity: 1; transform: none; }
+  .pcm-reveal { opacity: 1; transform: none; transition: none; }
+  .pcm-faq-icon { transition: none; }
+  .pcm-lifestyle-img { transition: none; }
 }

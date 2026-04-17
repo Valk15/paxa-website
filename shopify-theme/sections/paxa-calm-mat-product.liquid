@@ -353,6 +353,21 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════════════
+       LIFESTYLE IMAGE BREAK — full-width, between F and G
+       Upload calm-dog-resting.jpg to theme assets before going live
+  ══════════════════════════════════════════════════════════ -->
+  <section class="pcm-lifestyle" aria-hidden="true">
+    <img
+      src="{{ 'calm-dog-resting.jpg' | asset_url }}"
+      alt="Dog resting calmly with PAXA Calm Mat"
+      class="pcm-lifestyle-img"
+      loading="lazy"
+      width="1200"
+      height="600"
+    >
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
        G. TRUST ROW — sage-light background
            4 trust signals, horizontal strip
   ══════════════════════════════════════════════════════════ -->
@@ -564,9 +579,8 @@
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════
-     MOTION.JS + PAGE SCRIPTS
+     PAGE SCRIPTS — no external dependencies
 ════════════════════════════════════════════════════════════ -->
-<script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
 <script>
 (function () {
   'use strict';
@@ -585,58 +599,49 @@
   var currentIdx = 0;
   var mainImg    = document.getElementById('pcm-main-img');
   var thumbBtns  = document.querySelectorAll('.pcm-thumb');
-  var M = (typeof Motion !== 'undefined') ? Motion : null;
 
-  /* ── 1. MOTION SCROLL REVEALS ── */
-  if (M && M.inView) {
-    M.inView('.pcm-reveal', function (info) {
-      M.animate(info.target, { opacity: [0, 1], y: [30, 0] }, {
-        duration: 0.6,
-        easing: [0.16, 1, 0.3, 1]
-      });
+  /* ── 1. SCROLL REVEALS — CSS transition triggered by class ── */
+  var revealObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('pcm-revealed');
+        revealObserver.unobserve(entry.target);
+      }
     });
-  }
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.pcm-reveal').forEach(function (el) {
+    revealObserver.observe(el);
+  });
 
   /* ── 2. REVIEW CARDS STAGGER ── */
-  if (M && M.inView) {
-    M.inView('#pcm-reviews-grid', function (info) {
-      var cards = info.target.querySelectorAll('.pcm-review-card');
-      M.animate(cards, { opacity: [0, 1], y: [20, 0] }, {
-        delay: M.stagger ? M.stagger(0.08) : 0,
-        duration: 0.5
+  var reviewsGrid = document.getElementById('pcm-reviews-grid');
+  if (reviewsGrid) {
+    var reviewObserver = new IntersectionObserver(function (entries) {
+      if (!entries[0].isIntersecting) return;
+      reviewObserver.disconnect();
+      reviewsGrid.querySelectorAll('.pcm-review-card').forEach(function (card, i) {
+        setTimeout(function () {
+          card.classList.add('pcm-revealed');
+        }, i * 80);
       });
-    });
-  }
-
-  /* ── 3. BUY BUTTON HOVER ── */
-  if (M && M.animate) {
-    document.querySelectorAll('.pcm-buy-btn, .pcm-cta-btn').forEach(function (btn) {
-      btn.addEventListener('mouseenter', function () {
-        M.animate(btn, { scale: 1.02 }, { duration: 0.15 });
-      });
-      btn.addEventListener('mouseleave', function () {
-        M.animate(btn, { scale: 1 }, { duration: 0.15 });
-      });
-    });
+    }, { threshold: 0.1 });
+    reviewObserver.observe(reviewsGrid);
   }
 
   /* ── GALLERY ── */
   function setImage(idx, src) {
-    currentIdx = idx;
+    currentIdx = (idx + IMAGES.length) % IMAGES.length;
     if (!mainImg) return;
 
-    if (M && M.animate) {
-      M.animate(mainImg, { opacity: [1, 0] }, { duration: 0.15 });
-      setTimeout(function () {
-        mainImg.src = src;
-        M.animate(mainImg, { opacity: [0, 1] }, { duration: 0.2 });
-      }, 150);
-    } else {
-      mainImg.src = src;
-    }
+    mainImg.style.opacity = '0';
+    setTimeout(function () {
+      mainImg.src = src || IMAGES[currentIdx];
+      mainImg.style.opacity = '1';
+    }, 140);
 
     thumbBtns.forEach(function (t) {
-      var active = parseInt(t.dataset.index, 10) === idx;
+      var active = parseInt(t.dataset.index, 10) === currentIdx;
       t.classList.toggle('active', active);
       t.setAttribute('aria-pressed', active ? 'true' : 'false');
     });
@@ -650,88 +655,54 @@
 
   var prevBtn = document.getElementById('pcm-prev');
   var nextBtn = document.getElementById('pcm-next');
-  if (prevBtn) prevBtn.addEventListener('click', function () {
-    var i = (currentIdx - 1 + IMAGES.length) % IMAGES.length;
-    setImage(i, IMAGES[i]);
-  });
-  if (nextBtn) nextBtn.addEventListener('click', function () {
-    var i = (currentIdx + 1) % IMAGES.length;
-    setImage(i, IMAGES[i]);
-  });
+  if (prevBtn) prevBtn.addEventListener('click', function () { setImage(currentIdx - 1); });
+  if (nextBtn) nextBtn.addEventListener('click', function () { setImage(currentIdx + 1); });
 
   /* Touch swipe */
   var swipeX = 0;
   if (mainImg) {
+    mainImg.style.transition = 'opacity 0.14s ease';
     mainImg.addEventListener('touchstart', function (e) { swipeX = e.changedTouches[0].clientX; }, { passive: true });
     mainImg.addEventListener('touchend', function (e) {
       var dx = e.changedTouches[0].clientX - swipeX;
-      if (Math.abs(dx) > 44) {
-        var i = dx < 0
-          ? (currentIdx + 1) % IMAGES.length
-          : (currentIdx - 1 + IMAGES.length) % IMAGES.length;
-        setImage(i, IMAGES[i]);
-      }
+      if (Math.abs(dx) > 44) setImage(dx < 0 ? currentIdx + 1 : currentIdx - 1);
     }, { passive: true });
   }
 
   /* ── VARIANT SELECTOR ── */
-  var variantCards  = document.querySelectorAll('.pcm-variant-card');
-  var variantInput  = document.getElementById('pcm-variant-id');
-  var ctaInput      = document.getElementById('pcm-cta-variant-id');
-  var mobileInput   = document.getElementById('pcm-mobile-variant-id');
-  var confirmLabel  = document.getElementById('pcm-confirm-label');
+  var variantCards = document.querySelectorAll('.pcm-variant-card');
+  var variantInput = document.getElementById('pcm-variant-id');
+  var ctaInput     = document.getElementById('pcm-cta-variant-id');
+  var mobileInput  = document.getElementById('pcm-mobile-variant-id');
+  var confirmLabel = document.getElementById('pcm-confirm-label');
 
   function selectVariant(card) {
-    /* Deselect all */
     variantCards.forEach(function (c) {
       c.classList.remove('selected');
       c.setAttribute('aria-checked', 'false');
       c.setAttribute('tabindex', '-1');
-      var chk = c.querySelector('.pcm-variant-check');
-      if (chk) { chk.style.opacity = '0'; chk.style.scale = '0'; }
     });
 
-    /* Select clicked card */
     card.classList.add('selected');
     card.setAttribute('aria-checked', 'true');
     card.setAttribute('tabindex', '0');
 
-    /* Animate checkmark spring */
-    var check = card.querySelector('.pcm-variant-check');
-    if (check) {
-      if (M && M.animate) {
-        M.animate(check, { scale: [0, 1], opacity: [0, 1] }, {
-          type: 'spring',
-          stiffness: 500,
-          damping: 25
-        });
-      } else {
-        check.style.opacity = '1';
-        check.style.scale = '1';
-      }
-    }
+    var vid  = card.dataset.variantId;
+    var name = card.dataset.variantName;
+    var col1 = card.dataset.color1;
+    var col2 = card.dataset.color2;
+    var img  = card.dataset.img;
 
-    var vid   = card.dataset.variantId;
-    var name  = card.dataset.variantName;
-    var col1  = card.dataset.color1;
-    var col2  = card.dataset.color2;
-    var img   = card.dataset.img;
-
-    /* Update hidden inputs */
     if (variantInput) variantInput.value = vid;
     if (ctaInput)     ctaInput.value     = vid;
     if (mobileInput)  mobileInput.value  = vid;
 
-    /* Update confirmation label */
     if (confirmLabel) {
       confirmLabel.textContent = 'Selected: ' + name + ' \u2014 ' + col1 + ' + ' + col2;
-      if (M && M.animate) M.animate(confirmLabel, { opacity: [0, 1] }, { duration: 0.3 });
     }
 
-    /* Swap gallery to variant image */
     if (img) setImage(0, img);
 
-    /* Update URL */
     try {
       var url = new URL(window.location.href);
       url.searchParams.set('variant', vid);
@@ -739,9 +710,9 @@
     } catch (e) {}
   }
 
-  /* Initialise first checkmark */
-  var firstCard = document.querySelector('.pcm-variant-card.selected .pcm-variant-check');
-  if (firstCard) { firstCard.style.opacity = '1'; firstCard.style.scale = '1'; }
+  /* Initialise first checkmark visibility */
+  var firstCheck = document.querySelector('.pcm-variant-card.selected .pcm-variant-check');
+  if (firstCheck) { firstCheck.style.opacity = '1'; firstCheck.style.scale = '1'; }
 
   variantCards.forEach(function (card) {
     card.addEventListener('click', function () { selectVariant(card); });
@@ -790,34 +761,31 @@
         var a  = other.parentElement.querySelector('.pcm-faq-a');
         var ic = other.querySelector('.pcm-faq-icon');
         if (a) a.hidden = true;
-        if (ic && M && M.animate) M.animate(ic, { rotate: 0 }, { duration: 0.22 });
+        if (ic) ic.style.transform = 'rotate(0deg)';
       });
 
       if (!open) {
         btn.setAttribute('aria-expanded', 'true');
         if (answer) answer.hidden = false;
-        if (icon && M && M.animate) M.animate(icon, { rotate: 180 }, { duration: 0.25, easing: 'easeInOut' });
+        if (icon) icon.style.transform = 'rotate(180deg)';
       } else {
         btn.setAttribute('aria-expanded', 'false');
         if (answer) answer.hidden = true;
-        if (icon && M && M.animate) M.animate(icon, { rotate: 0 }, { duration: 0.25, easing: 'easeInOut' });
+        if (icon) icon.style.transform = 'rotate(0deg)';
       }
     });
   });
 
-  /* ── I. STICKY MOBILE ATC BAR ── */
+  /* ── STICKY MOBILE ATC BAR ── */
   var mobileBar = document.getElementById('pcm-mobile-bar');
   var mainAtc   = document.getElementById('pcm-main-atc');
 
-  if (mobileBar && mainAtc && window.matchMedia('(max-width: 768px)').matches) {
-    mobileBar.setAttribute('aria-hidden', 'false');
-
+  if (mobileBar && mainAtc) {
     var atcObserver = new IntersectionObserver(function (entries) {
-      /* Bar is visible when ATC button is NOT in viewport */
-      var atcVisible = entries[0].isIntersecting;
-      mobileBar.classList.toggle('visible', !atcVisible);
+      var visible = !entries[0].isIntersecting;
+      mobileBar.classList.toggle('visible', visible);
+      mobileBar.setAttribute('aria-hidden', visible ? 'false' : 'true');
     }, { threshold: 0.5 });
-
     atcObserver.observe(mainAtc);
   }
 
