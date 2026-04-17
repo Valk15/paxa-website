@@ -1,5 +1,5 @@
 {% comment %}
-  PAXA Calm Mat — Product Page v3
+  PAXA Calm Mat — Product Page v4
   sections/paxa-calm-mat-product.liquid
   Template: templates/product.calm-mat.json
   Works with Dawn — no header/footer overrides
@@ -10,7 +10,8 @@
 <div class="pcm-page">
 
   <!-- ═══════════════════════════════════════════════════════
-       A. PRODUCT PANEL — bone background, 50/50 grid
+       A + B. PRODUCT PANEL — bone background, 50/50 grid
+               Bundle variant selector inside purchase panel
   ══════════════════════════════════════════════════════════ -->
   <section class="pcm-panel pcm-section" aria-label="Product">
     <div class="pcm-panel-grid">
@@ -21,7 +22,7 @@
         <div class="pcm-gallery-main" id="pcm-gallery-main">
           <img
             src="https://cdn.shopify.com/s/files/1/1037/8874/0945/files/5976563626975890682_121.jpg?v=1776245217"
-            alt="PAXA Calm Mat — Protocol Pair"
+            alt="PAXA Calm Mat — The Calm Duo, Sky Blue + Teal"
             id="pcm-main-img"
             class="pcm-main-img"
             loading="eager"
@@ -76,25 +77,28 @@
           <span class="pcm-price">&pound;34</span>
           <span class="pcm-save-tag">Save &pound;6 vs singles</span>
         </div>
+        <p class="pcm-price-secondary">Also available: single mat &mdash; &pound;20</p>
         <p class="pcm-shipping">Free UK delivery &middot; 3&ndash;5 working days</p>
 
-        <!-- VARIANT SELECTOR -->
+        <!-- B. BUNDLE VARIANT SELECTOR -->
+        <p class="pcm-variant-label">Choose your colour pair</p>
         <div class="pcm-variants" id="pcm-variants" role="radiogroup" aria-label="Choose colour pair">
 
+          <!-- The Calm Duo — hero, selected by default -->
           <div class="pcm-variant-card selected"
                data-variant-id="53536507068753"
-               data-variant-name="Protocol Pair"
-               data-color1="Milk White"
-               data-color2="Sky Blue"
+               data-variant-name="The Calm Duo"
+               data-color1="Sky Blue"
+               data-color2="Teal"
                data-img="https://cdn.shopify.com/s/files/1/1037/8874/0945/files/5976563626975890682_121.jpg?v=1776245217"
                role="radio" aria-checked="true" tabindex="0">
             <div class="pcm-swatches">
-              <span class="pcm-swatch" style="background:#F5F5F0;" aria-hidden="true"></span>
               <span class="pcm-swatch" style="background:#87CEEB;" aria-hidden="true"></span>
+              <span class="pcm-swatch" style="background:#008080;" aria-hidden="true"></span>
             </div>
             <div class="pcm-variant-info">
-              <span class="pcm-variant-name">Protocol Pair</span>
-              <span class="pcm-variant-colors">Milk White + Sky Blue</span>
+              <span class="pcm-variant-name">The Calm Duo</span>
+              <span class="pcm-variant-colors">Sky Blue + Teal</span>
             </div>
             <span class="pcm-variant-check" aria-hidden="true">
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -104,20 +108,21 @@
             </span>
           </div>
 
+          <!-- The Natural Duo -->
           <div class="pcm-variant-card"
                data-variant-id="53536507101521"
-               data-variant-name="Regulation Pair"
-               data-color1="Mint Green"
-               data-color2="Light Green"
+               data-variant-name="The Natural Duo"
+               data-color1="Beige"
+               data-color2="Charcoal"
                data-img="https://cdn.shopify.com/s/files/1/1037/8874/0945/files/5976563626975890676_121.jpg?v=1776245217"
                role="radio" aria-checked="false" tabindex="-1">
             <div class="pcm-swatches">
-              <span class="pcm-swatch" style="background:#98D4A3;" aria-hidden="true"></span>
-              <span class="pcm-swatch" style="background:#4CAF50;" aria-hidden="true"></span>
+              <span class="pcm-swatch" style="background:#C4AA8A;" aria-hidden="true"></span>
+              <span class="pcm-swatch" style="background:#4A4A4A;" aria-hidden="true"></span>
             </div>
             <div class="pcm-variant-info">
-              <span class="pcm-variant-name">Regulation Pair</span>
-              <span class="pcm-variant-colors">Mint Green + Light Green</span>
+              <span class="pcm-variant-name">The Natural Duo</span>
+              <span class="pcm-variant-colors">Beige + Charcoal</span>
             </div>
             <span class="pcm-variant-check" aria-hidden="true">
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -127,20 +132,21 @@
             </span>
           </div>
 
+          <!-- The Bold Duo -->
           <div class="pcm-variant-card"
                data-variant-id="53536507134289"
-               data-variant-name="Anchor Pair"
+               data-variant-name="The Bold Duo"
                data-color1="Purple"
-               data-color2="Dark Grey"
+               data-color2="Lime Green"
                data-img="https://cdn.shopify.com/s/files/1/1037/8874/0945/files/5976563626975890675_121.jpg?v=1776245217"
                role="radio" aria-checked="false" tabindex="-1">
             <div class="pcm-swatches">
               <span class="pcm-swatch" style="background:#9C27B0;" aria-hidden="true"></span>
-              <span class="pcm-swatch" style="background:#616161;" aria-hidden="true"></span>
+              <span class="pcm-swatch" style="background:#8BC34A;" aria-hidden="true"></span>
             </div>
             <div class="pcm-variant-info">
-              <span class="pcm-variant-name">Anchor Pair</span>
-              <span class="pcm-variant-colors">Purple + Dark Grey</span>
+              <span class="pcm-variant-name">The Bold Duo</span>
+              <span class="pcm-variant-colors">Purple + Lime Green</span>
             </div>
             <span class="pcm-variant-check" aria-hidden="true">
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -153,19 +159,19 @@
         </div><!-- /pcm-variants -->
 
         <p class="pcm-selection-confirm" id="pcm-confirm-label" aria-live="polite">
-          Selected: Protocol Pair &mdash; Milk White + Sky Blue
+          Selected: The Calm Duo &mdash; Sky Blue + Teal
         </p>
 
         <!-- Shopify cart form — integrates with Dawn cart drawer -->
         <form action="/cart/add" method="post" class="pcm-buy-form" id="pcm-buy-form">
           <input type="hidden" name="id"       id="pcm-variant-id" value="53536507068753">
           <input type="hidden" name="quantity" value="1">
-          <button type="submit" class="pcm-buy-btn">
+          <button type="submit" class="pcm-buy-btn" id="pcm-main-atc">
             Add to Cart &mdash; &pound;34 &rarr;
           </button>
         </form>
 
-        <p class="pcm-trust">30-day money-back &middot; BPA-free &middot; Dishwasher safe</p>
+        <p class="pcm-trust">30-day money-back &middot; Food-grade silicone &middot; Dishwasher safe</p>
 
       </div><!-- /pcm-purchase -->
 
@@ -173,7 +179,8 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════════════
-       B. SCIENCE STRIP — dark background
+       C. SCIENCE STRIP — dark background (#0A0A0A)
+           Stat counters animate in on scroll
   ══════════════════════════════════════════════════════════ -->
   <section class="pcm-science pcm-section" aria-label="Science">
     <div class="pcm-stats-row">
@@ -189,7 +196,7 @@
           <span class="pcm-stat-count" data-target="2" aria-label="2 times">0</span>
           <span class="pcm-stat-unit" aria-hidden="true">&times;</span>
         </div>
-        <p class="pcm-stat-label">Habituation prevention</p>
+        <p class="pcm-stat-label">Habituation prevention &mdash; rotate mats so the cue never dulls</p>
       </div>
       <div class="pcm-stat pcm-reveal">
         <div class="pcm-stat-num-wrap">
@@ -205,74 +212,197 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════════════
-       C. HOW IT WORKS — bone background
+       D. SCIENCE NARRATIVE — bone background
+           Licking/cortisol mechanism, two-mat science,
+           40-minute window, vagus nerve activation
   ══════════════════════════════════════════════════════════ -->
-  <section class="pcm-how pcm-section" aria-label="How the Calm Mat works">
-    <div style="max-width:1000px;margin:0 auto;">
-      <h2 class="pcm-section-title">How it works</h2>
-      <div class="pcm-steps">
-        <div class="pcm-step pcm-reveal">
-          <span class="pcm-step-num" aria-hidden="true">01</span>
-          <div>
-            <h3 class="pcm-step-title">Load and position</h3>
-            <p class="pcm-step-desc">Spread a thin layer of your dog&rsquo;s favourite paste across all four texture zones. Place the mat in the designated departure spot &mdash; the same location, every session. Consistency builds the conditioned cue.</p>
-          </div>
+  <section class="pcm-narrative pcm-section" aria-label="The licking mechanism">
+    <div class="pcm-narrative-inner">
+
+      <span class="pcm-narrative-eyebrow pcm-reveal">The mechanism</span>
+      <h2 class="pcm-narrative-headline pcm-reveal">
+        Using the same mat every day<br>is the problem, not the solution.
+      </h2>
+
+      <div class="pcm-narrative-block">
+
+        <div class="pcm-narrative-item pcm-reveal">
+          <span class="pcm-narrative-item-title">Licking and the parasympathetic system</span>
+          <p class="pcm-narrative-item-body">
+            Repetitive licking activates the parasympathetic branch of the autonomic nervous system. It is not a distraction &mdash; it is a physiological downregulation mechanism. The rhythmic oral motor action stimulates the vagus nerve, reducing heart rate and cortisol production before the departure anxiety cycle can establish itself.
+          </p>
         </div>
-        <div class="pcm-step pcm-reveal">
-          <span class="pcm-step-num" aria-hidden="true">02</span>
-          <div>
-            <h3 class="pcm-step-title">Depart without ceremony</h3>
-            <p class="pcm-step-desc">No drawn-out goodbyes. No reassurance. Leave while your dog is engaged. The slow licking activates the parasympathetic nervous system before cortisol has time to spike during that critical 30&ndash;40 minute window.</p>
-          </div>
+
+        <div class="pcm-narrative-item pcm-reveal">
+          <span class="pcm-narrative-item-title">Vagus nerve activation</span>
+          <p class="pcm-narrative-item-body">
+            Vagal tone is the nervous system&rsquo;s capacity to return to calm after a stressor. Slow, sustained licking is one of the most reliable vagal stimulation methods available without clinical intervention. The food element is secondary &mdash; the licking motion itself is the mechanism.
+          </p>
         </div>
-        <div class="pcm-step pcm-reveal">
-          <span class="pcm-step-num" aria-hidden="true">03</span>
-          <div>
-            <h3 class="pcm-step-title">Extend the window</h3>
-            <p class="pcm-step-desc">Following the protocol, session length increases incrementally over 30 days. The mat becomes an environmental anchor &mdash; a reliable signal that calm is the expected state. The anxiety retreats as the behaviour solidifies.</p>
-          </div>
+
+        <div class="pcm-narrative-item pcm-reveal">
+          <span class="pcm-narrative-item-title">The 40-minute cortisol window</span>
+          <p class="pcm-narrative-item-body">
+            Cortisol in separated dogs peaks between 30 and 40 minutes after departure. This is the biological window where anxiety becomes self-reinforcing. Engaging the parasympathetic system before this peak &mdash; not after &mdash; is what prevents the habituation of chronic departure distress.
+          </p>
         </div>
+
+        <div class="pcm-narrative-item pcm-reveal">
+          <span class="pcm-narrative-item-title">Why two mats, not one</span>
+          <p class="pcm-narrative-item-body">
+            Neurological engagement degrades with repetition. A dog exposed to the same mat daily habituates to the stimulus &mdash; the reward-anticipation response diminishes, and with it, the depth of parasympathetic activation. Rotating between two mats resets the novelty signal each session, sustaining engagement past the critical cortisol window.
+          </p>
+        </div>
+
+      </div>
+
+      <blockquote class="pcm-narrative-callout pcm-reveal">
+        &ldquo;One mat every day trains the nervous system to ignore it. Two mats, rotated, keep the conditioned response sharp enough to do the work.&rdquo;
+      </blockquote>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       E. PROTOCOL INTEGRATION — dark background
+           How the Calm Mat slots into the PAXA 30-day protocol
+  ══════════════════════════════════════════════════════════ -->
+  <section class="pcm-protocol pcm-section" aria-label="PAXA 30-day protocol">
+    <div class="pcm-protocol-inner">
+
+      <span class="pcm-protocol-eyebrow pcm-reveal">30-day protocol</span>
+      <h2 class="pcm-protocol-headline pcm-reveal">
+        The mat activates the system.<br>The protocol changes it.
+      </h2>
+      <p class="pcm-protocol-intro pcm-reveal">
+        The PAXA Calm Mat is a physiological tool &mdash; it creates the neurological conditions for calm. On its own, it provides enrichment. Within the PAXA 30-day protocol, it becomes a conditioned cue woven through four structured phases of systematic desensitisation and counter-conditioning.
+      </p>
+
+      <div class="pcm-phases pcm-reveal">
+
+        <div class="pcm-phase">
+          <span class="pcm-phase-days">Days 1&ndash;7</span>
+          <span class="pcm-phase-name">Foundation</span>
+          <p class="pcm-phase-desc">Establish baseline calm. Introduce the mat in low-stakes environments. Build the departure-mat association before any threshold work begins.</p>
+        </div>
+
+        <div class="pcm-phase">
+          <span class="pcm-phase-days">Days 8&ndash;14</span>
+          <span class="pcm-phase-name">Desensitisation</span>
+          <p class="pcm-phase-desc">Begin systematic exposure to departure cues while the dog remains below threshold. The mat anchors parasympathetic activation during each exposure session.</p>
+        </div>
+
+        <div class="pcm-phase">
+          <span class="pcm-phase-days">Days 15&ndash;21</span>
+          <span class="pcm-phase-name">Incremental Distance</span>
+          <p class="pcm-phase-desc">Extend absence duration in measured increments. The mat&rsquo;s conditioned cue grows stronger as the dog learns that departure predicts the most rewarding experience of the day.</p>
+        </div>
+
+        <div class="pcm-phase">
+          <span class="pcm-phase-days">Days 22&ndash;30</span>
+          <span class="pcm-phase-name">Real-World Resilience</span>
+          <p class="pcm-phase-desc">Introduce variability &mdash; different departure times, routes, durations. The conditioned response must generalise across contexts for the change to be permanent.</p>
+        </div>
+
+      </div>
+
+      <a href="https://paxapet.gumroad.com/l/PAXA-Solo" class="pcm-protocol-cta pcm-reveal" rel="noopener">
+        Add the protocol &mdash; PAXA Solo &mdash; &pound;29 &rarr;
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       F. WHAT'S INCLUDED — bone background
+  ══════════════════════════════════════════════════════════ -->
+  <section class="pcm-included pcm-section" aria-label="What's included">
+    <div class="pcm-included-inner">
+
+      <h2 class="pcm-section-title pcm-reveal">What&rsquo;s included</h2>
+
+      <div class="pcm-included-grid">
+
+        <div class="pcm-included-card pcm-reveal">
+          <div class="pcm-included-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <rect x="2" y="2" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M6 10h8M10 6v8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="pcm-included-title">2&times; PAXA Calm Mat</h3>
+          <p class="pcm-included-desc">
+            208 &times; 208 &times; 23 mm food-grade silicone. Four distinct lick-zone textures across the surface. 99 suction cups on the base keep the mat fixed during sessions. Dishwasher safe &mdash; top rack. Colour-matched per chosen duo.
+          </p>
+        </div>
+
+        <div class="pcm-included-card pcm-reveal">
+          <div class="pcm-included-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M3 10l4 4 10-8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="pcm-included-title">Free UK Delivery</h3>
+          <p class="pcm-included-desc">
+            3&ndash;5 working days, fully tracked. Dispatched within one working day of order. No minimum spend required. Standard Royal Mail tracked service.
+          </p>
+        </div>
+
       </div>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════════════════
-       D. SPECS TABLE — warm card background
+       G. TRUST ROW — sage-light background
+           4 trust signals, horizontal strip
   ══════════════════════════════════════════════════════════ -->
-  <section class="pcm-specs-wrap pcm-section" aria-label="Product specifications">
-    <div class="pcm-specs-inner">
-      <h2 class="pcm-section-title">Specifications</h2>
-      <div class="pcm-specs-grid">
-        <div class="pcm-spec">
-          <span class="pcm-spec-label">Material</span>
-          <span class="pcm-spec-value">Food-grade silicone &mdash; BPA-free confirmed</span>
+  <section class="pcm-trust-strip" aria-label="Why PAXA">
+    <div class="pcm-trust-signals">
+
+      <div class="pcm-trust-signal pcm-reveal">
+        <div class="pcm-trust-signal-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M10 2l1.5 4.5H16l-3.5 2.5 1.5 4.5L10 11l-4 2.5 1.5-4.5L4 6.5h4.5L10 2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+          </svg>
         </div>
-        <div class="pcm-spec">
-          <span class="pcm-spec-label">Size (per mat)</span>
-          <span class="pcm-spec-value">20.8 &times; 20.8 &times; 2.5 cm</span>
-        </div>
-        <div class="pcm-spec">
-          <span class="pcm-spec-label">Texture zones</span>
-          <span class="pcm-spec-value">4 &mdash; ridge, wave, dot, honeycomb</span>
-        </div>
-        <div class="pcm-spec">
-          <span class="pcm-spec-label">Base</span>
-          <span class="pcm-spec-value">99 suction cups &mdash; stays fixed during sessions</span>
-        </div>
-        <div class="pcm-spec">
-          <span class="pcm-spec-label">Dishwasher safe</span>
-          <span class="pcm-spec-value">Yes &mdash; top rack</span>
-        </div>
-        <div class="pcm-spec">
-          <span class="pcm-spec-label">Bundle contents</span>
-          <span class="pcm-spec-value">2 mats &mdash; colour-paired per variant</span>
-        </div>
+        <span class="pcm-trust-signal-label">30-day money-back</span>
       </div>
+
+      <div class="pcm-trust-signal pcm-reveal">
+        <div class="pcm-trust-signal-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.4"/>
+            <path d="M10 6v4l3 2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="pcm-trust-signal-label">Food-grade silicone</span>
+      </div>
+
+      <div class="pcm-trust-signal pcm-reveal">
+        <div class="pcm-trust-signal-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <rect x="2" y="6" width="16" height="10" rx="2" stroke="currentColor" stroke-width="1.4"/>
+            <path d="M6 6V5a4 4 0 018 0v1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="pcm-trust-signal-label">Free UK delivery</span>
+      </div>
+
+      <div class="pcm-trust-signal pcm-reveal">
+        <div class="pcm-trust-signal-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M10 3C6.13 3 3 6.13 3 10s3.13 7 7 7 7-3.13 7-7-3.13-7-7-7z" stroke="currentColor" stroke-width="1.4"/>
+            <path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span class="pcm-trust-signal-label">Science-backed protocol</span>
+      </div>
+
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════════════════
-       E. REVIEWS — warm card background, 5 static cards
+       REVIEWS — warm card background, 5 static cards
   ══════════════════════════════════════════════════════════ -->
   <section class="pcm-reviews pcm-section" aria-label="Customer reviews">
     <div class="pcm-reviews-inner">
@@ -315,25 +445,7 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════════════
-       F. CROSS-SELL PAXA SOLO — dark background
-  ══════════════════════════════════════════════════════════ -->
-  <section class="pcm-crosssell pcm-section" aria-label="PAXA Solo Protocol">
-    <div class="pcm-crosssell-inner pcm-reveal">
-      <span class="pcm-crosssell-label">The mat does the mechanism. The protocol does the work.</span>
-      <h2 class="pcm-crosssell-headline">The PAXA Solo Protocol &mdash; 30 days to a different dog</h2>
-      <p class="pcm-crosssell-body">
-        A 42-page science-backed workbook covering systematic desensitisation, counter-conditioning,
-        and functional relaxation. Phases 2, 3, and 4 of the protocol integrate directly with the
-        Calm Mat. Available separately &mdash; instant download.
-      </p>
-      <a href="https://paxapet.gumroad.com/l/PAXA-Solo" class="pcm-crosssell-btn" rel="noopener">
-        View the PAXA Solo Protocol &mdash; &pound;29 &rarr;
-      </a>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════════
-       G. FAQ ACCORDION — bone background
+       H. FAQ ACCORDION — bone background
   ══════════════════════════════════════════════════════════ -->
   <section class="pcm-faq-wrap pcm-section" aria-label="Frequently asked questions">
     <div class="pcm-faq-inner">
@@ -342,49 +454,61 @@
 
         <div class="pcm-faq-item">
           <button class="pcm-faq-q" aria-expanded="false" type="button">
-            <span>Does the mat work on its own?</span>
+            <span>Does the mat work on its own, without a protocol?</span>
             <svg class="pcm-faq-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </button>
           <div class="pcm-faq-a" hidden>
-            <p>No. The mat is a tool, not a treatment. It creates a reliable physiological anchor &mdash; slow licking during the cortisol window &mdash; but systematic desensitisation is what resolves separation anxiety. Without a protocol, the mat provides enrichment. Within one, it accelerates progress.</p>
+            <p>The mat is a physiological tool, not a standalone treatment. It creates a reliable conditioned cue &mdash; slow licking activates the parasympathetic nervous system during the cortisol peak window &mdash; but systematic desensitisation is what resolves separation anxiety at its root. Without a protocol, the mat provides enrichment and some acute calming. Within one, it accelerates lasting change.</p>
           </div>
         </div>
 
         <div class="pcm-faq-item">
           <button class="pcm-faq-q" aria-expanded="false" type="button">
-            <span>Which colour pair should I choose?</span>
+            <span>Why two mats, not one?</span>
             <svg class="pcm-faq-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </button>
           <div class="pcm-faq-a" hidden>
-            <p>The Protocol Pair (Milk White + Sky Blue) is the standard setup used across all four protocol phases. The Regulation Pair suits highly reactive or sensitive dogs in foundation work &mdash; softer tones reduce visual stimulation. The Anchor Pair is designed for Phase 3 threshold management, where visual contrast sharpens the conditioned cue.</p>
+            <p>Habituation reduces neurological engagement over time. Presenting the same mat daily causes the novelty-driven reward response to diminish &mdash; the dog engages less deeply, and parasympathetic activation becomes shallower and shorter. Rotating between two mats resets the stimulus and sustains engagement past the 40-minute cortisol peak where the work actually happens. One mat degrades in effectiveness. Two, rotated, do not.</p>
           </div>
         </div>
 
         <div class="pcm-faq-item">
           <button class="pcm-faq-q" aria-expanded="false" type="button">
-            <span>Is it safe for all dogs?</span>
+            <span>What food should I use on the mat?</span>
             <svg class="pcm-faq-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </button>
           <div class="pcm-faq-a" hidden>
-            <p>Yes. Food-grade silicone, BPA-free confirmed. The 99 suction cups keep the mat fixed during sessions &mdash; this matters for maintaining the environmental cue. Supervise the first few sessions to confirm your dog engages correctly rather than chewing the mat.</p>
+            <p>High-value foods that your dog receives exclusively on the mat build the strongest conditioned association. Xylitol-free peanut butter, plain yoghurt, soft cheese, or meat paste all work well. The rule is simple: whatever you use on the mat should never appear in any other context. Freezing the loaded mat overnight significantly extends the engagement window on each session.</p>
           </div>
         </div>
 
         <div class="pcm-faq-item">
           <button class="pcm-faq-q" aria-expanded="false" type="button">
-            <span>What if my dog isn&rsquo;t interested in the mat?</span>
+            <span>What if my dog ignores the mat or loses interest?</span>
             <svg class="pcm-faq-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </button>
           <div class="pcm-faq-a" hidden>
-            <p>Common in the first 1&ndash;2 sessions. Use a high-value paste &mdash; peanut butter, soft cheese, meat paste &mdash; spread into all four texture zones. Freezing the mat overnight extends engagement time significantly. Most dogs are reliably engaged within 3 sessions once the conditioned cue begins to form.</p>
+            <p>Low engagement in the first one or two sessions is normal. The conditioned cue &mdash; mat predicts departure &mdash; takes a few repetitions to establish. Use a higher-value food spread thinly across all texture zones, and ensure you are presenting the mat at the exact moment of departure, not before. If interest wanes after several weeks of use, switch food types between sessions and ensure you are rotating both mats consistently.</p>
+          </div>
+        </div>
+
+        <div class="pcm-faq-item">
+          <button class="pcm-faq-q" aria-expanded="false" type="button">
+            <span>Is it safe for all breeds and sizes?</span>
+            <svg class="pcm-faq-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="pcm-faq-a" hidden>
+            <p>Yes. The parasympathetic activation mechanism of slow licking is consistent across all breeds and sizes. The mat&rsquo;s 208 &times; 208 mm surface works for most adult dogs from small breeds upwards. Food-grade silicone is non-porous and does not retain bacteria between sessions. Supervise the first few sessions to confirm your dog is licking rather than chewing, and to establish that the 99 suction cups are holding securely on your chosen surface.</p>
           </div>
         </div>
 
@@ -396,7 +520,7 @@
             </svg>
           </button>
           <div class="pcm-faq-a" hidden>
-            <p>Dishwasher safe &mdash; top rack only. Alternatively, warm water and a soft brush. No abrasive cleaners or solvents. The non-porous silicone resists bacterial build-up between sessions.</p>
+            <p>Dishwasher safe &mdash; top rack only. Alternatively, warm water and a soft brush. The non-porous food-grade silicone resists bacterial build-up and cleans thoroughly without abrasive cleaners. Do not use solvents or harsh detergents, as these can degrade the silicone surface over time.</p>
           </div>
         </div>
 
@@ -405,12 +529,12 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════════════
-       H. FINAL CTA — sage-light background
+       FINAL CTA — sage-light background
   ══════════════════════════════════════════════════════════ -->
   <section class="pcm-final-cta pcm-section" aria-label="Purchase">
     <div class="pcm-cta-inner pcm-reveal">
-      <h2 class="pcm-cta-headline">Two mats. One protocol. A different dog.</h2>
-      <p class="pcm-cta-sub">As used across all four phases of the PAXA Solo Protocol.</p>
+      <h2 class="pcm-cta-headline">Two mats. One protocol.<br>A different dog.</h2>
+      <p class="pcm-cta-sub">As used across all four phases of the PAXA 30-day protocol.</p>
       <form action="/cart/add" method="post">
         <input type="hidden" name="id"       id="pcm-cta-variant-id" value="53536507068753">
         <input type="hidden" name="quantity" value="1">
@@ -422,6 +546,22 @@
   </section>
 
 </div><!-- /pcm-page -->
+
+<!-- ═══════════════════════════════════════════════════════════
+     I. STICKY MOBILE ATC BAR — ≤768px only
+        Disappears when main ATC button is in viewport
+════════════════════════════════════════════════════════════ -->
+<div class="pcm-mobile-bar" id="pcm-mobile-bar" aria-hidden="true" role="complementary" aria-label="Quick purchase">
+  <div class="pcm-mobile-bar-info">
+    <div class="pcm-mobile-bar-name">PAXA Calm Mat &mdash; Bundle of 2</div>
+    <div class="pcm-mobile-bar-price">&pound;34 &middot; Free UK delivery</div>
+  </div>
+  <form action="/cart/add" method="post" id="pcm-mobile-bar-form">
+    <input type="hidden" name="id"       id="pcm-mobile-variant-id" value="53536507068753">
+    <input type="hidden" name="quantity" value="1">
+    <button type="submit" class="pcm-mobile-bar-btn">Add to Cart &rarr;</button>
+  </form>
+</div>
 
 <!-- ═══════════════════════════════════════════════════════════
      MOTION.JS + PAGE SCRIPTS
@@ -538,6 +678,7 @@
   var variantCards  = document.querySelectorAll('.pcm-variant-card');
   var variantInput  = document.getElementById('pcm-variant-id');
   var ctaInput      = document.getElementById('pcm-cta-variant-id');
+  var mobileInput   = document.getElementById('pcm-mobile-variant-id');
   var confirmLabel  = document.getElementById('pcm-confirm-label');
 
   function selectVariant(card) {
@@ -555,7 +696,7 @@
     card.setAttribute('aria-checked', 'true');
     card.setAttribute('tabindex', '0');
 
-    /* 4. Animate checkmark spring */
+    /* Animate checkmark spring */
     var check = card.querySelector('.pcm-variant-check');
     if (check) {
       if (M && M.animate) {
@@ -579,6 +720,7 @@
     /* Update hidden inputs */
     if (variantInput) variantInput.value = vid;
     if (ctaInput)     ctaInput.value     = vid;
+    if (mobileInput)  mobileInput.value  = vid;
 
     /* Update confirmation label */
     if (confirmLabel) {
@@ -645,7 +787,7 @@
       document.querySelectorAll('.pcm-faq-q').forEach(function (other) {
         if (other === btn) return;
         other.setAttribute('aria-expanded', 'false');
-        var a = other.parentElement.querySelector('.pcm-faq-a');
+        var a  = other.parentElement.querySelector('.pcm-faq-a');
         var ic = other.querySelector('.pcm-faq-icon');
         if (a) a.hidden = true;
         if (ic && M && M.animate) M.animate(ic, { rotate: 0 }, { duration: 0.22 });
@@ -662,6 +804,22 @@
       }
     });
   });
+
+  /* ── I. STICKY MOBILE ATC BAR ── */
+  var mobileBar = document.getElementById('pcm-mobile-bar');
+  var mainAtc   = document.getElementById('pcm-main-atc');
+
+  if (mobileBar && mainAtc && window.matchMedia('(max-width: 768px)').matches) {
+    mobileBar.setAttribute('aria-hidden', 'false');
+
+    var atcObserver = new IntersectionObserver(function (entries) {
+      /* Bar is visible when ATC button is NOT in viewport */
+      var atcVisible = entries[0].isIntersecting;
+      mobileBar.classList.toggle('visible', !atcVisible);
+    }, { threshold: 0.5 });
+
+    atcObserver.observe(mainAtc);
+  }
 
 })();
 </script>
