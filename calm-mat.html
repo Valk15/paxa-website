@@ -992,7 +992,7 @@ if (localStorage.getItem('paxa_cookie_consent') === 'accepted') {
     <a href="/blog/" class="nav-link">Blog</a>
     <a href="mailto:hello@paxapet.co.uk" class="nav-link">Contact</a>
   </div>
-  <a href="https://paxapet.com/products/paxa-calm-mat-bundle-of-2?utm_source=advertorial&utm_medium=organic&utm_campaign=calm-mat" class="nav-cta" id="nav-cta-link" aria-label="Get the PAXA Calm Mat Bundle of 2 — £34, free UK delivery">Get the Calm Mat — £34 →</a>
+  <a href="https://paxapet.com/products/paxa-calm-mat-bundle-of-2?variant=53536507068753&utm_source=advertorial&utm_medium=organic&utm_campaign=calm-mat" class="nav-cta" id="nav-cta-link" aria-label="Get the PAXA Calm Mat Bundle of 2 — £34, free UK delivery">Get the Calm Mat — £34 →</a>
 </nav>
 
 <!-- COOKIE BANNER -->
@@ -1218,7 +1218,7 @@ if (localStorage.getItem('paxa_cookie_consent') === 'accepted') {
       </div>
       <p class="adv-price-note">Bundle of 2 mats · Free UK delivery · Ships within 3–5 working days</p>
       <p class="adv-price-single">Also available as a single mat — £20</p>
-      <a href="https://paxapet.com/products/paxa-calm-mat-bundle-of-2?utm_source=advertorial&utm_medium=organic&utm_campaign=calm-mat" class="btn-calm-mat" id="cta-calm-mat">
+      <a href="https://paxapet.com/products/paxa-calm-mat-bundle-of-2?variant=53536507068753&utm_source=advertorial&utm_medium=organic&utm_campaign=calm-mat" class="btn-calm-mat" id="cta-calm-mat">
         Get the Calm Mat — £34 →
       </a>
     </div>
@@ -1267,7 +1267,7 @@ if (localStorage.getItem('paxa_cookie_consent') === 'accepted') {
 <div class="adv-final-cta">
   <h2 class="reveal">Two mats. One protocol.<br><em>A different dog.</em></h2>
   <p class="reveal">The PAXA Calm Mat is the physical tool that gives the science somewhere to land. Used correctly, it is the difference between a dog that spirals and a dog that settles.</p>
-  <a href="https://paxapet.com/products/paxa-calm-mat-bundle-of-2?utm_source=advertorial&utm_medium=organic&utm_campaign=calm-mat" class="btn-final reveal" id="cta-final">Get the Calm Mat — £34 →</a>
+  <a href="https://paxapet.com/products/paxa-calm-mat-bundle-of-2?variant=53536507068753&utm_source=advertorial&utm_medium=organic&utm_campaign=calm-mat" class="btn-final reveal" id="cta-final">Get the Calm Mat — £34 →</a>
   <p class="adv-trust-line" style="font-family:var(--sans);font-size:12px;color:var(--stone);text-align:center;margin-top:14px;letter-spacing:0.04em;">Food-grade silicone · BPA-free · 30-day money-back · Free UK delivery</p>
 </div>
 
@@ -1289,7 +1289,7 @@ if (localStorage.getItem('paxa_cookie_consent') === 'accepted') {
   <div class="adv-sticky-bar-text">
     PAXA Calm Mat — Bundle of 2<br><span class="price">£34</span><span style="font-size:11px;color:var(--sage-mid);display:block;margin-top:2px;">Free UK delivery</span>
   </div>
-  <a href="https://paxapet.com/products/paxa-calm-mat-bundle-of-2?utm_source=advertorial&utm_medium=organic&utm_campaign=calm-mat" class="btn-sticky" id="cta-sticky">Get it →</a>
+  <a href="https://paxapet.com/products/paxa-calm-mat-bundle-of-2?variant=53536507068753&utm_source=advertorial&utm_medium=organic&utm_campaign=calm-mat" class="btn-sticky" id="cta-sticky">Get it →</a>
 </div>
 
 <script>
@@ -1405,8 +1405,14 @@ document.addEventListener('keydown', function(e) {
 });
 
 // ── VARIANT SELECTOR ──
-// Variant selection on the advertorial previews colour pairs in the gallery.
-// Final variant/cart logic is handled on the Shopify product page.
+// Click a colour pair: preview image in the gallery and append ?variant=ID
+// to every CTA so the Shopify product page opens on the chosen pair.
+var PAXA_PRODUCT_URL = 'https://paxapet.com/products/paxa-calm-mat-bundle-of-2';
+var PAXA_UTM = 'utm_source=advertorial&utm_medium=organic&utm_campaign=calm-mat';
+function buildVariantUrl(variantId) {
+  return PAXA_PRODUCT_URL + '?variant=' + variantId + '&' + PAXA_UTM;
+}
+
 function selectVariant(card) {
   document.querySelectorAll('.adv-duo-card').forEach(function(c) {
     c.classList.remove('selected');
@@ -1414,6 +1420,12 @@ function selectVariant(card) {
   card.classList.add('selected');
   var variantId = card.dataset.variant;
   var variantImg = card.dataset.img;
+  var url = buildVariantUrl(variantId);
+
+  ['cta-calm-mat', 'cta-final', 'cta-sticky', 'nav-cta-link'].forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) el.href = url;
+  });
 
   var variantImgIdx = galleryImages.findIndex(function(img) { return img.src === variantImg; });
   if (variantImgIdx >= 0) {
