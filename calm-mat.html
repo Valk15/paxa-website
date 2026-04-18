@@ -518,7 +518,7 @@ if (localStorage.getItem('paxa_cookie_consent') === 'accepted') {
 }
 
 .adv-duo-card.hero-duo {
-  border-color: var(--sage-mid);
+  /* border handled by .selected only — badge is the only permanent "most popular" signal */
 }
 
 .adv-duo-badge {
@@ -1108,8 +1108,8 @@ if (localStorage.getItem('paxa_cookie_consent') === 'accepted') {
       <div class="adv-gallery-main">
         <button class="gallery-nav gallery-prev" aria-label="Previous image">&#8592;</button>
         <img id="gallery-main-img"
-          src="/images/calm-mat/bundle-green.jpg"
-          alt="PAXA Calm Mat Bundle of 2 — The Protocol Pair, science-backed lick mat"
+          src="/images/calm-mat/bundle-blue.jpg"
+          alt="PAXA Calm Mat Bundle of 2 — The Protocol Pair, Milk White + Sky Blue"
           loading="lazy"
           width="480"
           height="480">
@@ -1117,22 +1117,22 @@ if (localStorage.getItem('paxa_cookie_consent') === 'accepted') {
       </div>
       <div class="adv-gallery-thumbs">
         <button class="gallery-thumb active" data-idx="0">
-          <img src="/images/calm-mat/bundle-green.jpg" alt="PAXA Calm Mat Bundle of 2 — The Protocol Pair">
+          <img src="/images/calm-mat/bundle-blue.jpg" alt="Protocol Pair — Milk White + Sky Blue">
         </button>
         <button class="gallery-thumb" data-idx="1">
-          <img src="/images/calm-mat/bundle-black.jpg" alt="PAXA Calm Mat — The Anchor Pair, purple and dark grey">
+          <img src="/images/calm-mat/bundle-green.jpg" alt="Regulation Pair — Mint Green + Light Green">
         </button>
         <button class="gallery-thumb" data-idx="2">
-          <img src="/images/calm-mat/product-top.jpg" alt="PAXA Calm Mat top surface — four lick-zone textures">
+          <img src="/images/calm-mat/bundle-black.jpg" alt="Anchor Pair — Purple + Dark Grey">
         </button>
         <button class="gallery-thumb" data-idx="3">
-          <img src="/images/calm-mat/product-suction.jpg" alt="PAXA Calm Mat suction base — 99 suction cups, stays fixed">
+          <img src="/images/calm-mat/product-top.jpg" alt="PAXA Calm Mat top surface — four lick-zone textures">
         </button>
         <button class="gallery-thumb" data-idx="4">
-          <img src="/images/calm-mat/product-lifestyle.jpg" alt="Dog using PAXA Calm Mat — calm before departure">
+          <img src="/images/calm-mat/product-suction.jpg" alt="PAXA Calm Mat suction base — 99 suction cups, stays fixed">
         </button>
         <button class="gallery-thumb" data-idx="5">
-          <img src="/images/calm-mat/product-inuse.jpg" alt="PAXA Calm Mat in use — dog engaged for 20+ minutes">
+          <img src="/images/calm-mat/product-lifestyle.jpg" alt="Dog using PAXA Calm Mat — calm before departure">
         </button>
       </div>
     </div>
@@ -1171,7 +1171,7 @@ if (localStorage.getItem('paxa_cookie_consent') === 'accepted') {
       <div class="adv-duo-cards">
 
         <label class="adv-duo-card hero-duo selected" data-variant="53536507068753"
-          data-img="/images/calm-mat/bundle-green.jpg"
+          data-img="/images/calm-mat/bundle-blue.jpg"
           onclick="selectVariant(this)">
           <input type="radio" name="variant" value="53536507068753" checked style="display:none">
           <span class="adv-duo-badge">Most popular</span>
@@ -1184,7 +1184,7 @@ if (localStorage.getItem('paxa_cookie_consent') === 'accepted') {
         </label>
 
         <label class="adv-duo-card" data-variant="53536507101521"
-          data-img="/images/calm-mat/product-top.jpg"
+          data-img="/images/calm-mat/bundle-green.jpg"
           onclick="selectVariant(this)">
           <input type="radio" name="variant" value="53536507101521" style="display:none">
           <div class="adv-duo-swatches">
@@ -1361,12 +1361,12 @@ document.querySelectorAll('#cta-calm-mat, #cta-final, #cta-sticky').forEach(func
 
 // ── PRODUCT GALLERY ──
 var galleryImages = [
-  { src: '/images/calm-mat/bundle-green.jpg', alt: 'PAXA Calm Mat Bundle of 2 — The Protocol Pair, science-backed lick mat' },
-  { src: '/images/calm-mat/bundle-black.jpg', alt: 'PAXA Calm Mat — The Anchor Pair, purple and dark grey' },
-  { src: '/images/calm-mat/product-top.jpg', alt: 'PAXA Calm Mat top surface — four lick-zone textures' },
-  { src: '/images/calm-mat/product-suction.jpg', alt: 'PAXA Calm Mat suction base — 99 suction cups, stays fixed' },
-  { src: '/images/calm-mat/product-lifestyle.jpg', alt: 'Dog using PAXA Calm Mat — calm before departure' },
-  { src: '/images/calm-mat/product-inuse.jpg', alt: 'PAXA Calm Mat in use — dog engaged for 20+ minutes' }
+  { src: '/images/calm-mat/bundle-blue.jpg',      alt: 'Protocol Pair — Milk White + Sky Blue' },
+  { src: '/images/calm-mat/bundle-green.jpg',     alt: 'Regulation Pair — Mint Green + Light Green' },
+  { src: '/images/calm-mat/bundle-black.jpg',     alt: 'Anchor Pair — Purple + Dark Grey' },
+  { src: '/images/calm-mat/product-top.jpg',      alt: 'PAXA Calm Mat top surface — four lick-zone textures' },
+  { src: '/images/calm-mat/product-suction.jpg',  alt: 'PAXA Calm Mat suction base — 99 suction cups, stays fixed' },
+  { src: '/images/calm-mat/product-lifestyle.jpg',alt: 'Dog using PAXA Calm Mat — calm before departure' }
 ];
 var currentIdx = 0;
 var mainImg = document.getElementById('gallery-main-img');
