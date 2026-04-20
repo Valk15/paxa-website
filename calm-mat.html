@@ -61,6 +61,11 @@ function paxaLoadAnalytics() {
   // TikTok Pixel
   !function(w,d,t){w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};ttq.load('D7J2053C77U8847ELUI0');ttq.page();}(window,document,'ttq');
   ttq.track('ViewContent', { content_type: 'product', content_id: 'paxa-calm-mat', content_name: 'PAXA Calm Mat Bundle of 2', currency: 'GBP', value: 34 });
+  // Meta Pixel
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '977092621560109');
+  fbq('track', 'PageView');
+  fbq('track', 'ViewContent', { content_type: 'product', content_ids: ['paxa-calm-mat'], content_name: 'PAXA Calm Mat Bundle of 2', currency: 'GBP', value: 34 });
 }
 if (localStorage.getItem('paxa_cookie_consent') === 'accepted') {
   paxaLoadAnalytics();
@@ -1346,13 +1351,13 @@ function paxaDeclineCookies() {
   document.getElementById('cookie-banner').style.display = 'none';
 }
 
-// ── Patch initial CTA hrefs with ttclid if present ──
-if (PAXA_TTCLID) {
-  ['cta-calm-mat', 'cta-final', 'cta-sticky', 'nav-cta-link'].forEach(function(id) {
-    var el = document.getElementById(id);
-    if (el && el.href) el.href = el.href + '&ttclid=' + encodeURIComponent(PAXA_TTCLID);
-  });
-}
+// ── Patch initial CTA hrefs with ttclid/fbclid if present ──
+['cta-calm-mat', 'cta-final', 'cta-sticky', 'nav-cta-link'].forEach(function(id) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  if (PAXA_TTCLID) el.href = el.href + '&ttclid=' + encodeURIComponent(PAXA_TTCLID);
+  if (PAXA_FBCLID) el.href = el.href + '&fbclid=' + encodeURIComponent(PAXA_FBCLID);
+});
 
 // ── GA4 + TikTok event: CTA clicks ──
 document.querySelectorAll('#cta-calm-mat, #cta-final, #cta-sticky, #nav-cta-link').forEach(function(btn) {
@@ -1365,6 +1370,9 @@ document.querySelectorAll('#cta-calm-mat, #cta-final, #cta-sticky, #nav-cta-link
     }
     if (window.ttq) {
       ttq.track('AddToCart', { content_type: 'product', content_id: 'paxa-calm-mat', content_name: 'PAXA Calm Mat Bundle of 2', currency: 'GBP', value: 34 });
+    }
+    if (window.fbq) {
+      fbq('track', 'AddToCart', { content_type: 'product', content_ids: ['paxa-calm-mat'], content_name: 'PAXA Calm Mat Bundle of 2', currency: 'GBP', value: 34 });
     }
   });
 });
@@ -1420,9 +1428,11 @@ document.addEventListener('keydown', function(e) {
 var PAXA_PRODUCT_URL = 'https://paxapet.com/products/paxa-calm-mat-bundle-of-2';
 var PAXA_UTM = 'utm_source=advertorial&utm_medium=tiktok&utm_campaign=calm-mat';
 var PAXA_TTCLID = (new URLSearchParams(window.location.search)).get('ttclid') || '';
+var PAXA_FBCLID = (new URLSearchParams(window.location.search)).get('fbclid') || '';
 function buildVariantUrl(variantId) {
   var url = PAXA_PRODUCT_URL + '?variant=' + variantId + '&' + PAXA_UTM;
   if (PAXA_TTCLID) url += '&ttclid=' + encodeURIComponent(PAXA_TTCLID);
+  if (PAXA_FBCLID) url += '&fbclid=' + encodeURIComponent(PAXA_FBCLID);
   return url;
 }
 

@@ -11,6 +11,19 @@ Read these files at the start of every session before doing anything else:
 - Instagram: carousel #1 live
 - Klaviyo DNS: fixed
 - Claude Code: Youness machine, Windows, v2.1.42, authenticated
+- TikTok Pixel: D7J2053C77U8847ELUI0 — live on calm-mat.html, calm-mat-landing.html, Shopify
+- Meta Pixel: 977092621560109 — live on calm-mat.html (advertorial only), Shopify
+
+## Pixel Verification Checklist
+When any tracking change is made to HTML files, ALWAYS verify:
+1. Visit paxapet.co.uk/calm-mat in browser → accept cookies → check TikTok Pixel Helper shows ViewContent on pixel D7J2053C77U8847ELUI0
+2. Check Meta Pixel Helper shows ViewContent on pixel 977092621560109
+3. Click a CTA button → both helpers should show AddToCart
+4. Visit Shopify store product page → both pixels should fire ViewContent
+5. In TikTok Events Manager → Data Sources → confirm "Browser events received" step is green
+6. In Meta Events Manager → confirm events show in Test Events tab
+7. If Pixel Helper shows "No pixel found" — check if cookies have been accepted (both pixels are consent-gated)
+8. If pixel fires on site but not Shopify → check TikTok for Shopify / Meta for Shopify app is connected with correct pixel ID
 
 # PAXA — Claude Code Project Intelligence
 
