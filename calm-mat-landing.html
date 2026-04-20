@@ -1439,6 +1439,9 @@ function loadAnalytics() {
   window.gtag = gtag;
   gtag('js', new Date());
   gtag('config', 'G-E6VF2S1GQX');
+  // TikTok Pixel
+  !function(w,d,t){w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};ttq.load('D7J1RSJC77U9I9C36S70');ttq.page();}(window,document,'ttq');
+  ttq.track('ViewContent', { content_type: 'product', content_id: 'paxa-calm-mat', content_name: 'PAXA Calm Mat Bundle of 2', currency: 'GBP', value: 34 });
 }
 
 if (localStorage.getItem('paxa_cookie_consent') === 'accepted') loadAnalytics();
@@ -1556,9 +1559,24 @@ variantCards.forEach(function(card) {
   });
 });
 
+/* ttclid passthrough — store from URL, append to all Shopify links */
+var PAXA_TTCLID = (new URLSearchParams(window.location.search)).get('ttclid') || '';
+function shopifyUrl(base) {
+  return PAXA_TTCLID ? base + (base.indexOf('?') >= 0 ? '&' : '?') + 'ttclid=' + encodeURIComponent(PAXA_TTCLID) : base;
+}
+if (PAXA_TTCLID) {
+  ['nav-cta', 'hero-cta', 'main-cta', 'final-cta'].forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el && el.href) el.href = shopifyUrl(el.href);
+  });
+  document.querySelectorAll('[data-url]').forEach(function(el) {
+    el.dataset.url = shopifyUrl(el.dataset.url);
+  });
+}
+
 /* Mobile bar button default */
 document.getElementById('mobile-bar-btn').onclick = function() {
-  window.location.href = 'https://paxa-7714.myshopify.com/cart/53536507068753:1';
+  window.location.href = shopifyUrl('https://paxa-7714.myshopify.com/cart/53536507068753:1');
 };
 
 /* ── Mobile buy bar visibility ────────────────────────────── */
@@ -1623,11 +1641,14 @@ if (purchaseSec) {
   viewItemObserver.observe(purchaseSec);
 }
 
-/* ── GA4: add_to_cart on CTA clicks ──────────────────────── */
-document.querySelectorAll('#main-cta, #final-cta, #hero-cta, .mobile-bar-btn').forEach(function(el) {
+/* ── GA4 + TikTok: add_to_cart on CTA clicks ─────────────── */
+document.querySelectorAll('#main-cta, #final-cta, #hero-cta, #nav-cta, .mobile-bar-btn').forEach(function(el) {
   el.addEventListener('click', function() {
     if (window.gtag) {
       gtag('event', 'add_to_cart', { currency: 'GBP', value: 34, event_label: 'calm_mat' });
+    }
+    if (window.ttq) {
+      ttq.track('AddToCart', { content_type: 'product', content_id: 'paxa-calm-mat', content_name: 'PAXA Calm Mat Bundle of 2', currency: 'GBP', value: 34 });
     }
   });
 });

@@ -58,6 +58,9 @@ function paxaLoadAnalytics() {
   kl.type = 'text/javascript';
   kl.src = 'https://static.klaviyo.com/onsite/js/R3fCTy/klaviyo.js?company_id=R3fCTy';
   document.head.appendChild(kl);
+  // TikTok Pixel
+  !function(w,d,t){w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};ttq.load('D7J1RSJC77U9I9C36S70');ttq.page();}(window,document,'ttq');
+  ttq.track('ViewContent', { content_type: 'product', content_id: 'paxa-calm-mat', content_name: 'PAXA Calm Mat Bundle of 2', currency: 'GBP', value: 34 });
 }
 if (localStorage.getItem('paxa_cookie_consent') === 'accepted') {
   paxaLoadAnalytics();
@@ -1343,14 +1346,25 @@ function paxaDeclineCookies() {
   document.getElementById('cookie-banner').style.display = 'none';
 }
 
-// ── GA4 event: CTA clicks ──
-document.querySelectorAll('#cta-calm-mat, #cta-final, #cta-sticky').forEach(function(btn) {
+// ── Patch initial CTA hrefs with ttclid if present ──
+if (PAXA_TTCLID) {
+  ['cta-calm-mat', 'cta-final', 'cta-sticky', 'nav-cta-link'].forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el && el.href) el.href = el.href + '&ttclid=' + encodeURIComponent(PAXA_TTCLID);
+  });
+}
+
+// ── GA4 + TikTok event: CTA clicks ──
+document.querySelectorAll('#cta-calm-mat, #cta-final, #cta-sticky, #nav-cta-link').forEach(function(btn) {
   btn.addEventListener('click', function() {
     if (window.gtag) {
       gtag('event', 'calm_mat_cta_click', {
         event_category: 'ecommerce',
         event_label: 'calm_mat_advertorial'
       });
+    }
+    if (window.ttq) {
+      ttq.track('AddToCart', { content_type: 'product', content_id: 'paxa-calm-mat', content_name: 'PAXA Calm Mat Bundle of 2', currency: 'GBP', value: 34 });
     }
   });
 });
@@ -1404,9 +1418,12 @@ document.addEventListener('keydown', function(e) {
 // Click a colour pair: preview image in the gallery and append ?variant=ID
 // to every CTA so the Shopify product page opens on the chosen pair.
 var PAXA_PRODUCT_URL = 'https://paxapet.com/products/paxa-calm-mat-bundle-of-2';
-var PAXA_UTM = 'utm_source=advertorial&utm_medium=organic&utm_campaign=calm-mat';
+var PAXA_UTM = 'utm_source=advertorial&utm_medium=tiktok&utm_campaign=calm-mat';
+var PAXA_TTCLID = (new URLSearchParams(window.location.search)).get('ttclid') || '';
 function buildVariantUrl(variantId) {
-  return PAXA_PRODUCT_URL + '?variant=' + variantId + '&' + PAXA_UTM;
+  var url = PAXA_PRODUCT_URL + '?variant=' + variantId + '&' + PAXA_UTM;
+  if (PAXA_TTCLID) url += '&ttclid=' + encodeURIComponent(PAXA_TTCLID);
+  return url;
 }
 
 function selectVariant(card) {
