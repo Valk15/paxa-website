@@ -14,7 +14,8 @@
       "Bash(git rm:*)",
       "WebFetch(domain:www.amazon.co.uk)",
       "WebFetch(domain:www.etsy.com)",
-      "WebFetch(domain:dogtoy360.co.uk)"
+      "WebFetch(domain:dogtoy360.co.uk)",
+      "Bash(awk '/<article class=\"blog-body\">/,/<\\\\/article>/' \"blog/dog-independence-training-uk/index.html\")"
     ]
   }
 }

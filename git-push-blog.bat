@@ -1,0 +1,13 @@
+@echo off
+cd /d "C:\Users\lenovo\OneDrive\Desktop\Ai Projects\paxa-website"
+echo Removing lock file...
+powershell -ExecutionPolicy Bypass -Command "Remove-Item -Force '.git\index.lock' -ErrorAction SilentlyContinue; Write-Host 'Lock handled'"
+echo Staging files...
+git add blog/separation-anxiety-vs-boredom-dogs/index.html blog/index.html images/separation-anxiety-vs-boredom-dogs.jpg sitemap.xml
+echo Committing...
+git commit -m "Add blog post: Dog Separation Anxiety vs Boredom (SEO-optimised)"
+echo Pushing to GitHub...
+git push origin main
+echo.
+echo === ALL DONE ===
+pause

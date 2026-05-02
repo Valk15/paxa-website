@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PAXA Calm Mat 05 — Feature Callout</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --ink:#0A0A0A;--bone:#F5F5F0;--warm:#E8E0D5;
+  --sage:#4A6741;--sage-light:#EAF3DE;--sage-mid:#9FBF93;
+  --stone:#B8A898;--muted:#6B6860;
+}
+html,body{width:1080px;height:1080px;overflow:hidden}
+body{
+  background:var(--bone);
+  display:flex;flex-direction:column;
+  padding:72px 80px;
+  position:relative;
+}
+.top-row{
+  display:flex;align-items:baseline;justify-content:space-between;
+  margin-bottom:64px;
+}
+.paxa-logo{
+  font-family:'Cormorant Garamond',serif;font-weight:300;
+  font-size:40px;color:var(--ink);letter-spacing:-1px;
+}
+.paxa-logo span{
+  font-style:italic;color:var(--sage);
+}
+.top-label{
+  font-family:'DM Sans',sans-serif;font-weight:500;
+  font-size:10px;letter-spacing:3px;text-transform:uppercase;
+  color:var(--stone);
+}
+.grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+  flex:1;
+}
+.col{
+  padding:48px 48px 48px 0;
+  border-left:1px solid rgba(10,10,10,.12);
+  padding-left:48px;
+}
+.col:first-child{border-left:none;padding-left:0}
+.check{
+  font-family:'DM Sans',sans-serif;font-weight:500;
+  font-size:11px;letter-spacing:2px;text-transform:uppercase;
+  color:var(--sage);margin-bottom:20px;
+  display:flex;align-items:center;gap:8px;
+}
+.check::before{
+  content:'';display:block;width:18px;height:18px;
+  border:1.5px solid var(--sage);border-radius:50%;
+  background:var(--sage-light);
+  flex-shrink:0;
+  position:relative;
+}
+.feature-title{
+  font-family:'Cormorant Garamond',serif;font-weight:300;
+  font-size:36px;line-height:1.15;color:var(--ink);
+  letter-spacing:-.5px;margin-bottom:20px;
+}
+.feature-body{
+  font-family:'DM Sans',sans-serif;font-weight:300;
+  font-size:17px;line-height:1.72;color:var(--muted);
+}
+.bottom-row{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-top:56px;padding-top:40px;
+  border-top:1px solid rgba(10,10,10,.12);
+}
+.price-group{
+  display:flex;align-items:baseline;gap:24px;
+}
+.price{
+  font-family:'Cormorant Garamond',serif;font-weight:300;
+  font-size:32px;color:var(--ink);
+}
+.price-label{
+  font-family:'DM Sans',sans-serif;font-weight:300;
+  font-size:14px;color:var(--muted);
+}
+.price-sep{color:var(--stone);margin:0 4px}
+</style>
+</head>
+<body>
+<div class="top-row">
+  <div class="paxa-logo">PAXA <span>Calm Mat</span></div>
+  <div class="top-label">Product Specifications</div>
+</div>
+<div class="grid">
+  <div class="col">
+    <div class="check">BPA-Free</div>
+    <div class="feature-title">Food-grade silicone</div>
+    <div class="feature-body">Safe for daily use. Dishwasher safe — top rack. No plasticisers, no compromises.</div>
+  </div>
+  <div class="col">
+    <div class="check">4-Quadrant Design</div>
+    <div class="feature-title">Different zones sustain engagement</div>
+    <div class="feature-body">Each quadrant presents a different cognitive and lick pattern — maintaining novelty across the cortisol window.</div>
+  </div>
+  <div class="col">
+    <div class="check">99 Suction Cups</div>
+    <div class="feature-title">Stays fixed while your dog works</div>
+    <div class="feature-body">99 suction cups on the base grip any smooth surface. No sliding. No frustration. Sustained parasympathetic activation.</div>
+  </div>
+</div>
+<div class="bottom-row">
+  <div class="price-group">
+    <span class="price">£20 <span class="price-label" style="font-size:14px">single</span></span>
+    <span style="color:var(--stone)">·</span>
+    <span class="price">£34 <span class="price-label" style="font-size:14px">bundle of 2</span></span>
+  </div>
+  <div class="top-label">paxapet.co.uk</div>
+</div>
+</body>
+</html>

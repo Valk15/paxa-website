@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PAXA Calm Mat 07 — Story Product</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --ink:#0A0A0A;--bone:#F5F5F0;--warm:#E8E0D5;
+  --sage:#4A6741;--sage-light:#EAF3DE;--sage-mid:#9FBF93;
+  --stone:#B8A898;--muted:#6B6860;
+}
+html,body{width:1080px;height:1920px;overflow:hidden}
+body{display:flex;flex-direction:column;background:var(--bone)}
+.mat-zone{
+  flex:0 0 50%;
+  background:linear-gradient(135deg,#1a2a38 0%,#0d1f2d 100%);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.mat-zone::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 60% 40%,rgba(91,188,214,.15) 0%,transparent 65%);
+}
+.mat-svg{width:640px;height:640px;position:relative;z-index:1;filter:drop-shadow(0 32px 64px rgba(0,0,0,.6))}
+.spec-card{
+  flex:1;
+  background:var(--ink);
+  padding:52px 64px;
+  display:flex;flex-direction:column;gap:0;
+}
+.card-title{
+  font-family:'Cormorant Garamond',serif;font-weight:300;
+  font-size:52px;color:var(--bone);letter-spacing:-.8px;
+  margin-bottom:32px;
+}
+.specs{
+  display:grid;grid-template-columns:1fr 1fr;gap:0;
+  border-top:1px solid rgba(255,255,255,.08);
+  margin-bottom:40px;
+}
+.spec-row{
+  padding:18px 0;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.spec-row:nth-child(odd){padding-right:32px;border-right:1px solid rgba(255,255,255,.08)}
+.spec-row:nth-child(even){padding-left:32px}
+.spec-k{
+  font-family:'DM Sans',sans-serif;font-weight:500;
+  font-size:9px;letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--muted);margin-bottom:6px;
+}
+.spec-v{
+  font-family:'DM Sans',sans-serif;font-weight:300;
+  font-size:16px;color:var(--stone);
+}
+.swatches-label{
+  font-family:'DM Sans',sans-serif;font-weight:500;
+  font-size:9px;letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--muted);margin-bottom:16px;
+}
+.swatches{display:flex;gap:10px;margin-bottom:40px;flex-wrap:wrap}
+.swatch{
+  width:36px;height:36px;border-radius:50%;
+  border:1.5px solid rgba(255,255,255,.15);
+  position:relative;
+}
+.swatch-label{
+  font-family:'DM Sans',sans-serif;font-weight:300;
+  font-size:9px;color:var(--muted);text-align:center;
+  margin-top:4px;letter-spacing:.5px;
+}
+.swatch-wrap{display:flex;flex-direction:column;align-items:center}
+.ctas{display:flex;gap:16px;margin-top:auto}
+.cta-filled{
+  flex:1;padding:20px;text-align:center;
+  background:var(--bone);
+  font-family:'DM Sans',sans-serif;font-weight:500;
+  font-size:14px;letter-spacing:.5px;color:var(--ink);
+}
+.cta-outlined{
+  flex:1;padding:20px;text-align:center;
+  border:1px solid rgba(255,255,255,.2);
+  font-family:'DM Sans',sans-serif;font-weight:300;
+  font-size:14px;letter-spacing:.5px;color:var(--bone);
+}
+.cta-note{
+  font-family:'DM Sans',sans-serif;font-weight:300;
+  font-size:11px;color:var(--muted);display:block;
+  margin-top:4px;
+}
+</style>
+</head>
+<body>
+<div class="mat-zone">
+  <svg class="mat-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+    <defs>
+      <pattern id="a07" width="26" height="26" patternUnits="userSpaceOnUse"><circle cx="13" cy="13" r="6" fill="#8DDAF5" opacity=".55"/></pattern>
+      <pattern id="b07" width="15" height="15" patternUnits="userSpaceOnUse"><path d="M0 7.5Q3.75 0 7.5 7.5Q11.25 15 15 7.5" fill="none" stroke="#8DDAF5" stroke-width="2.5" opacity=".55"/></pattern>
+      <pattern id="c07" width="28" height="18" patternUnits="userSpaceOnUse"><polyline points="0,9 14,2 28,9" fill="none" stroke="#8DDAF5" stroke-width="2.5" opacity=".55"/><polyline points="0,16 14,9 28,16" fill="none" stroke="#8DDAF5" stroke-width="2.5" opacity=".55"/></pattern>
+      <pattern id="d07" width="20" height="20" patternUnits="userSpaceOnUse"><rect x="6" y="0" width="8" height="8" rx="1.5" fill="#8DDAF5" opacity=".42"/><rect x="0" y="6" width="8" height="8" rx="1.5" fill="#8DDAF5" opacity=".42"/><rect x="12" y="6" width="8" height="8" rx="1.5" fill="#8DDAF5" opacity=".42"/><rect x="6" y="12" width="8" height="8" rx="1.5" fill="#8DDAF5" opacity=".42"/></pattern>
+      <clipPath id="cl07"><rect x="20" y="20" width="360" height="360" rx="18"/></clipPath>
+    </defs>
+    <rect x="20" y="20" width="360" height="360" rx="18" fill="#5BBCD6"/>
+    <g clip-path="url(#cl07)">
+      <rect x="20" y="20" width="174" height="174" fill="url(#a07)"/>
+      <rect x="206" y="20" width="174" height="174" fill="url(#b07)"/>
+      <rect x="20" y="206" width="174" height="174" fill="url(#c07)"/>
+      <rect x="206" y="206" width="174" height="174" fill="url(#d07)"/>
+      <rect x="20" y="190" width="360" height="20" rx="5" fill="#3A9EBE"/>
+      <rect x="190" y="20" width="20" height="360" rx="5" fill="#3A9EBE"/>
+      <rect x="190" y="190" width="20" height="20" rx="0" fill="#2D88A2"/>
+      <rect x="20" y="20" width="360" height="70" fill="rgba(255,255,255,.08)"/>
+    </g>
+    <rect x="20" y="20" width="360" height="360" rx="18" fill="none" stroke="rgba(255,255,255,.13)" stroke-width="2.5"/>
+  </svg>
+</div>
+<div class="spec-card">
+  <div class="card-title">PAXA Calm Mat</div>
+  <div class="specs">
+    <div class="spec-row"><div class="spec-k">Size</div><div class="spec-v">20.8 × 20.8 × 2.3 cm</div></div>
+    <div class="spec-row"><div class="spec-k">Material</div><div class="spec-v">Food-grade silicone</div></div>
+    <div class="spec-row"><div class="spec-k">Design</div><div class="spec-v">4-quadrant, 99 suction cups</div></div>
+    <div class="spec-row"><div class="spec-k">Dishwasher</div><div class="spec-v">Safe — top rack</div></div>
+  </div>
+  <div class="swatches-label">Available colours</div>
+  <div class="swatches">
+    <div class="swatch-wrap"><div class="swatch" style="background:#5BBCD6"></div><div class="swatch-label">Sky Blue</div></div>
+    <div class="swatch-wrap"><div class="swatch" style="background:#1F8A8A"></div><div class="swatch-label">Teal</div></div>
+    <div class="swatch-wrap"><div class="swatch" style="background:#E87B8A"></div><div class="swatch-label">Blush</div></div>
+    <div class="swatch-wrap"><div class="swatch" style="background:#E8834A"></div><div class="swatch-label">Coral</div></div>
+    <div class="swatch-wrap"><div class="swatch" style="background:#7EC850"></div><div class="swatch-label">Lime</div></div>
+    <div class="swatch-wrap"><div class="swatch" style="background:#8B6BAE"></div><div class="swatch-label">Lavender</div></div>
+    <div class="swatch-wrap"><div class="swatch" style="background:#F0C040"></div><div class="swatch-label">Yellow</div></div>
+    <div class="swatch-wrap"><div class="swatch" style="background:#7B8FA0"></div><div class="swatch-label">Slate</div></div>
+    <div class="swatch-wrap"><div class="swatch" style="background:#EFEFEF;border-color:rgba(255,255,255,.35)"></div><div class="swatch-label">White</div></div>
+  </div>
+  <div class="ctas">
+    <div class="cta-filled">Bundle of 2 — £34<span class="cta-note">Save £6 vs single</span></div>
+    <div class="cta-outlined">Single mat — £20<span class="cta-note">Free UK delivery</span></div>
+  </div>
+</div>
+</body>
+</html>
