@@ -1,5 +1,50 @@
+# PAXA — paxapet.co.uk
+# LLM context file: https://paxapet.co.uk/llms.txt
+# Machine-readable summary: https://paxapet.co.uk/.well-known/ai.json
+
 User-agent: *
 Allow: /
 Disallow: /downloads/
+
+# Search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# AI search and citation crawlers (allow indexing for AI answers)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Disallow: /
 
 Sitemap: https://paxapet.co.uk/sitemap.xml
