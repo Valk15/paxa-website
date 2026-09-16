@@ -8,6 +8,24 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/favicon.png">
 <meta name="theme-color" content="#0A0A0A">
+<!-- Analytics and marketing scripts load only after cookie consent -->
+<script>
+function paxaLoadAnalytics() {
+  // Google Analytics 4
+  var ga = document.createElement('script');
+  ga.async = true;
+  ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-E6VF2S1GQX';
+  document.head.appendChild(ga);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', 'G-E6VF2S1GQX');
+}
+if (localStorage.getItem('paxa_cookie_consent') === 'accepted') {
+  paxaLoadAnalytics();
+}
+</script>
 <meta name="description" content="How long does it take to fix dog separation anxiety? Most dogs reach 4-hour independence in 30 days. But four specific factors determine your dog's actual timeline — here's what the science says.">
 <link rel="canonical" href="https://paxapet.co.uk/blog/how-long-to-fix-dog-separation-anxiety/">
 
@@ -925,6 +943,37 @@
   </div>
   <p class="footer-copy">© 2026 PAXA. All rights reserved.</p>
 </footer>
+
+<!-- COOKIE CONSENT BANNER -->
+<div id="paxa-cookie-banner" role="region" aria-label="Cookie consent">
+  <p class="cookie-banner-text">
+    We use cookies for analytics and email personalisation. You can accept all cookies or continue with essential cookies only.
+    <a href="/cookies.html">Cookie Policy</a>
+  </p>
+  <div class="cookie-banner-actions">
+    <button class="cookie-btn-accept" id="cookieAccept">Accept all cookies</button>
+    <button class="cookie-btn-decline" id="cookieDecline">Essential only</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  var banner = document.getElementById('paxa-cookie-banner');
+  var consent = localStorage.getItem('paxa_cookie_consent');
+  if (!consent) {
+    setTimeout(function() { banner.classList.add('visible'); }, 600);
+  }
+  document.getElementById('cookieAccept').addEventListener('click', function() {
+    localStorage.setItem('paxa_cookie_consent', 'accepted');
+    banner.classList.remove('visible');
+    paxaLoadAnalytics();
+  });
+  document.getElementById('cookieDecline').addEventListener('click', function() {
+    localStorage.setItem('paxa_cookie_consent', 'declined');
+    banner.classList.remove('visible');
+  });
+})();
+</script>
 
 </body>
 </html>

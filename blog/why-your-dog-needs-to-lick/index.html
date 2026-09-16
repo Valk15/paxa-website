@@ -1159,5 +1159,36 @@ document.querySelectorAll('#cta-calm-mat, .btn-final, .btn-sticky').forEach(func
   });
 });
 </script>
+<!-- COOKIE CONSENT BANNER -->
+<div id="paxa-cookie-banner" role="region" aria-label="Cookie consent">
+  <p class="cookie-banner-text">
+    We use cookies for analytics and email personalisation. You can accept all cookies or continue with essential cookies only.
+    <a href="/cookies.html">Cookie Policy</a>
+  </p>
+  <div class="cookie-banner-actions">
+    <button class="cookie-btn-accept" id="cookieAccept">Accept all cookies</button>
+    <button class="cookie-btn-decline" id="cookieDecline">Essential only</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  var banner = document.getElementById('paxa-cookie-banner');
+  var consent = localStorage.getItem('paxa_cookie_consent');
+  if (!consent) {
+    setTimeout(function() { banner.classList.add('visible'); }, 600);
+  }
+  document.getElementById('cookieAccept').addEventListener('click', function() {
+    localStorage.setItem('paxa_cookie_consent', 'accepted');
+    banner.classList.remove('visible');
+    paxaLoadAnalytics();
+  });
+  document.getElementById('cookieDecline').addEventListener('click', function() {
+    localStorage.setItem('paxa_cookie_consent', 'declined');
+    banner.classList.remove('visible');
+  });
+})();
+</script>
+
 </body>
 </html>

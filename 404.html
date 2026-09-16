@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page not found — PAXA</title>
+<meta name="robots" content="noindex, follow">
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0A0A0A">
+<!-- Analytics and marketing scripts load only after cookie consent -->
+<script>
+function paxaLoadAnalytics() {
+  // Google Analytics 4
+  var ga = document.createElement('script');
+  ga.async = true;
+  ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-E6VF2S1GQX';
+  document.head.appendChild(ga);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', 'G-E6VF2S1GQX');
+}
+if (localStorage.getItem('paxa_cookie_consent') === 'accepted') {
+  paxaLoadAnalytics();
+}
+</script>
+<link rel="stylesheet" href="/styles.css">
+<style>
+  .nf-wrap { max-width: 640px; margin: 0 auto; padding: 18vh 8vw 14vh; text-align: center; }
+  .nf-code { font-family: var(--serif); font-size: 64px; color: var(--sage); margin: 0 0 8px; }
+  .nf-title { font-family: var(--serif); font-size: 34px; font-weight: 400; margin: 0 0 16px; color: var(--ink); }
+  .nf-text { font-size: 15px; font-weight: 300; color: var(--muted); line-height: 1.7; margin: 0 0 32px; }
+  .nf-links { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .nf-btn { display: inline-block; padding: 13px 26px; border-radius: 2px; font-size: 14px; text-decoration: none; }
+  .nf-btn-primary { background: var(--sage); color: var(--bone); }
+  .nf-btn-ghost { border: 1px solid var(--stone-light); color: var(--ink); }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">PAXA</a>
+  <div class="nav-links">
+    <a href="/#how-it-works" class="nav-link">How it works</a>
+    <a href="/#whats-inside" class="nav-link">What's inside</a>
+    <a href="/#pricing" class="nav-link">Pricing</a>
+    <a href="/blog/" class="nav-link">Blog</a>
+    <a href="mailto:hello@paxapet.co.uk" class="nav-link">Contact</a>
+  </div>
+  <a href="https://paxapet.gumroad.com/l/PAXA-Solo" target="_blank" class="nav-cta">
+    Start the protocol — &pound;29 &rarr;
+  </a>
+</nav>
+
+<div class="nf-wrap">
+  <p class="nf-code">404</p>
+  <h1 class="nf-title">This page does not exist</h1>
+  <p class="nf-text">The address may have changed, or the page may have been removed. The separation anxiety guides below cover the protocol in full.</p>
+  <div class="nf-links">
+    <a href="/blog/" class="nf-btn nf-btn-primary">Read the guides</a>
+    <a href="/" class="nf-btn nf-btn-ghost">Back to home</a>
+  </div>
+</div>
+
+<!-- COOKIE CONSENT BANNER -->
+<div id="paxa-cookie-banner" role="region" aria-label="Cookie consent">
+  <p class="cookie-banner-text">
+    We use cookies for analytics and email personalisation. You can accept all cookies or continue with essential cookies only.
+    <a href="/cookies.html">Cookie Policy</a>
+  </p>
+  <div class="cookie-banner-actions">
+    <button class="cookie-btn-accept" id="cookieAccept">Accept all cookies</button>
+    <button class="cookie-btn-decline" id="cookieDecline">Essential only</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  var banner = document.getElementById('paxa-cookie-banner');
+  var consent = localStorage.getItem('paxa_cookie_consent');
+  if (!consent) {
+    setTimeout(function() { banner.classList.add('visible'); }, 600);
+  }
+  document.getElementById('cookieAccept').addEventListener('click', function() {
+    localStorage.setItem('paxa_cookie_consent', 'accepted');
+    banner.classList.remove('visible');
+    paxaLoadAnalytics();
+  });
+  document.getElementById('cookieDecline').addEventListener('click', function() {
+    localStorage.setItem('paxa_cookie_consent', 'declined');
+    banner.classList.remove('visible');
+  });
+})();
+</script>
+
+</body>
+</html>
