@@ -8,6 +8,24 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/favicon.png">
 <meta name="theme-color" content="#0A0A0A">
+<!-- Analytics and marketing scripts load only after cookie consent -->
+<script>
+function paxaLoadAnalytics() {
+  // Google Analytics 4
+  var ga = document.createElement('script');
+  ga.async = true;
+  ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-E6VF2S1GQX';
+  document.head.appendChild(ga);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', 'G-E6VF2S1GQX');
+}
+if (localStorage.getItem('paxa_cookie_consent') === 'accepted') {
+  paxaLoadAnalytics();
+}
+</script>
 <meta name="description" content="PAXA's 30-day money-back guarantee and refund process for PAXA Solo.">
 <meta name="robots" content="noindex">
 <link rel="canonical" href="https://paxapet.co.uk/refund.html">
@@ -157,6 +175,76 @@ footer {
   text-decoration: none;
 }
 .footer-links a:hover { color: var(--ink); }
+/* ── COOKIE CONSENT BANNER ── */
+#paxa-cookie-banner {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 9999;
+  background: var(--ink);
+  color: var(--bone);
+  padding: 20px 8vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
+#paxa-cookie-banner.visible {
+  transform: translateY(0);
+}
+.cookie-banner-text {
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(245,245,240,0.75);
+  flex: 1;
+  min-width: 200px;
+}
+.cookie-banner-text a {
+  color: var(--sage-mid);
+  text-decoration: none;
+}
+.cookie-banner-text a:hover { text-decoration: underline; }
+.cookie-banner-actions {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+}
+.cookie-btn-accept {
+  background: var(--sage);
+  color: var(--bone);
+  border: none;
+  padding: 10px 20px;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 400;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  transition: background 0.2s;
+}
+.cookie-btn-accept:hover { background: #3a5232; }
+.cookie-btn-decline {
+  background: transparent;
+  color: rgba(245,245,240,0.5);
+  border: 1px solid rgba(245,245,240,0.2);
+  padding: 10px 20px;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 300;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  transition: color 0.2s, border-color 0.2s;
+}
+.cookie-btn-decline:hover {
+  color: rgba(245,245,240,0.8);
+  border-color: rgba(245,245,240,0.4);
+}
+@media (max-width: 600px) {
+  #paxa-cookie-banner { flex-direction: column; align-items: flex-start; }
+  .cookie-banner-actions { width: 100%; }
+  .cookie-btn-accept, .cookie-btn-decline { flex: 1; text-align: center; }
 </style>
 </head>
 <body>
@@ -216,6 +304,37 @@ footer {
     <a href="mailto:hello@paxapet.co.uk">Contact</a>
   </div>
 </footer>
+
+<!-- COOKIE CONSENT BANNER -->
+<div id="paxa-cookie-banner" role="region" aria-label="Cookie consent">
+  <p class="cookie-banner-text">
+    We use cookies for analytics and email personalisation. You can accept all cookies or continue with essential cookies only.
+    <a href="/cookies.html">Cookie Policy</a>
+  </p>
+  <div class="cookie-banner-actions">
+    <button class="cookie-btn-accept" id="cookieAccept">Accept all cookies</button>
+    <button class="cookie-btn-decline" id="cookieDecline">Essential only</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  var banner = document.getElementById('paxa-cookie-banner');
+  var consent = localStorage.getItem('paxa_cookie_consent');
+  if (!consent) {
+    setTimeout(function() { banner.classList.add('visible'); }, 600);
+  }
+  document.getElementById('cookieAccept').addEventListener('click', function() {
+    localStorage.setItem('paxa_cookie_consent', 'accepted');
+    banner.classList.remove('visible');
+    paxaLoadAnalytics();
+  });
+  document.getElementById('cookieDecline').addEventListener('click', function() {
+    localStorage.setItem('paxa_cookie_consent', 'declined');
+    banner.classList.remove('visible');
+  });
+})();
+</script>
 
 </body>
 </html>
