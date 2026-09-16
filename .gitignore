@@ -1,3 +1,23 @@
 .env
 node_modules/
 .claude/worktrees/
+
+# --- not part of the deployed site (removed 2026-09-16) ---
+shopify-theme/
+PAXA Calm Mat Images/
+creatives/
+graphify-out/
+scripts/
+content/
+INSTALL/
+images/calm-mat/
+calm-mat.html
+telegram-bot.js
+SHOPIFY_THEME_PROMPT.md
+skills-lock.json
+blog-post-3-distribution.txt
+PAXA_Product_Research_SOP.docx
+PAXA_Product_Research_Tracker.xlsx
+*.bat
+*.ps1
+.~lock.*#
