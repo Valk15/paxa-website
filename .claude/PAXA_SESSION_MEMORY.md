@@ -1,97 +1,91 @@
-# PAXA — Static Session Memory
-*Read this first in every session. Single source of truth for current state.*
-*Last updated: April 2026*
+# PAXA — Current State
+*Single source of truth. Read first in every session. Last updated: 19 September 2026.*
+*Every figure below was verified against Cloudflare, Search Console, Gumroad, GA4 and this repo.*
+
+---
+
+## OWNERSHIP
+
+**Youness is the sole founder and owner.** There is no team. He holds every account —
+Cloudflare, GitHub, Gumroad, Klaviyo, GA4, Search Console, TikTok, Instagram — and does
+every role. Never assign a task to another person, never wait on anyone, never write
+"pending X". Every task is his.
 
 ---
 
 ## GATE STATUS
-- Gate 2: 0/5 organic sales — EVERYTHING serves this number
-- No paid ads until Gate 2 passes
+
+**Gate 2: 1 of 5 organic sales.** Everything serves this number. No paid ads until it passes.
+
+The one sale: 15 Sep, GBP 29, Gumroad referrer `paxapet.co.uk` — from the website, not
+Gumroad Discover. The buyer never took the free preview; she bought cold at full price,
+almost certainly from a blog post.
+
+Gumroad shows 6 records but only 1 is a sale: 1 x GBP 29, 1 x GBP 4 tip on the free
+preview, 3 real free-preview leads, 1 internal. Klaviyo has four real people in it.
+Do not review email open rates until that number is far higher.
 
 ---
 
-## WHAT CHANGED THIS SESSION (April 2026)
+## TRAFFIC — Search Console, 28 days to 13 Sep
 
-| Item | Old State | New State |
-|------|-----------|-----------|
-| Hosting | Netlify | Cloudflare |
-| Claude Code | Ayoub's machine | Youness's machine (Windows, v2.1.42) |
-| Claude Code auth | Broken (401) | Fixed ✅ |
-| Klaviyo DNS | Not configured | Fixed — 4 NS records in Cloudflare ✅ |
-| Blog posts | 1 planned | 3 live ✅ |
-| Instagram | Profile only | Carousel #1 live ✅ |
-| Reddit | Not started | Hamza started today ✅ |
-| TikTok | 0 views | 2 videos live, ~475 views ✅ |
-| Canva | Not connected | Connected (Education plan — no AI gen) |
+41 clicks, 3,790 impressions, 1.1% CTR, average position 25.7.
+12 pages get impressions, 5 get clicks. **7 pages indexed, 12 not.**
 
----
+| Page | Clicks | Impressions | Position |
+|---|---|---|---|
+| how-long-to-fix | 23 | 1,880 | 9.1 |
+| the-40-minute-rule | 11 | 452 | 7.7 |
+| how-to-stop | 3 | 1,017 | 72.3 |
+| homepage | 3 | 37 | 6.4 |
+| why-calming-treats | 2 | 426 | 11.3 |
 
-## LIVE BLOG POSTS
-1. /blog/how-to-stop-dog-separation-anxiety/
-2. /blog/why-calming-treats-dont-fix-separation-anxiety/
-3. /blog/the-40-minute-rule-dog-separation-anxiety/ ✅ live
-
-Next: "Separation anxiety vs boredom: how to tell the difference"
+The top ten queries by impressions have zero clicks between them — eight are "treatment"
+variants at positions 61-76. Fixed 16 Sep; results not yet confirmed. Check Search Console
+before assuming improvement.
 
 ---
 
-## ACTIVE TASKS BY PERSON
+## INFRASTRUCTURE
 
-**Youness (Brand, Marketing, Code, SEO, GitHub, Claude Code):**
-- TikTok hook rewrite — PRIORITY (avg 4–5s watch time, hooks failing)
-- Write TikTok + Instagram scripts (3x/week) for Hamza + Youssef to post
-- All site updates, HTML edits, GitHub pushes
-- SEO: blog post #4, schema markup, keyword monitoring
-- Claude Code agents: maintenance, new agent briefs
+| Thing | Reality |
+|---|---|
+| Hosting | Cloudflare Pages, project `paxa-website.pages.dev` — NOT Netlify |
+| Repo | github.com/Valk15/paxa-website, branch `main`, auto-deploys on push |
+| DNS / WAF | Cloudflare zone paxapet.co.uk |
+| GA4 | `G-E6VF2S1GQX` — consent-gated, fires only after `paxa_cookie_consent === 'accepted'`, so it always undercounts. Search Console is the reliable traffic number |
+| Klaviyo | company `R3fCTy`, 5-email flow off the free preview |
+| Local repo | `C:\Users\lenovo\OneDrive\Desktop\Ai Projects\paxa-website` — in OneDrive, which has repeatedly corrupted git. `core.autocrlf` is `false` |
 
-**Youssef (Social Media Content — TikTok + Instagram, especially physical product):**
-- Brief from Youness on physical product TikTok scripts once lick mat sample arrives
-- Film + edit TikTok content for physical product launches
-- Instagram Reels for physical product
-- Coordinate with Hamza on posting schedule
-
-**Hamza (Community, Customer Support, Social Posting):**
-- Create Facebook account (no VPN needed)
-- Post Facebook group copy from blog-post-3-distribution.txt
-- Post Pinterest pins from blog-post-3-distribution.txt
-- Reddit: 4–5 comments/day on r/dogs, r/dogadvice, r/puppy101
-- No PAXA links until 5–7 days of karma building
-- Post TikTok + Instagram content (from Youness scripts)
-- Customer support: respond to all DMs and comments
-
-**Ayoub (Klaviyo only):**
-- Add dog name field to Klaviyo email capture
-- Monitor email flow open rates after first 50 subscribers
+**GA4 data before 16 Sep is not usable** — the tag was missing from 9 of 17 pages,
+including the top entry page.
 
 ---
 
-## KNOWN ISSUES
-- Claude Code stop hook error: `'_R' is not recognized` — Windows bash issue, cosmetic only, does not block work
-- Canva Education plan: no AI design generation — manual builds only
-- Testimonials on site: may be fake — UK ASA risk, needs resolution
-- TikTok hook retention: 4–5s avg = hook failing, scripts need rewriting — NEXT CONTENT PRIORITY
-- Cloudflare cache purge needed after blog index confirmed (Youness manual step)
+## CONTENT
+
+14 blog posts live plus the blog index. One finished post
+(`dog-separation-anxiety-cost-uk`) is staged on branch `publish/cost-uk`, deliberately
+unpublished until the indexing backlog clears.
+
+**Discontinued — never reference as live:** PAXA Calm Mat (GBP 34 lick mat) and Shopify.
+Both removed from the deploy, pages 301'd.
+
+---
+
+## OPEN
+
+1. Confirm in Search Console whether the 7 indexing requests landed, then publish `publish/cost-uk`
+2. **Testimonials** — three named testimonials on the site must be real or removed. UK ASA treats fake reviews as a violation. Legal exposure, not a task
+3. `.claude/` — 380 files still deployed publicly (WAF-blocked, not removed). Real fix: move the site into `/public` and set that as the Cloudflare build output directory
+4. Dog-name field on the Klaviyo capture form
+5. FAQPage + Product schema markup
 
 ---
 
 ## QUICK REFERENCE
 
-**Product URL:** https://paxapet.gumroad.com/l/PAXA-Solo
-**Website:** https://paxapet.co.uk
-**CTA text:** "Start the protocol — £29 →"
-**Brand voice:** Calm authority, science-backed, counter-intuitive hooks, UK English
-**Never say:** vet-reviewed, fur baby, revolutionary, guaranteed overnight results
-
----
-
-## SESSION STARTUP CHECKLIST
-When starting a new Claude.ai session, confirm:
-- [ ] Gate 2 count (ask Youness for current sales number)
-- [ ] Any new blog posts published
-- [ ] TikTok/Instagram metrics updated
-- [ ] Klaviyo DNS verified green in Klaviyo dashboard
-- [ ] Blog post #3 live on site
-
----
-
-*This file is the fast-load reference. Full detail in 00_PAXA_MASTER_CONTEXT.md*
+Product: https://paxapet.gumroad.com/l/PAXA-Solo · Site: https://paxapet.co.uk
+CTA: "Start the protocol — GBP 29 ->"
+Voice: calm authority, science-backed, counter-intuitive hooks, UK English
+Never: vet-reviewed, fur baby, revolutionary, guaranteed overnight results, urgency theatre

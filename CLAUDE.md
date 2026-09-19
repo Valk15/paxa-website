@@ -29,7 +29,7 @@ When any tracking change is made to HTML files, ALWAYS verify:
 
 ## What This Project Is
 
-PAXA is a premium UK dog behavioral wellness brand. Our core product is **PAXA Solo** — a £29 digital PDF workbook that solves dog separation anxiety using systematic desensitisation and counter-conditioning. We sell via Gumroad at paxapet.co.uk, hosted on Netlify.
+PAXA is a premium UK dog behavioral wellness brand. Our core product is **PAXA Solo** — a £29 digital PDF workbook that solves dog separation anxiety using systematic desensitisation and counter-conditioning. We sell via Gumroad at paxapet.co.uk, hosted on Cloudflare Pages.
 
 **This is not a hobby project. Every output must be production-ready, ROI-focused, and brand-correct.**
 
@@ -70,14 +70,11 @@ PAXA is a premium UK dog behavioral wellness brand. Our core product is **PAXA S
 
 ---
 
-## Team Roles
+## Ownership
 
-| Person | Role |
-|--------|------|
-| Youness | Brand, marketing, content, ads — also all code, SEO, GitHub, Claude Code agents, site updates |
-| Ayoub | Klaviyo email flows only |
-| Hamza | Community management, customer support, social media posting |
-| Youssef | Social media content creation — TikTok + Instagram, especially for physical product |
+**Youness is the sole founder and owner.** He holds every account and does every role:
+brand, marketing, content, ads, code, SEO, GitHub, Cloudflare, Gumroad, Klaviyo, social.
+There is no team. Never assign a task to anyone else or wait on anyone else.
 
 ---
 

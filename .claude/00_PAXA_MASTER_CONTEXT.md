@@ -17,9 +17,6 @@
 | Person | Role |
 |--------|------|
 | Youness | Co-founder — Brand & Marketing Lead + all code, SEO, GitHub, Claude Code agents, site updates |
-| Ayoub | Co-founder — Klaviyo email flows only |
-| Hamza | Co-founder — Community management, customer support, social media posting |
-| Youssef | Social Media Content — TikTok + Instagram content creation, especially for physical product |
 
 ---
 
@@ -93,8 +90,8 @@ Premium UK digital pet wellness brand. Solving dog separation anxiety with behav
 ## WHAT IS LIVE RIGHT NOW
 
 ### Website — paxapet.co.uk ✅ LIVE
-- Hosted on Cloudflare (migrated from Netlify)
-- GitHub repo: bayoubnassibi-prog/paxa-website
+- Hosted on Cloudflare Pages (project paxa-website.pages.dev)
+- GitHub repo: Valk15/paxa-website
 - Full landing page: hero, 4 protocol phases, what's inside, science section, testimonials, FAQ
 - Free 2-day preview section + exit intent popup with email capture
 - Cookie consent banner
@@ -107,7 +104,7 @@ Premium UK digital pet wellness brand. Solving dog separation anxiety with behav
 |---|-------|-----|--------|
 | 1 | How to Stop Dog Separation Anxiety: The Complete Science-Backed Guide | /blog/how-to-stop-dog-separation-anxiety/ | ✅ Live |
 | 2 | Why Calming Treats Don't Fix Dog Separation Anxiety | /blog/why-calming-treats-dont-fix-separation-anxiety/ | ✅ Live |
-| 3 | The 40-Minute Rule: Why Your Dog's Anxiety Peaks When You Leave | /blog/the-40-minute-rule-dog-separation-anxiety/ | ✅ Live (pending Ayoub push) |
+| 3 | The 40-Minute Rule: Why Your Dog's Anxiety Peaks When You Leave | /blog/the-40-minute-rule-dog-separation-anxiety/ | ✅ Live |
 
 Next blog topics (priority order):
 4. "Separation anxiety vs boredom: how to tell the difference"
@@ -131,17 +128,17 @@ Next blog topics (priority order):
 | Day 5 | Soft sell | What Days 3–30 look like |
 | Day 7 | Hard close | Objection handling, guarantee, final CTA |
 
-**Pending:** Add dog's name field to Klaviyo email capture — Ayoub, 30 min
+**Pending:** Add dog's name field to Klaviyo email capture — Youness
 
 ### Social Media
 - TikTok: ✅ 2 videos live, ~475 views total, avg watch time 4–5s (hook retention problem)
 - Instagram: ✅ Carousel #1 live — dark editorial 8-slide brand introduction post
-- Reddit: ✅ Hamza started seeding today (r/dogs, r/dogadvice, r/puppy101)
-- Facebook groups: Hamza starting this week
+- Reddit: r/dogs, r/dogadvice, r/puppy101 — value first, no links until karma is built
+- UK Facebook dog owner groups
 
 ### Technical Infrastructure
-- GitHub: bayoubnassibi-prog/paxa-website
-- Hosting: Cloudflare (migrated from Netlify)
+- GitHub: Valk15/paxa-website
+- Hosting: Cloudflare Pages
 - Claude Code: installed on Youness's machine (Windows, VS Code, v2.1.42) ✅ authenticated
 - Telegram bot: built — Youness sends tasks → executes in Claude Code → output returned
 - 6-agent PAXA system in .claude/agents/
@@ -190,10 +187,10 @@ The only metric that matters: **5 organic sales.**
 - Gate 4 (future): Week 12 review → AU + physical product research
 
 **Active channels:**
-- TikTok + Instagram (Hamza + Youssef post, Youness writes scripts — 3x/week)
-- Reddit: r/dogs, r/dogadvice, r/puppy101 (Hamza — genuine value, no spam)
-- UK Facebook dog groups (Hamza)
-- Email: Klaviyo 5-email flow via free 2-day preview lead magnet (Ayoub manages)
+- TikTok + Instagram — 3x/week
+- Reddit: r/dogs, r/dogadvice, r/puppy101 — genuine value, no spam
+- UK Facebook dog owner groups
+- Email: Klaviyo 5-email flow via free 2-day preview lead magnet
 - Blog: 3 posts live, distributing via Facebook groups + Pinterest
 
 ---
@@ -202,16 +199,14 @@ The only metric that matters: **5 organic sales.**
 
 ### Urgent
 1. **Testimonials** — Sarah M. / James & Rachel T. / Anna K. must be real or removed. UK ASA risk.
-2. **Add dog name field** to Klaviyo email capture — Ayoub, 30 min
+2. **Add dog name field** to Klaviyo email capture
 3. **Fix stop hook error** in Claude Code Windows — remove `_R` bash hook from .claude/settings
-4. **Post Instagram carousel #1** — 8 slides built, copy ready, Hamza to post today
-5. **Hamza posts Facebook group copy** for blog post #3 — file in repo: blog-post-3-distribution.txt
-6. **Hamza posts Pinterest pins** for blog post #3 — same file
+4. **Post Instagram carousel #1** — 8 slides built, copy ready
 
 ### This Month
 7. **First 5 organic sales** — everything else is secondary
 8. **Blog post #4** — "Separation anxiety vs boredom: how to tell the difference"
-9. **Schema markup** — FAQPage + Product schema — Ayoub
+9. **Schema markup** — FAQPage + Product schema
 10. **Email flow review** — after first 50 subscribers, check open rates
 11. **TikTok hook fix** — avg watch time 4–5s means hook is failing, rewrite needed
 
@@ -223,7 +218,7 @@ The only metric that matters: **5 organic sales.**
 - 3 blog posts live
 - Instagram carousel #1 live (dark editorial, 8 slides)
 - TikTok: 2 videos live (~475 views)
-- Reddit seeding started (Hamza)
+- Reddit seeding started
 - Blog post #3 distribution copy created
 
 ---
@@ -235,12 +230,12 @@ The only metric that matters: **5 organic sales.**
 | paxapet.co.uk | Landing page + blog | Youness (Cloudflare) |
 | GitHub (paxa-website) | Codebase + agents | Youness |
 | Gumroad | Product delivery + payments | Youness |
-| Klaviyo | Email marketing, 5-email flow | Ayoub |
+| Klaviyo | Email marketing, 5-email flow | Youness |
 | Telegram bot | Youness → Claude Code bridge | Youness |
 | Claude Code v2.1.42 | 6-agent PAXA system | Youness (Windows) |
 | Claude.ai | Strategy, content, planning | Youness |
 | Canva | Design (Education plan — no AI gen) | Youness |
-| TikTok / Instagram | Organic content — posting | Hamza + Youssef |
+| TikTok / Instagram | Organic content — posting | Youness |
 
 ---
 

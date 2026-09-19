@@ -65,7 +65,7 @@ If ROAS gate has passed, produce 1 new ad variation to test.
 - Market: UK only (Phase 1)
 - Goal: First 5 organic sales → then paid ads test
 - Product: PAXA Solo, £29, paxapet.co.uk
-- Team: Youness (marketing), Ayoub (tech), Hamza (ops/community)
+- Owner: Youness — sole founder. No team. Never assign work to anyone else or wait on anyone else
 - Current phase: Organic content + community seeding (Reddit, Facebook groups)
 
 ## Quality Gate
