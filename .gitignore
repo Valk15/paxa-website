@@ -21,3 +21,6 @@ PAXA_Product_Research_Tracker.xlsx
 *.bat
 *.ps1
 .~lock.*#
+
+# archived — discontinued products / dead platforms, kept locally only
+_archive/
