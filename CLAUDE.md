@@ -1,29 +1,18 @@
 ## AUTO-LOAD ON EVERY SESSION
 Read these files at the start of every session before doing anything else:
-1. .claude/00_PAXA_MASTER_CONTEXT.md — full project context, team, strategy, gate status
+1. .claude/00_PAXA_MASTER_CONTEXT.md — full project context, strategy, gate status
 2. .claude/PAXA_SESSION_MEMORY.md — latest changes, active tasks, known issues
 
-## CURRENT STATUS (April 2026)
-- Gate 2: 0/5 organic sales
-- Hosting: Cloudflare
-- Blog: 3 posts live
-- TikTok: 2 videos live, ~475 views
-- Instagram: carousel #1 live
-- Klaviyo DNS: fixed
-- Claude Code: Youness machine, Windows, v2.1.42, authenticated
-- TikTok Pixel: D7J2053C77U8847ELUI0 — live on calm-mat.html, calm-mat-landing.html, Shopify
-- Meta Pixel: 977092621560109 — live on calm-mat.html (advertorial only), Shopify
-
-## Pixel Verification Checklist
-When any tracking change is made to HTML files, ALWAYS verify:
-1. Visit paxapet.co.uk/calm-mat in browser → accept cookies → check TikTok Pixel Helper shows ViewContent on pixel D7J2053C77U8847ELUI0
-2. Check Meta Pixel Helper shows ViewContent on pixel 977092621560109
-3. Click a CTA button → both helpers should show AddToCart
-4. Visit Shopify store product page → both pixels should fire ViewContent
-5. In TikTok Events Manager → Data Sources → confirm "Browser events received" step is green
-6. In Meta Events Manager → confirm events show in Test Events tab
-7. If Pixel Helper shows "No pixel found" — check if cookies have been accepted (both pixels are consent-gated)
-8. If pixel fires on site but not Shopify → check TikTok for Shopify / Meta for Shopify app is connected with correct pixel ID
+## CURRENT STATUS (verified 24 Sep 2026)
+- Gate 2: 1/5 organic sales (15 Sep, £29, referrer paxapet.co.uk)
+- Hosting: Cloudflare Pages (paxa-website.pages.dev), auto-deploys from main on github.com/Valk15/paxa-website
+- Only live product: PAXA Solo. Calm Mat and Shopify are discontinued — never reference as live
+- Search Console (28 days to ~22 Sep): 49 clicks, 4.3K impressions, avg position 20.8. 16 pages indexed (was 7)
+- Blog: 14 posts live; publish/cost-uk staged, unpublished — owner's decision
+- Social: TikTok 2 videos (~475 views), Instagram 1 carousel — account access being recovered
+- No reviews or testimonials exist. Never add review text, star ratings or aggregateRating schema until real reviews exist (UK ASA)
+- Pixels: TikTok and Meta pixels were only on the removed calm-mat pages. Paid ads locked until Gate 2
+- Local repo sits in OneDrive — if git errors on index.lock, delete .git/index.lock and retry
 
 # PAXA — Claude Code Project Intelligence
 
@@ -42,17 +31,17 @@ PAXA is a premium UK dog behavioral wellness brand. Our core product is **PAXA S
 | `index.html` | Main landing page — live at paxapet.co.uk |
 | `.claude/agents/` | 6 PAXA-specific agents |
 | `.claude/skills/` | Brand + marketing skills |
-| `paxa-brand-identity.md` | Full brand system — READ THIS FIRST |
-| `paxa-operator-guide.md` | How to think, decide, prioritise |
-| `paxa-output-formats.md` | Templates for every output type |
+| `.claude/paxa-brand-identity.md` | Full brand system — READ THIS FIRST |
+| `.claude/paxa-operator-guide.md` | How to think, decide, prioritise |
+| `.claude/paxa-output-formats.md` | Templates for every output type |
 
 ---
 
 ## Before Every Task — Load These
 
-1. Read `paxa-brand-identity.md` for voice, colours, tone rules
-2. Read `paxa-operator-guide.md` for business context and decision rules
-3. Read `paxa-output-formats.md` for the correct output format
+1. Read `.claude/paxa-brand-identity.md` for voice, colours, tone rules
+2. Read `.claude/paxa-operator-guide.md` for business context and decision rules
+3. Read `.claude/paxa-output-formats.md` for the correct output format
 
 ---
 
@@ -63,7 +52,7 @@ PAXA is a premium UK dog behavioral wellness brand. Our core product is **PAXA S
 - **Free lead magnet:** https://paxapet.gumroad.com/l/PAXA_Free_2Days (Days 1 & 2 free)
 - **Website:** https://paxapet.co.uk
 - **Email:** hello@paxapet.co.uk
-- **Market:** UK Phase 1 — Australia Phase 2
+- **Market:** UK only (Australia is Phase 2 — not now)
 - **ICP:** UK dog owners, 28–55, Labrador/Cockapoo/Spaniel breeds, post-pandemic velcro dogs
 - **Budget:** $1,000 total — currently pre-paid-ads phase
 - **Gate:** 5 organic sales before any Meta ad spend
