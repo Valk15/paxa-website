@@ -8,7 +8,7 @@ Read these files at the start of every session before doing anything else:
 - Hosting: Cloudflare Pages (paxa-website.pages.dev), auto-deploys from main on github.com/Valk15/paxa-website
 - Only live product: PAXA Solo. Calm Mat and Shopify are discontinued — never reference as live
 - Search Console (28 days to ~22 Sep): 49 clicks, 4.3K impressions, avg position 20.8. 16 pages indexed (was 7)
-- Blog: 14 posts live; publish/cost-uk staged, unpublished — owner's decision
+- Blog: 15 posts live (cost-uk published 24 Sep)
 - Social: TikTok 2 videos (~475 views), Instagram 1 carousel — account access being recovered
 - No reviews or testimonials exist. Never add review text, star ratings or aggregateRating schema until real reviews exist (UK ASA)
 - Pixels: TikTok and Meta pixels were only on the removed calm-mat pages. Paid ads locked until Gate 2
