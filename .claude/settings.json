@@ -1,7 +1,0 @@
-{
-  "enabledPlugins": {
-    "claude-mem@thedotmack": false,
-    "context-mode@context-mode": false,
-    "hookify@claude-plugins-official": false
-  }
-}

@@ -9,9 +9,11 @@ Disallow: /downloads/
 # Search engines
 User-agent: Googlebot
 Allow: /
+Disallow: /downloads/
 
 User-agent: Bingbot
 Allow: /
+Disallow: /downloads/
 
 # AI search and citation crawlers (allow indexing for AI answers)
 User-agent: GPTBot

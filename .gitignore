@@ -24,3 +24,9 @@ PAXA_Product_Research_Tracker.xlsx
 
 # archived — discontinued products / dead platforms, kept locally only
 _archive/
+
+# --- local-only working files, never deployed (untracked 2026-09-28) ---
+.claude/
+CLAUDE.md
+.env.example
+*distribution-brief.txt
