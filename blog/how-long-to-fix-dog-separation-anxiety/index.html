@@ -634,6 +634,15 @@ if (localStorage.getItem('paxa_cookie_consent') === 'accepted') {
     .progress-table { font-size: 13px; }
   }
 </style>
+<style>
+  /* Free-guide CTA: secondary to the £29 CTA, inherits page text colour so it works on light and dark layouts */
+  .free-guide-cta { border: 1px solid rgba(125,138,110,0.45); border-radius: 4px; padding: 32px; margin: 48px 0; text-align: center; color: inherit; }
+  .free-guide-cta h3 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 26px; line-height: 1.25; margin: 0 0 12px; color: inherit; }
+  .free-guide-cta p { font-size: 15px; line-height: 1.7; margin: 0 auto 20px; max-width: 520px; opacity: 0.75; color: inherit; }
+  .free-guide-cta .btn-free-guide { display: inline-flex; align-items: center; gap: 8px; font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: inherit; background: transparent; border: 1px solid currentColor; padding: 13px 28px; border-radius: 2px; text-decoration: none; transition: background 0.2s, transform 0.15s; }
+  .free-guide-cta .btn-free-guide:hover { background: rgba(125,138,110,0.15); transform: translateY(-1px); }
+  @media (max-width: 600px) { .free-guide-cta { padding: 24px 20px; } .free-guide-cta h3 { font-size: 22px; } }
+</style>
 </head>
 <body>
 
@@ -721,6 +730,13 @@ if (localStorage.getItem('paxa_cookie_consent') === 'accepted') {
         <div class="factor-title">Unmanaged Absences</div>
         <p class="factor-desc">Every time a dog is left alone above their anxiety threshold — between training sessions, during work, on the school run — the amygdala receives confirming evidence that being alone is dangerous. Unmanaged absences do not pause the protocol: they actively work against it. Preventing them during the treatment window is not optional — it is the difference between 4 weeks and 4 months.</p>
       </div>
+    </div>
+
+    <!-- FREE GUIDE CTA (after second section) -->
+    <div class="free-guide-cta">
+      <h3>Not ready for 30 days? Start with two.</h3>
+      <p>Days 1 and 2 of the PAXA Solo protocol are free to download. See how the method works with your own dog before you decide on the full programme.</p>
+      <a href="https://paxapet.gumroad.com/l/PAXA_Free_2Days" target="_blank" class="btn-free-guide">Get Days 1 & 2 free →</a>
     </div>
 
     <h2>The week-by-week timeline: what a correctly run protocol looks like</h2>
@@ -970,6 +986,13 @@ if (localStorage.getItem('paxa_cookie_consent') === 'accepted') {
         <p class="faq-question">Does the length of time a dog has had separation anxiety affect recovery time?</p>
         <p class="faq-answer">Less than most owners expect. The nervous system's capacity for neuroplastic change is not significantly diminished by the duration of the problem. A dog who has had separation anxiety for five years can recover in the same timeframe as one who developed it six months ago — provided the protocol is correctly calibrated and consistently applied. Chronic cases may require slightly more foundation work, but the overall timeline holds.</p>
       </div>
+    </div>
+
+    <!-- FREE GUIDE CTA (before final CTA) -->
+    <div class="free-guide-cta">
+      <h3>Not ready for 30 days? Start with two.</h3>
+      <p>Days 1 and 2 of the PAXA Solo protocol are free to download. See how the method works with your own dog before you decide on the full programme.</p>
+      <a href="https://paxapet.gumroad.com/l/PAXA_Free_2Days" target="_blank" class="btn-free-guide">Get Days 1 & 2 free →</a>
     </div>
 
     <!-- CTA BLOCK -->

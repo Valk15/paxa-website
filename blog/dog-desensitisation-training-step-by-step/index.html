@@ -439,6 +439,15 @@ if (localStorage.getItem('paxa_cookie_consent') === 'accepted') {
     .step-card { padding: 16px 18px; }
   }
 </style>
+<style>
+  /* Free-guide CTA: secondary to the £29 CTA, inherits page text colour so it works on light and dark layouts */
+  .free-guide-cta { border: 1px solid rgba(125,138,110,0.45); border-radius: 4px; padding: 32px; margin: 48px 0; text-align: center; color: inherit; }
+  .free-guide-cta h3 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 26px; line-height: 1.25; margin: 0 0 12px; color: inherit; }
+  .free-guide-cta p { font-size: 15px; line-height: 1.7; margin: 0 auto 20px; max-width: 520px; opacity: 0.75; color: inherit; }
+  .free-guide-cta .btn-free-guide { display: inline-flex; align-items: center; gap: 8px; font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: inherit; background: transparent; border: 1px solid currentColor; padding: 13px 28px; border-radius: 2px; text-decoration: none; transition: background 0.2s, transform 0.15s; }
+  .free-guide-cta .btn-free-guide:hover { background: rgba(125,138,110,0.15); transform: translateY(-1px); }
+  @media (max-width: 600px) { .free-guide-cta { padding: 24px 20px; } .free-guide-cta h3 { font-size: 22px; } }
+</style>
 </head>
 <body>
 
@@ -514,6 +523,13 @@ if (localStorage.getItem('paxa_cookie_consent') === 'accepted') {
   <p>Flooding means exposing your dog to the full anxiety trigger — a departure, a full absence — before they have the neurological tolerance for it. Every flooding event resets the process. A single session where your dog reaches panic threshold can undo two weeks of careful sub-threshold work. During the protocol, you must not leave your dog for longer than their current trained threshold allows. If you cannot manage this (work commitments, family situations), address that logistic first — a dog-walker, a friend, daycare — or the protocol cannot progress.</p>
 
   <hr>
+
+  <!-- FREE GUIDE CTA (after second section) -->
+  <div class="free-guide-cta">
+    <h3>Not ready for 30 days? Start with two.</h3>
+    <p>Days 1 and 2 of the PAXA Solo protocol are free to download. See how the method works with your own dog before you decide on the full programme.</p>
+    <a href="https://paxapet.gumroad.com/l/PAXA_Free_2Days" target="_blank" class="btn-free-guide">Get Days 1 & 2 free →</a>
+  </div>
 
   <h2>Phase 1: identify your dog's threshold</h2>
 
@@ -681,6 +697,13 @@ if (localStorage.getItem('paxa_cookie_consent') === 'accepted') {
 
   <!-- INTERNAL LINKS -->
   <p>To understand the cortisol timeline that drives the 40-minute threshold, see <a href="/blog/the-40-minute-rule-dog-separation-anxiety/" style="color: var(--sage);">The 40-Minute Rule: Why Your Dog's Anxiety Peaks When You Leave</a>. If you are not yet certain whether your dog has separation anxiety or is simply under-stimulated, see <a href="/blog/separation-anxiety-vs-boredom-dogs/" style="color: var(--sage);">Dog Separation Anxiety vs Boredom: The Science-Backed Difference</a> before beginning this protocol.</p>
+
+  <!-- FREE GUIDE CTA (before final CTA) -->
+  <div class="free-guide-cta">
+    <h3>Not ready for 30 days? Start with two.</h3>
+    <p>Days 1 and 2 of the PAXA Solo protocol are free to download. See how the method works with your own dog before you decide on the full programme.</p>
+    <a href="https://paxapet.gumroad.com/l/PAXA_Free_2Days" target="_blank" class="btn-free-guide">Get Days 1 & 2 free →</a>
+  </div>
 
   <!-- CTA BOX -->
   <div class="blog-cta-box">

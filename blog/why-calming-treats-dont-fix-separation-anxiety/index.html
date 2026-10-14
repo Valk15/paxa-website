@@ -253,6 +253,15 @@
     .blog-cta-box { padding: 36px 24px; }
   }
 </style>
+<style>
+  /* Free-guide CTA: secondary to the £29 CTA, inherits page text colour so it works on light and dark layouts */
+  .free-guide-cta { border: 1px solid rgba(125,138,110,0.45); border-radius: 4px; padding: 32px; margin: 48px 0; text-align: center; color: inherit; }
+  .free-guide-cta h3 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 26px; line-height: 1.25; margin: 0 0 12px; color: inherit; }
+  .free-guide-cta p { font-size: 15px; line-height: 1.7; margin: 0 auto 20px; max-width: 520px; opacity: 0.75; color: inherit; }
+  .free-guide-cta .btn-free-guide { display: inline-flex; align-items: center; gap: 8px; font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: inherit; background: transparent; border: 1px solid currentColor; padding: 13px 28px; border-radius: 2px; text-decoration: none; transition: background 0.2s, transform 0.15s; }
+  .free-guide-cta .btn-free-guide:hover { background: rgba(125,138,110,0.15); transform: translateY(-1px); }
+  @media (max-width: 600px) { .free-guide-cta { padding: 24px 20px; } .free-guide-cta h3 { font-size: 22px; } }
+</style>
 
 <!-- Analytics -->
 <script>
@@ -329,6 +338,13 @@ if (localStorage.getItem('paxa_cookie_consent') === 'accepted') {
 
   <hr>
 
+  <!-- FREE GUIDE CTA (after second section) -->
+  <div class="free-guide-cta">
+    <h3>Not ready for 30 days? Start with two.</h3>
+    <p>Days 1 and 2 of the PAXA Solo protocol are free to download. See how the method works with your own dog before you decide on the full programme.</p>
+    <a href="https://paxapet.gumroad.com/l/PAXA_Free_2Days" target="_blank" class="btn-free-guide">Get Days 1 & 2 free →</a>
+  </div>
+
   <h2>Why calming treats can't reach the amygdala</h2>
 
   <p>The <strong>amygdala</strong> is a small, almond-shaped structure deep in the brain that serves as the threat-detection centre. In dogs with separation anxiety, the amygdala has essentially been trained — through repeated exposure to distressing departures — to flag "being alone" as a survival-level threat.</p>
@@ -376,6 +392,13 @@ if (localStorage.getItem('paxa_cookie_consent') === 'accepted') {
     <p>Not a supplement. Not a workaround. A structured system that rewires your dog's stress response from the source.</p>
     <a href="https://paxapet.gumroad.com/l/PAXA-Solo" target="_blank" class="btn-cta">Start the protocol — £29 →</a>
     <p class="cta-guarantee">30-day money back guarantee · Instant download · No subscription</p>
+  </div>
+
+  <!-- FREE GUIDE CTA (before final CTA) -->
+  <div class="free-guide-cta">
+    <h3>Not ready for 30 days? Start with two.</h3>
+    <p>Days 1 and 2 of the PAXA Solo protocol are free to download. See how the method works with your own dog before you decide on the full programme.</p>
+    <a href="https://paxapet.gumroad.com/l/PAXA_Free_2Days" target="_blank" class="btn-free-guide">Get Days 1 & 2 free →</a>
   </div>
 
   <div class="paxa-cta-block" style="background:#f5f0eb;border-left:4px solid #2C3E2D;padding:24px 28px;margin:40px 0;border-radius:4px;">
