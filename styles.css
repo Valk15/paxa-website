@@ -928,6 +928,7 @@ footer {
   nav { padding: 0 5vw; }
   .nav-cta { display: none; }
   footer { flex-direction: column; align-items: flex-start; }
+  .footer-links { flex-wrap: wrap; gap: 14px 24px; }
 }
 
 /* ── TESTIMONIALS ── */
@@ -1186,4 +1187,53 @@ footer {
   #paxa-cookie-banner { flex-direction: column; align-items: flex-start; }
   .cookie-banner-actions { width: 100%; }
   .cookie-btn-accept, .cookie-btn-decline { flex: 1; text-align: center; }
+}
+
+/* ── FIREWORKS (homepage promo + /fireworks/ page) ── */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--ink);
+  padding: 17px 32px;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, transform 0.15s;
+}
+.btn-outline:hover { background: var(--ink); color: var(--white); transform: translateY(-2px); }
+
+.fw-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.fw-actions .btn-buy { display: inline-flex; margin-bottom: 0; padding: 18px 32px; }
+
+.fw-promo {
+  background: var(--bone);
+  border-top: 1px solid rgba(10,10,10,0.06);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.fw-promo .section-body { margin-bottom: 32px; }
+.fw-promo-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: 3px;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .fw-promo { grid-template-columns: 1fr; gap: 40px; }
+}
+@media (max-width: 600px) {
+  .fw-actions { flex-direction: column; align-items: stretch; }
+  .fw-actions .btn-buy, .fw-actions .btn-outline { width: 100%; }
 }
