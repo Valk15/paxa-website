@@ -1237,3 +1237,29 @@ footer {
   .fw-actions { flex-direction: column; align-items: stretch; }
   .fw-actions .btn-buy, .fw-actions .btn-outline { width: 100%; }
 }
+
+
+/* Hero fireworks card */
+.hero-fw {
+  display: flex; align-items: center; gap: 16px;
+  margin-top: 36px; padding: 12px 18px 12px 12px;
+  max-width: 440px;
+  border: 1px solid rgba(245,245,240,0.14);
+  border-radius: 3px;
+  background: rgba(245,245,240,0.04);
+  text-decoration: none; color: var(--bone);
+  transition: border-color .2s, background .2s, transform .15s;
+  animation: fadeUp 0.8s ease 0.85s both;
+  position: relative; z-index: 1;
+}
+.hero-fw:hover { border-color: var(--sage-mid); background: rgba(159,191,147,0.08); transform: translateY(-2px); }
+.hero-fw img { width: 64px; height: 64px; object-fit: cover; object-position: center 20%; border-radius: 2px; flex-shrink: 0; }
+.hero-fw-text { display: flex; flex-direction: column; gap: 3px; }
+.hero-fw-tag { font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--sage-mid); }
+.hero-fw-title { font-family: var(--serif); font-size: 18px; line-height: 1.2; }
+.hero-fw-title em { font-style: italic; color: var(--stone-light); }
+.hero-fw-link { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: rgba(245,245,240,0.55); margin-top: 2px; }
+@media (max-width: 600px) {
+  .hero-fw { max-width: 100%; margin-top: 28px; }
+  .hero-fw-title { font-size: 16px; }
+}
